@@ -65,6 +65,7 @@ Review the design against ALL the **DON'T** guidelines in the frontend-design sk
 - Does it match the brand personality?
 - Does it feel trustworthy, approachable, premium, playful — whatever it should feel?
 - Would the target user feel "this is for me"?
+- Do frequent interactions respond fast enough to preserve flow, or do repeated waits keep breaking concentration? (Doherty Threshold)
 - **Peak-end rule**: Is the most intense moment positive? Does the experience end well (confirmation, celebration, clear next step)?
 - **Emotional valleys**: Check for onboarding frustration, error cliffs, feature discovery gaps, or anxiety spikes at high-stakes moments (payment, delete, commit)
 - **Interventions at negative moments**: Are there design interventions where users are likely to feel frustrated or anxious? (progress indicators, reassurance copy, undo options, social proof)
@@ -73,6 +74,7 @@ Review the design against ALL the **DON'T** guidelines in the frontend-design sk
 - Are interactive elements obviously interactive?
 - Would a user know what to do without instructions?
 - Are primary and frequent targets large enough and close enough to use confidently, especially on touch devices?
+- Do powerful features have safeguards proportional to their risk — permissions, previews, undo, confirmation, history, or explicit consequence language?
 - Are hover/focus states providing useful feedback?
 - Are there hidden features that should be more visible?
 
@@ -117,6 +119,7 @@ Review the design against ALL the **DON'T** guidelines in the frontend-design sk
 - Is the writing clear and concise?
 - Does it sound like a human (the right human for this brand)?
 - Are labels and buttons unambiguous?
+- Is any part of the flow manipulative — confusing consent, obstructed cancellation, guilt copy, fake urgency, or hierarchy that pressures the wrong choice?
 - Does error copy help users fix the problem?
 
 ## Phase 2: Present Findings

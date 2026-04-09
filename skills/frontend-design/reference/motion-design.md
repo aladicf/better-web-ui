@@ -80,6 +80,8 @@ This is not optional. Vestibular disorders affect ~35% of adults over 40.
 
 **The 80ms threshold**: Our brains buffer sensory input for ~80ms to synchronize perception. Anything under 80ms feels instant and simultaneous. This is your target for micro-interactions.
 
+**Doherty Threshold**: For frequent UI actions, try to keep the interaction within roughly **400ms** so users stay in flow instead of mentally context-switching. If the real work will take longer, acknowledge the action immediately and show meaningful progress rather than leaving the user in a dead wait.
+
 **Active vs passive time**: Passive waiting (staring at a spinner) feels longer than active engagement. Strategies to shift the balance:
 
 - **Preemptive start**: Begin transitions immediately while loading (iOS app zoom, skeleton UI). Users perceive work happening.

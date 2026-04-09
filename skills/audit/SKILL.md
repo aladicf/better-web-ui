@@ -45,6 +45,7 @@ Run comprehensive checks across 5 dimensions. Score each dimension 0-4 using the
 **Check for**:
 - **Layout thrashing**: Reading/writing layout properties in loops
 - **Expensive animations**: Animating layout properties (width, height, top, left) instead of transform/opacity
+- **Interaction latency**: Common actions provide no immediate feedback, rely on blank waits, or miss obvious optimistic/prefetch/progressive-loading opportunities
 - **Missing optimization**: Images without lazy loading, unoptimized assets, missing will-change
 - **Bundle size**: Unnecessary imports, unused dependencies
 - **Render performance**: Unnecessary re-renders, missing memoization
@@ -97,6 +98,8 @@ Also run these implementation-level hierarchy checks:
 - **Scaled-up icon chunkiness test**: Are tiny icons enlarged far past their intended size?
 - **Surface separation test**: Are borders, shadows, cards, and background shifts stacked redundantly instead of chosen intentionally?
 - **Overlap clash test**: Are overlapping images/cards colliding without clean separation or readable layering?
+- **Dark-pattern check**: Are there misleading labels, preselected exploitative options, obstructed cancellation/consent flows, fake urgency, or hierarchy that pressures the wrong choice?
+- **Guardrail check**: Do bulk/destructive/admin/powerful actions lack confirmations, undo, permission boundaries, or other proportional safeguards?
 
 **Score 0-4**: 0=AI slop gallery (5+ tells), 1=Heavy AI aesthetic (3-4 tells), 2=Some tells (1-2 noticeable), 3=Mostly clean (subtle issues only), 4=No AI tells (distinctive, intentional design)
 

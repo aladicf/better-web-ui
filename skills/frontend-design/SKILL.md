@@ -155,6 +155,7 @@ Focus on high-impact moments: one well-orchestrated page load with staggered rev
 Use [action hierarchy](reference/action-hierarchy.md) when deciding which controls should lead, recede, disappear, or escalate in destructive confirmations.
 
 Use `empty-state` for zero-data surface design. Use `onboard` for broader activation strategy, aha moments, tours, and first-run education.
+Use `optimize` when frequent interactions feel sluggish or break flow. Use `harden` when permissions, destructive actions, automation, or admin power need stronger safeguards.
 
 Make interactions feel fast. Use optimistic UI—update immediately, sync later.
 
@@ -182,6 +183,35 @@ Make interactions feel fast. Use optimistic UI—update immediately, sync later.
 **DON'T**: Repeat information users can already see
 
 Use `empty-state` for zero-data surface design. Use `onboard` for broader activation strategy, first-run learning, aha moments, tours, and adoption planning.
+
+### Product Ethics & Defaults
+
+When tradeoffs appear, default to this order:
+1. **Clarity**
+2. **Task completion speed**
+3. **Error prevention**
+4. **Familiar interaction patterns**
+5. **Visual polish**
+6. **Advanced flexibility**
+
+Do not sacrifice the top of the list just to improve the bottom.
+
+#### Never Use Dark Patterns
+
+The interface must not rely on confusion, obstruction, guilt, concealment, or misleading hierarchy to drive product-favoring outcomes.
+
+**DO**:
+- make choices, pricing, consent, and consequences easy to understand
+- keep unsubscribe, cancellation, privacy, and downgrade paths straightforward
+- use truthful warnings, real opt-in, and fair defaults
+- preserve user autonomy, informed consent, and reversibility whenever possible
+
+**DON'T**:
+- hide important information behind weak contrast, obscure placement, or misleading labels
+- make cancellation harder than signup
+- preselect exploitative options just to raise conversion
+- use fake urgency, fake scarcity, shame copy, or ambiguous destructive confirmations
+- improve metrics by making decisions less informed or harder to reverse
 
 ---
 

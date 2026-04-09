@@ -190,6 +190,27 @@ t('items', { count }) // Handles complex plural rules
 
 ### Edge Cases & Boundary Conditions
 
+#### With Power Comes Responsibility
+
+The more powerful a feature is, the more carefully the interface must communicate consequences and prevent accidental damage.
+
+High-power surfaces include:
+- bulk actions
+- admin panels
+- permission editors
+- automation and integrations
+- AI tools that can change or generate large amounts of content
+- destructive editing, publishing, billing, and account operations
+
+Guardrails to add:
+- role-based permissions and clear capability boundaries
+- previews, summaries, or counts before high-impact actions run
+- undo for reversible actions, confirmations for irreversible or high-cost ones
+- audit trails or visible history when actions have organizational consequences
+- safe defaults, explicit warnings, and plain-language consequence copy
+
+Power should feel controlled, not risky. If a feature can cause large-scale mistakes, design the interface so users have to understand what will happen before it happens.
+
 **Empty states**:
 - No items in list
 - No search results
@@ -221,6 +242,7 @@ t('items', { count }) // Handles complex plural rules
 - No permission to edit
 - Read-only mode
 - Clear explanation of why
+- Path to request access or understand who controls the permission when relevant
 
 **Browser compatibility**:
 - Polyfills for modern features

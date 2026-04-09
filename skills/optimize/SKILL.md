@@ -16,6 +16,7 @@ Understand current performance and identify problems:
 1. **Measure current state**:
    - **Core Web Vitals**: LCP, FID/INP, CLS scores
    - **Load time**: Time to interactive, first contentful paint
+  - **Interaction latency**: Response time for filters, search, save, open-panel, autocomplete, and other repeated actions
    - **Bundle size**: JavaScript, CSS, image sizes
    - **Runtime performance**: Frame rate, memory usage, CPU usage
    - **Network**: Request count, payload sizes, waterfall
@@ -31,6 +32,18 @@ Understand current performance and identify problems:
 ## Optimization Strategy
 
 Create systematic improvement plan:
+
+### Doherty Threshold for Interaction Speed
+
+Routine interactions should preserve flow. Aim for users to see acknowledgment immediately and, when possible, feel the interaction resolve within roughly **400ms**.
+
+When work will exceed that window:
+- show instant feedback within ~100ms (pressed, active, loading, optimistic state)
+- stream or reveal partial content early instead of waiting for everything
+- prefetch likely next screens or data for common paths
+- prefer skeletons, optimistic UI, and progressive rendering over blank waits and generic spinners
+
+**Don't** rely on a spinner as the main experience for high-frequency actions if the interface could instead acknowledge intent and keep momentum alive.
 
 ### Loading Performance
 

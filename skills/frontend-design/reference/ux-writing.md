@@ -98,10 +98,27 @@ Be specific: "Saving your draft..." not "Loading...". For long waits, set expect
 
 Most confirmation dialogs are design failures—consider undo instead. When you must confirm: name the action, explain consequences, use specific button labels ("Delete project" / "Keep project", not "Yes" / "No").
 
+## Avoid Dark Patterns in Copy and Consent
+
+Copy should help users make informed decisions, not pressure them into product-favoring ones.
+
+Use writing to preserve autonomy:
+- make pricing, renewals, billing terms, and data use easy to find and easy to understand
+- make opt-in genuinely optional and explicit
+- make cancellation, unsubscribe, and downgrade language direct and easy to follow
+- name consequences honestly in consent and destructive moments
+
+Avoid writing that manipulates:
+- shame copy ("No thanks, I hate saving money")
+- misleading button labels or mismatched actions
+- fake urgency or fake scarcity claims
+- hiding important conditions in low-emphasis helper text
+- making the safe option linguistically vague while the product-favoring option is clear and prominent
+
 ## Form Instructions
 
 Show format with placeholders, not instructions. For non-obvious fields, explain why you're asking.
 
 ---
 
-**Avoid**: Jargon without explanation. Blaming users ("You made an error" → "This field is required"). Vague errors ("Something went wrong"). Varying terminology for variety. Humor for errors.
+**Avoid**: Jargon without explanation. Blaming users ("You made an error" → "This field is required"). Vague errors ("Something went wrong"). Varying terminology for variety. Humor for errors. Manipulative guilt copy. Misleading consent language.
