@@ -1,0 +1,27 @@
+name: Validate skill library
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate canonical skills and wrapper sync
+        run: npm run validate
+
+      - name: Ensure generated wrappers are up to date
+        run: |
+          npm run generate:wrappers
+          git diff --exit-code

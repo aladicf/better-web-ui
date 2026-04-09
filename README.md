@@ -1,8 +1,10 @@
 # better-web-ui
 
-`better-web-ui` is a frontend design skill library for AI coding agents.
+`better-web-ui` is an opinionated frontend design skill library for AI coding agents.
 
 It helps agents build, critique, refine, and systematize high-quality UI work without defaulting to generic, low-context design output.
+
+The project is deliberately opinionated about design taste: it optimizes for distinctive, production-grade, high-context interfaces rather than neutral, lowest-common-denominator UI.
 
 The package follows the [Agent Skills](https://agentskills.io/) format and is designed to be installed through the [`skills` CLI](https://skills.sh/docs/cli).
 
@@ -10,6 +12,7 @@ The package follows the [Agent Skills](https://agentskills.io/) format and is de
 
 Use `better-web-ui` when you want an agent to help with:
 
+- multi-variation UI generation for new sections, pages, shells, and components
 - broader frontend design direction
 - visual hierarchy and layout quality
 - typography, color, and spacing systems
@@ -18,6 +21,8 @@ Use `better-web-ui` when you want an agent to help with:
 - polish, motion, depth, and standout showcase work
 
 This repository is a **skills package**, not a web app or starter template.
+
+If you want safe, generic UI output above all else, this package is probably not trying to be that. It is intentionally biased toward stronger design points of view.
 
 ## Installation
 
@@ -32,6 +37,8 @@ Useful variations:
 ```bash
 npx skills add aladicf/better-web-ui --list
 npx skills add aladicf/better-web-ui --all
+npx skills add aladicf/better-web-ui --skill add-ui
+npx skills add aladicf/better-web-ui --skill add-ui --skill frontend-design
 npx skills add aladicf/better-web-ui --skill frontend-design --skill polish
 npx skills add aladicf/better-web-ui -g
 ```
@@ -40,7 +47,32 @@ npx skills add aladicf/better-web-ui -g
 
 ```bash
 npx skills add .
+npx skills add . --skill add-ui
 ```
+
+## Using `add-ui`
+
+`add-ui` is the canonical skill name in this repository. Some hosts may expose a friendly `/add` alias, but docs, wrappers, and source files should continue to refer to the skill as `add-ui`.
+
+Example requests:
+
+- `/add-ui hero section for a B2B security product homepage`
+- `/add-ui pricing section for a developer tool with monthly and annual billing`
+- `/add-ui dashboard shell for an operations analytics platform`
+- `/add-ui onboarding flow for a budgeting app aimed at first-time users`
+- `/add-ui product comparison table for a high-consideration ecommerce category`
+
+Equivalent host-level alias examples:
+
+- `/add hero section for a B2B security product homepage`
+- `/add dashboard shell for an operations analytics platform`
+
+Expected behavior:
+
+- generate **5** genuinely distinct directions
+- explain tradeoffs in a compact comparison format
+- recommend one direction when the goals clearly favor it
+- help preview and apply the selected option
 
 ## Skill catalog
 
@@ -51,6 +83,7 @@ npx skills add .
 
 ### Execution skills
 
+- `add-ui` — generate 5 distinct UI directions for a requested section, page, flow, shell, or component, then help preview and apply one
 - `adapt` — responsive and context-aware adaptation
 - `animate` — motion and micro-interactions
 - `arrange` — layout composition, grouping, and spacing rhythm
@@ -118,8 +151,8 @@ Those wrappers are compatibility shims only. If you are editing the library, edi
 When you add or change a skill:
 
 1. Update the canonical skill in `skills/`
-2. Regenerate wrapper trees
-3. Validate canonical skills with `skills-ref`
+2. Regenerate wrapper trees with `npm run generate:wrappers`
+3. Validate canonical skills and wrapper sync with `npm run validate`
 4. Smoke-test local installation with the `skills` CLI
 5. Update this README if discoverability changed
 
@@ -132,10 +165,14 @@ This repository is maintained against the Agent Skills spec and validated with `
 Typical validation flow:
 
 ```bash
+npm run validate
+npm run generate:wrappers
 npx skills-ref validate ./skills/frontend-design
 ```
 
 Repeat for the rest of the canonical skills, or script validation across the full `skills/` directory.
+
+The repository also includes `.github/workflows/validate.yml` to check canonical skill metadata, wrapper drift, and wrapper generation idempotency on pushes and pull requests.
 
 ## Attribution
 

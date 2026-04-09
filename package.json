@@ -1,0 +1,12 @@
+{
+  "name": "better-web-ui",
+  "private": true,
+  "type": "module",
+  "description": "Opinionated frontend design Agent Skills package for AI coding agents.",
+  "scripts": {
+    "generate:wrappers": "node ./scripts/generate-wrappers.mjs",
+    "validate": "node ./scripts/validate-skill-library.mjs",
+    "validate:wrappers": "node ./scripts/validate-skill-library.mjs --wrappers-only",
+    "smoke:list": "npx skills add . --list"
+  }
+}
