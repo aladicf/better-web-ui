@@ -207,7 +207,7 @@ npx skills-ref validate ./skills/frontend-design
 
 Repeat for the rest of the canonical skills, or script validation across the full `skills/` directory.
 
-The repository also includes `.github/workflows/validate.yml` to install dependencies, lint repository scripts with OXC, check canonical skill metadata and README sync, validate wrapper root readmes, detect wrapper drift, and smoke-test local `skills` CLI discovery on pushes and pull requests.
+The repository also includes `.github/workflows/validate.yml` to install dependencies, lint repository scripts with OXC, check canonical skill metadata and README sync, validate wrapper root readmes, detect wrapper drift inside the generated wrapper roots, and smoke-test local `skills` CLI discovery on pushes and pull requests.
 
 ## Attribution
 

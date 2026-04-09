@@ -26,6 +26,26 @@ export function normalizeForComparison(text) {
   return normalizeNewlines(text).trimEnd();
 }
 
+export function resolveWrapperRootPath(wrapperRoot) {
+  const wrapperRootPath = path.resolve(projectRoot, wrapperRoot);
+  const relativeFromProjectRoot = path.relative(projectRoot, wrapperRootPath);
+  const pathSegments = relativeFromProjectRoot.split(path.sep).filter(Boolean);
+
+  if (
+    !relativeFromProjectRoot ||
+    relativeFromProjectRoot.startsWith('..') ||
+    path.isAbsolute(relativeFromProjectRoot)
+  ) {
+    throw new Error(`Wrapper root resolves outside the repository: ${wrapperRoot}`);
+  }
+
+  if (pathSegments.includes('node_modules')) {
+    throw new Error(`Wrapper root must not point into node_modules: ${wrapperRoot}`);
+  }
+
+  return wrapperRootPath;
+}
+
 export function extractFrontmatterBlock(contents) {
   const normalized = normalizeNewlines(contents);
   const match = normalized.match(/^---\n[\s\S]*?\n---(?:\n|$)/);

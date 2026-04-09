@@ -25,6 +25,7 @@ Use `.nvmrc` or `.node-version` to align your local environment before running r
 
 - `npm run lint` — lint repository scripts with OXC (`oxlint`)
 - `npm run generate:wrappers` — regenerate all wrapper trees and wrapper-root readmes from canonical skills
+- `npm run check:wrapper-drift` — fail if tracked generated wrapper outputs differ from the checked-in wrapper roots
 - `npm run validate` — validate canonical skill metadata, local markdown links, README skill catalog sync, wrapper root readmes, and wrapper drift
 - `npm run validate:wrappers` — validate wrapper trees and wrapper-root readmes only
 - `npm run smoke:list` — smoke-test local `skills` CLI discovery from the repository root
@@ -70,3 +71,5 @@ Use `.nvmrc` or `.node-version` to align your local environment before running r
 ## CI
 
 GitHub Actions in [`.github/workflows/validate.yml`](.github/workflows/validate.yml) installs dependencies, lints repository scripts, validates canonical skills and wrapper sync, checks wrapper generation idempotency, and runs the local discovery smoke test.
+
+The wrapper-idempotency check is intentionally scoped to the generated wrapper roots rather than the whole repository, so unrelated files such as local package-manager artifacts cannot cause false negatives.

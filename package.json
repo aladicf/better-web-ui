@@ -27,6 +27,7 @@
   "scripts": {
     "lint": "oxlint --deny-warnings scripts",
     "generate:wrappers": "node ./scripts/generate-wrappers.mjs",
+    "check:wrapper-drift": "node ./scripts/check-generated-wrapper-diff.mjs",
     "validate": "node ./scripts/validate-skill-library.mjs",
     "validate:wrappers": "node ./scripts/validate-skill-library.mjs --wrappers-only",
     "smoke:list": "npx skills add . --list"

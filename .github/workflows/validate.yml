@@ -33,7 +33,7 @@ jobs:
       - name: Ensure generated wrappers are up to date
         run: |
           npm run generate:wrappers
-          git diff --exit-code
+          npm run check:wrapper-drift
 
       - name: Smoke test local skills discovery
         run: npm run smoke:list

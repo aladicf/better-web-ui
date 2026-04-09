@@ -6,6 +6,7 @@ import {
   getCanonicalSkills,
   normalizeForComparison,
   projectRoot,
+  resolveWrapperRootPath,
   wrapperRoots,
 } from './skill-library-utils.mjs';
 
@@ -244,7 +245,7 @@ if (!wrappersOnly) {
 }
 
 for (const wrapperRoot of wrapperRoots) {
-  const wrapperRootPath = path.join(projectRoot, wrapperRoot);
+  const wrapperRootPath = resolveWrapperRootPath(wrapperRoot);
 
   try {
     await fs.access(wrapperRootPath);

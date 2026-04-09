@@ -4,7 +4,7 @@ import {
   buildWrapperContent,
   buildWrapperRootReadmeContent,
   getCanonicalSkills,
-  projectRoot,
+  resolveWrapperRootPath,
   wrapperRoots,
 } from './skill-library-utils.mjs';
 
@@ -13,7 +13,7 @@ let writtenCount = 0;
 let removedCount = 0;
 
 for (const wrapperRoot of wrapperRoots) {
-  const wrapperRootPath = path.join(projectRoot, wrapperRoot);
+  const wrapperRootPath = resolveWrapperRootPath(wrapperRoot);
   await fs.mkdir(wrapperRootPath, { recursive: true });
   await fs.writeFile(
     path.join(wrapperRootPath, 'README.md'),
