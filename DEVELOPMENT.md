@@ -9,6 +9,13 @@ The supported engine range for repository tooling is `>=24.14.1 <25`.
 
 Use `.nvmrc` or `.node-version` to align your local environment before running repository scripts.
 
+Both files are intentionally committed for compatibility across version managers:
+
+- `.nvmrc` works well with `nvm`, `fnm`, and similar tools
+- `.node-version` is picked up by tools that prefer the generic filename
+
+They should stay in sync and currently both point to Node `24.14.1`.
+
 ## Quick start
 
 1. Install dependencies with `npm install`.
@@ -21,6 +28,14 @@ Use `.nvmrc` or `.node-version` to align your local environment before running r
 - Wrapper trees such as `.github/skills/` and `.cursor/skills/` are generated compatibility shims.
 - Each wrapper root also contains a generated `README.md` that explains the shim contract.
 
+## Design context files
+
+The canonical project design-context file for this library is `.better-web-ui.md`.
+
+Some skills still check legacy files such as `.better-ui.md` and `.impeccable.md` for migration compatibility with older projects or earlier tooling conventions.
+
+Treat those legacy files as fallback inputs only. New work should write or update `.better-web-ui.md` so future sessions have a single canonical source of design context.
+
 ## Script reference
 
 - `npm run lint` — lint repository scripts with OXC (`oxlint`)
@@ -28,7 +43,38 @@ Use `.nvmrc` or `.node-version` to align your local environment before running r
 - `npm run check:wrapper-drift` — fail if tracked generated wrapper outputs differ from the checked-in wrapper roots
 - `npm run validate` — validate canonical skill metadata, local markdown links, README skill catalog sync, wrapper root readmes, and wrapper drift
 - `npm run validate:wrappers` — validate wrapper trees and wrapper-root readmes only
-- `npm run smoke:list` — smoke-test local `skills` CLI discovery from the repository root
+- `npm run smoke:list` — smoke-test local `skills` CLI discovery from the repository root; verifies that `npx skills add . --list` discovers and lists the canonical skills as expected
+
+## Choosing the right skill
+
+Use these quick triage rules when multiple skills seem close:
+
+- **Too many choices / too much visible complexity** → `distill`
+- **Weak grouping / cramped or monotonous layout rhythm** → `arrange`
+- **Unclear priority / everything competes / titles too loud** → `hierarchy`
+- **Zero-data or no-results surface itself** → `empty-state`
+- **Broader first-run education, activation, or aha-moment strategy** → `onboard`
+- **Consistency cleanup and micro-detail refinement** → `polish`
+- **More personality, joy, or memorable moments** → `delight`
+- **Stronger visual confidence and impact** → `bolder`
+- **Less visual intensity without losing structure** → `quieter`
+
+If the problem is mainly about deciding what matters first, prefer `hierarchy` before `polish`.
+If the problem is mainly about removing user burden, prefer `distill` before adding more UI.
+
+## When to regenerate wrappers
+
+Run `npm run generate:wrappers` when you:
+
+- add a skill
+- remove a skill
+- rename a skill directory
+- change skill frontmatter such as `name`, `description`, or `metadata`
+- update wrapper-generation templates or wrapper-root guidance
+
+You usually do **not** need to regenerate wrappers for canonical body-text-only edits that do not affect wrapper output.
+
+If you skip regeneration when it is needed, validation will fail with wrapper-drift errors.
 
 ## Recommended workflow
 

@@ -46,6 +46,25 @@ This repository is an opinionated Agent Skills library, not a generic starter. C
 - Avoid duplicate doctrine across skills when a shared reference would do.
 - Preserve canonical naming such as `add-ui` when hosts expose friendlier aliases.
 
+## Proposing a new skill
+
+Before adding a brand-new skill, first check whether the idea should instead:
+
+- strengthen an existing skill
+- add a shared reference under `skills/frontend-design/reference/`
+- improve README / maintainer guidance rather than creating a new command
+
+Propose a new skill when it has a clearly distinct job, trigger pattern, and workflow that would otherwise create confusion or overload an existing skill.
+
+Good questions to answer before opening a pull request:
+
+- What unique problem does this skill solve?
+- Which existing skills are closest, and why are they not enough?
+- Should the doctrine live in a shared reference instead of a new skill?
+- Will the skill remain broadly useful to the library, not just one narrow project case?
+
+If the answer is still "new skill," follow the adding-a-skill workflow in [`DEVELOPMENT.md`](DEVELOPMENT.md) and update discoverability docs accordingly.
+
 ## Questions
 
 - repository rules: [`AGENTS.md`](AGENTS.md)

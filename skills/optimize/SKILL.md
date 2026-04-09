@@ -9,6 +9,10 @@ Identify and fix performance issues to create faster, smoother user experiences.
 
 Consult the [image treatment](../frontend-design/reference/image-treatment.md) when image performance problems intersect with screenshot sizing, icon scaling, cropping strategy, or user-uploaded media handling.
 
+## MANDATORY PREPARATION
+
+Users start this workflow with `/optimize`. Once this skill is active, load $frontend-design — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow that protocol before proceeding — if no design context exists yet, you MUST load $setup first. Additionally gather: the target devices, performance constraints, and which user interactions feel slow.
+
 ## Assess Performance Issues
 
 Understand current performance and identify problems:

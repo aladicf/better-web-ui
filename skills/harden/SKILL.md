@@ -10,6 +10,10 @@ Strengthen interfaces against edge cases, errors, internationalization issues, a
 Consult the [semantic color](../frontend-design/reference/semantic-color.md) reference when designing error, warning, success, and info states so semantic color stays clear and not purely decorative.
 Consult the [image treatment](../frontend-design/reference/image-treatment.md) when hardening user-uploaded media, screenshots, icon scaling, or image bleed behavior.
 
+## MANDATORY PREPARATION
+
+Users start this workflow with `/harden`. Once this skill is active, load $frontend-design — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow that protocol before proceeding — if no design context exists yet, you MUST load $setup first. Additionally gather: the risky scenarios, edge cases, and user constraints most likely to break the current flow.
+
 ## Assess Hardening Needs
 
 Identify weaknesses and edge cases:

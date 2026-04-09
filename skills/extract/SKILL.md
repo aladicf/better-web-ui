@@ -11,6 +11,10 @@ The goal is not to capture every value in the codebase. The goal is to create co
 
 Consult the [design-system alignment](../frontend-design/reference/design-system-alignment.md) reference for tokens vs components vs patterns, drift, and how to avoid turning inconsistency into token sprawl.
 
+## MANDATORY PREPARATION
+
+Users start this workflow with `/extract`. Once this skill is active, load $frontend-design — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow that protocol before proceeding — if no design context exists yet, you MUST load $setup first.
+
 ## Discover
 
 Analyze the target area to identify extraction opportunities:

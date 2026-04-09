@@ -30,6 +30,8 @@ Maintainer tooling in this repository is pinned to Node `24.14.1`.
 
 The package engine policy allows Node `>=24.14.1 <25` so local maintainer and CI behavior stay within the current LTS line.
 
+The repository includes both `.nvmrc` and `.node-version` so different version managers can resolve the same pinned runtime without extra local setup.
+
 - use `nvm use`, `fnm use`, or your preferred version manager with `.nvmrc` / `.node-version`
 - run `npm install` before using the maintainer scripts
 - use `npm run lint`, `npm run generate:wrappers`, and `npm run validate` from the repository root
@@ -84,6 +86,26 @@ Expected behavior:
 - recommend one direction when the goals clearly favor it
 - help preview and apply the selected option
 
+## More example requests
+
+### Review and diagnosis
+
+- `/critique this signup flow for trust, hierarchy, and friction`
+- `/critique this analytics dashboard for cognitive load and information architecture`
+- `/audit this checkout form for accessibility, responsive issues, and anti-patterns`
+- `/audit the table component for touch targets, keyboard support, and performance`
+
+### Setup and design direction
+
+- `/setup design context for a B2B operations platform used by analysts all day`
+- `/setup design context for a consumer budgeting app that should feel calm and trustworthy`
+
+## Shared design doctrine
+
+Reusable guidance and anti-pattern references live primarily in [`skills/frontend-design/reference/`](skills/frontend-design/reference/).
+
+When adding or updating skills, prefer linking to shared doctrine there instead of duplicating long guidance blocks in multiple `SKILL.md` files.
+
 ## Skill catalog
 
 The validator checks that every canonical skill name under `skills/` appears in this section, so keep it in sync when adding, removing, or renaming a skill.
@@ -109,17 +131,17 @@ The validator checks that every canonical skill name under `skills/` appears in 
 - `hierarchy` — priority, emphasis, and action clarity
 - `imagery` — screenshots, icons, photos, and media treatment
 - `normalize` — bring drifted UI back into alignment with the design system
-- `onboard` — first-run, activation, and onboarding flow design
+- `onboard` — first-run, activation, and onboarding strategy that gets users to value quickly
 - `typeset` — typography, readability, and type hierarchy
 
 ### Review and finishing
 
 - `audit` — technical UI quality checks with scored findings and severity ratings
-- `critique` — UX and design critique with scores and prioritized issues
-- `delight` — tasteful personality and memorable moments
-- `polish` — final pass for alignment, consistency, and micro-detail quality
-- `quieter` — reduce visual intensity without losing hierarchy
-- `bolder` — increase visual confidence, contrast, and impact
+- `critique` — UX and design critique with scores and prioritized issues across the overall interface, not just a single zero-data surface
+- `delight` — add tasteful personality and memorable moments once the fundamentals are already working
+- `polish` — final pass for alignment, consistency, and micro-detail quality, not a full tone shift
+- `quieter` — reduce visual intensity without losing hierarchy or character
+- `bolder` — increase visual confidence, contrast, and impact when the design feels too safe or generic
 
 ### Advanced / specialized
 
@@ -143,6 +165,21 @@ Shared doctrine currently lives primarily under:
 ```text
 skills/frontend-design/reference/
 ```
+
+## Choosing between similar skills
+
+### `onboard` vs `empty-state` vs `critique`
+
+- Use **`onboard`** when the problem is broader activation strategy: first-run learning, aha moments, progressive teaching, and the path to value.
+- Use **`empty-state`** when the work is the zero-data, no-results, permission, or error surface itself.
+- Use **`critique`** when you want an overall design review that may evaluate onboarding or empty states as part of a larger experience.
+
+### `polish` vs `delight` vs `bolder` vs `quieter`
+
+- Use **`polish`** for detail cleanup, consistency, spacing, alignment, and state refinement.
+- Use **`delight`** for personality, joy, and memorable moments that do not rewrite the whole visual direction.
+- Use **`bolder`** when the design is too timid and needs stronger contrast, confidence, and point of view.
+- Use **`quieter`** when the design is too loud and needs restraint without losing its structure.
 
 ## Compatibility wrapper trees
 
