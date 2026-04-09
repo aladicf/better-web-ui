@@ -24,6 +24,16 @@ This repository is a **skills package**, not a web app or starter template.
 
 If you want safe, generic UI output above all else, this package is probably not trying to be that. It is intentionally biased toward stronger design points of view.
 
+## Runtime requirements
+
+Maintainer tooling in this repository is pinned to Node `24.14.1`.
+
+The package engine policy allows Node `>=24.14.1 <25` so local maintainer and CI behavior stay within the current LTS line.
+
+- use `nvm use`, `fnm use`, or your preferred version manager with `.nvmrc` / `.node-version`
+- run `npm install` before using the maintainer scripts
+- use `npm run lint`, `npm run generate:wrappers`, and `npm run validate` from the repository root
+
 ## Installation
 
 ### Install from GitHub
@@ -75,6 +85,8 @@ Expected behavior:
 - help preview and apply the selected option
 
 ## Skill catalog
+
+The validator checks that every canonical skill name under `skills/` appears in this section, so keep it in sync when adding, removing, or renaming a skill.
 
 ### Meta and setup
 
@@ -146,15 +158,36 @@ This repo also ships generated wrapper trees for agent-specific layouts so the s
 
 Those wrappers are compatibility shims only. If you are editing the library, edit `skills/` first and regenerate wrappers afterward.
 
+Each wrapper root also includes a generated `README.md` explaining that it is a compatibility shim and pointing back to the canonical `skills/` directory.
+
+| Wrapper root | Purpose |
+| --- | --- |
+| `.agents/skills` | Generic `.agents` compatibility layout |
+| `.github/skills` | GitHub-oriented compatibility layout |
+| `.claude/skills` | Claude compatibility layout |
+| `.codex/skills` | Codex compatibility layout |
+| `.cursor/skills` | Cursor compatibility layout |
+| `.opencode/skills` | Opencode compatibility layout |
+| `.pi/skills` | Pi compatibility layout |
+
+Exact discovery behavior depends on the host. The purpose of these directories is to keep one canonical skill library while still surfacing thin wrappers in multiple environments.
+
+## Contributor docs
+
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — pull request expectations, quality bar, and submission checklist
+- [`DEVELOPMENT.md`](DEVELOPMENT.md) — local setup, script reference, wrapper generation, and validation details
+- [`AGENTS.md`](AGENTS.md) — repository-specific rules for coding agents
+
 ## Maintainer workflow
 
 When you add or change a skill:
 
 1. Update the canonical skill in `skills/`
-2. Regenerate wrapper trees with `npm run generate:wrappers`
-3. Validate canonical skills and wrapper sync with `npm run validate`
-4. Smoke-test local installation with the `skills` CLI
-5. Update this README if discoverability changed
+2. Run `npm run lint` if you changed repository scripts or tooling
+3. Regenerate wrapper trees with `npm run generate:wrappers`
+4. Validate canonical skills, docs, and wrapper sync with `npm run validate`
+5. Smoke-test local installation with the `skills` CLI
+6. Update this README if discoverability changed
 
 There is no separate `skills.sh` publish command. A public repo plus successful installs is the publish path.
 
@@ -165,14 +198,16 @@ This repository is maintained against the Agent Skills spec and validated with `
 Typical validation flow:
 
 ```bash
+npm run lint
 npm run validate
 npm run generate:wrappers
+npm run smoke:list
 npx skills-ref validate ./skills/frontend-design
 ```
 
 Repeat for the rest of the canonical skills, or script validation across the full `skills/` directory.
 
-The repository also includes `.github/workflows/validate.yml` to check canonical skill metadata, wrapper drift, and wrapper generation idempotency on pushes and pull requests.
+The repository also includes `.github/workflows/validate.yml` to install dependencies, lint repository scripts with OXC, check canonical skill metadata and README sync, validate wrapper root readmes, detect wrapper drift, and smoke-test local `skills` CLI discovery on pushes and pull requests.
 
 ## Attribution
 

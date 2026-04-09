@@ -2,6 +2,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import {
   buildWrapperContent,
+  buildWrapperRootReadmeContent,
   getCanonicalSkills,
   projectRoot,
   wrapperRoots,
@@ -14,6 +15,11 @@ let removedCount = 0;
 for (const wrapperRoot of wrapperRoots) {
   const wrapperRootPath = path.join(projectRoot, wrapperRoot);
   await fs.mkdir(wrapperRootPath, { recursive: true });
+  await fs.writeFile(
+    path.join(wrapperRootPath, 'README.md'),
+    buildWrapperRootReadmeContent({ wrapperRoot }),
+    'utf8',
+  );
 
   const existingEntries = await fs.readdir(wrapperRootPath, { withFileTypes: true });
   const existingDirectories = new Set(

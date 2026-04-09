@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseDocument } from 'yaml';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,7 +28,7 @@ export function normalizeForComparison(text) {
 
 export function extractFrontmatterBlock(contents) {
   const normalized = normalizeNewlines(contents);
-  const match = normalized.match(/^---\n[\s\S]*?\n---\n/);
+  const match = normalized.match(/^---\n[\s\S]*?\n---(?:\n|$)/);
 
   if (!match) {
     throw new Error('Missing or invalid YAML frontmatter block.');
@@ -36,57 +37,26 @@ export function extractFrontmatterBlock(contents) {
   return match[0];
 }
 
-function stripQuotes(value) {
-  if (
-    (value.startsWith('"') && value.endsWith('"')) ||
-    (value.startsWith("'") && value.endsWith("'"))
-  ) {
-    return value.slice(1, -1);
-  }
-
-  return value;
-}
-
-export function parseFrontmatter(frontmatterBlock) {
+export function parseFrontmatter(frontmatterBlock, { filePath = 'frontmatter' } = {}) {
   const body = normalizeNewlines(frontmatterBlock)
     .replace(/^---\n/, '')
-    .replace(/\n---\n$/, '');
+    .replace(/\n---(?:\n|$)$/, '');
 
-  const data = {};
-  let currentSection = null;
+  const document = parseDocument(body, {
+    merge: false,
+    prettyErrors: true,
+    uniqueKeys: true,
+  });
 
-  for (const rawLine of body.split('\n')) {
-    if (!rawLine.trim()) {
-      continue;
-    }
+  if (document.errors.length > 0) {
+    const message = document.errors.map((error) => error.message).join(' ');
+    throw new Error(`Invalid YAML frontmatter in ${filePath}: ${message}`);
+  }
 
-    if (/^\s{2,}[^:\s][^:]*:/.test(rawLine)) {
-      if (!currentSection) {
-        continue;
-      }
+  const data = document.toJSON();
 
-      const nestedMatch = rawLine.match(/^\s{2,}([^:]+):\s*(.*)$/);
-      if (!nestedMatch) {
-        continue;
-      }
-
-      data[currentSection] ??= {};
-      data[currentSection][nestedMatch[1].trim()] = stripQuotes(nestedMatch[2].trim());
-      continue;
-    }
-
-    const sectionMatch = rawLine.match(/^([^:]+):\s*$/);
-    if (sectionMatch) {
-      currentSection = sectionMatch[1].trim();
-      data[currentSection] ??= {};
-      continue;
-    }
-
-    const valueMatch = rawLine.match(/^([^:]+):\s*(.*)$/);
-    if (valueMatch) {
-      currentSection = null;
-      data[valueMatch[1].trim()] = stripQuotes(valueMatch[2].trim());
-    }
+  if (!data || typeof data !== 'object' || Array.isArray(data)) {
+    throw new Error(`Frontmatter in ${filePath} must be a YAML mapping.`);
   }
 
   return data;
@@ -106,6 +76,21 @@ export function buildWrapperContent({ frontmatterBlock, skillName, wrapperRoot }
   ].join('\n');
 }
 
+export function buildWrapperRootReadmeContent({ wrapperRoot }) {
+  const normalizedRoot = wrapperRoot.replace(/\\/g, '/');
+
+  return [
+    '# Compatibility wrappers',
+    '',
+    `This directory contains generated compatibility wrappers for the \`${normalizedRoot}\` layout.`,
+    '',
+    'Do not edit files here directly. Edit the canonical skills in [`../../skills/`](../../skills/) and regenerate wrappers with `npm run generate:wrappers`.',
+    '',
+    'For maintainer workflow details, see [`../../AGENTS.md`](../../AGENTS.md), [`../../CONTRIBUTING.md`](../../CONTRIBUTING.md), and [`../../DEVELOPMENT.md`](../../DEVELOPMENT.md).',
+    '',
+  ].join('\n');
+}
+
 export async function getCanonicalSkills() {
   const entries = await fs.readdir(skillsDir, { withFileTypes: true });
   const directories = entries
@@ -117,11 +102,25 @@ export async function getCanonicalSkills() {
 
   for (const directoryName of directories) {
     const skillFilePath = path.join(skillsDir, directoryName, 'SKILL.md');
-    const contents = await fs.readFile(skillFilePath, 'utf8');
+    let contents;
+
+    try {
+      contents = await fs.readFile(skillFilePath, 'utf8');
+    } catch (error) {
+      if (error?.code === 'ENOENT') {
+        throw new Error(`Missing SKILL.md in skills/${directoryName}.`);
+      }
+
+      throw error;
+    }
+
     const frontmatterBlock = extractFrontmatterBlock(contents);
-    const frontmatter = parseFrontmatter(frontmatterBlock);
+    const frontmatter = parseFrontmatter(frontmatterBlock, {
+      filePath: path.relative(projectRoot, skillFilePath),
+    });
 
     skills.push({
+      contents,
       directoryName,
       skillName: frontmatter.name,
       skillFilePath,

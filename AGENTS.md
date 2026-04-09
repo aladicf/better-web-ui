@@ -48,10 +48,14 @@ skills/
 .cursor/skills/
 .opencode/skills/
 .pi/skills/
+  README.md           # generated wrapper-root guidance
   {skill-name}/
     SKILL.md          # generated wrapper pointing back to skills/{skill-name}/SKILL.md
 
 README.md
+CONTRIBUTING.md
+DEVELOPMENT.md
+CHANGELOG.md
 AGENTS.md
 CLAUDE.md             # should remain a pointer to AGENTS.md
 NOTICE.md
@@ -59,6 +63,13 @@ LICENSE
 ```
 
 ## Working rules
+
+## Tooling baseline
+
+- Use Node `24.14.1` for local maintainer work.
+- Treat `>=24.14.1 <25` as the supported engine range for repository tooling and CI.
+- Run `npm install` before using repository scripts.
+- Use `npm run lint` for repository scripts, `npm run generate:wrappers` for compatibility trees, and `npm run validate` for canonical skill, doc, and wrapper checks.
 
 ### 1. Edit canonical skills first
 
@@ -124,12 +135,20 @@ Follow the canonical instructions in [../../../skills/{skill-name}/SKILL.md](../
 
 Before release or after significant skill changes:
 
-1. Validate canonical skills with `skills-ref`
-2. Smoke-test discovery with `npx skills add <local-path> --list`
-3. Smoke-test an actual local install of at least one skill into a temporary directory
-4. Ensure README install instructions still match observed behavior
+1. Run `npm run lint` after changing repository scripts or tooling
+2. Validate canonical skills, docs, wrapper root readmes, and wrapper sync with `npm run validate`
+3. Regenerate wrappers with `npm run generate:wrappers`
+4. Smoke-test discovery with `npx skills add <local-path> --list`
+5. Smoke-test an actual local install of at least one skill into a temporary directory
+6. Ensure README install instructions still match observed behavior
 
 There is no special `skills.sh` publish command. A public repo plus successful installs is the publish mechanism.
+
+## Human contributor docs
+
+- `CONTRIBUTING.md` documents pull request expectations and the skill quality bar.
+- `DEVELOPMENT.md` documents local setup, script usage, and validation coverage.
+- Generated wrapper-root `README.md` files explain the compatibility shim contract inside each wrapper tree.
 
 ## Attribution and licensing
 

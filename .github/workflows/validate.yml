@@ -8,6 +8,8 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Check out repository
@@ -16,7 +18,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24.14.1
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint repository scripts
+        run: npm run lint
 
       - name: Validate canonical skills and wrapper sync
         run: npm run validate
@@ -25,3 +34,6 @@ jobs:
         run: |
           npm run generate:wrappers
           git diff --exit-code
+
+      - name: Smoke test local skills discovery
+        run: npm run smoke:list

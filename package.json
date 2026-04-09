@@ -1,12 +1,38 @@
 {
   "name": "better-web-ui",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "Opinionated frontend design Agent Skills package for AI coding agents.",
+  "license": "LicenseRef-better-web-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aladicf/better-web-ui.git"
+  },
+  "homepage": "https://github.com/aladicf/better-web-ui",
+  "bugs": {
+    "url": "https://github.com/aladicf/better-web-ui/issues"
+  },
+  "keywords": [
+    "agent-skills",
+    "agents",
+    "design",
+    "frontend",
+    "skills",
+    "ui"
+  ],
+  "engines": {
+    "node": ">=24.14.1 <25"
+  },
   "scripts": {
+    "lint": "oxlint --deny-warnings scripts",
     "generate:wrappers": "node ./scripts/generate-wrappers.mjs",
     "validate": "node ./scripts/validate-skill-library.mjs",
     "validate:wrappers": "node ./scripts/validate-skill-library.mjs --wrappers-only",
     "smoke:list": "npx skills add . --list"
+  },
+  "devDependencies": {
+    "oxlint": "^1.20.0",
+    "yaml": "^2.8.1"
   }
 }
