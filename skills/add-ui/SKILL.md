@@ -19,6 +19,12 @@ Also gather the smallest set of implementation details needed to generate usable
 - whether the user wants a section, page, flow, shell, or standalone component
 - quality bar (quick draft, production-ready, flagship)
 
+Use this precedence order when deciding implementation defaults:
+
+1. detect and match the existing project's styling and component libraries first
+2. if this is a brand-new project and the user explicitly names a styling or component library, use that
+3. if this is a brand-new project and the user does not specify, use the framework defaults defined in `frontend-design`
+
 Ask only the missing questions. If you can infer the technical stack from the codebase, do so.
 
 Consult these references as needed:

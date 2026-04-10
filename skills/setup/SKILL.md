@@ -1,6 +1,6 @@
 ---
 name: setup
-description: One-time setup that gathers design context for your project and saves it for future design work. Use when starting a project, defining UI direction, or establishing persistent design guidelines for other better-web-ui skills.
+description: Gather design context for your project and save it for future design work in a one-time setup. Use when starting a project, defining UI direction, or establishing persistent design guidelines for other better-web-ui skills.
 ---
 
 Gather design context for this project, then persist it for all future sessions.
@@ -11,6 +11,8 @@ Before asking questions, thoroughly scan the project to discover what you can:
 
 - **README and docs**: Project purpose, target audience, any stated goals
 - **Package.json / config files**: Tech stack, dependencies, existing design libraries
+- **Styling system**: Tailwind, CSS modules, CSS-in-JS, vanilla CSS, utility systems, tokens
+- **Component libraries**: shadcn/ui, Nuxt UI, Angular Material, custom UI packages, in-house systems
 - **Existing components**: Current design patterns, spacing, typography in use
 - **Brand assets**: Logos, favicons, color values already defined
 - **Design tokens / CSS variables**: Existing color palettes, font stacks, spacing scales
@@ -47,6 +49,15 @@ ask the user directly to clarify what you cannot infer. Focus only on what you c
 
 Skip questions where the answer is already clear from the codebase exploration.
 
+### Implementation Defaults
+- What framework / runtime should future UI work assume by default?
+- If this is a brand-new project, does the user want a specific styling system?
+- If this is a brand-new project, does the user want a specific component library or block system?
+
+If the project already has a styling system or component library, treat that as the default unless the user explicitly wants to change it.
+
+If the project is new and the user does not specify implementation preferences, use the framework-default matrix from `frontend-design` and record the result.
+
 ## Step 3: Write Design Context
 
 Synthesize your findings and the user's answers into a `## Design Context` section:
@@ -63,6 +74,9 @@ Synthesize your findings and the user's answers into a `## Design Context` secti
 ### Aesthetic Direction
 [Visual tone, references, anti-references, theme]
 
+### Implementation Defaults
+[Detected or chosen framework, styling system, component library defaults, and whether they came from the existing codebase, explicit user preference, or framework fallback defaults]
+
 ### Design Principles
 [3-5 principles derived from the conversation that should guide all design decisions]
 ```
@@ -75,6 +89,14 @@ Derive the principles from concrete levers, not vague aspirations. Prefer things
 
 Write this section to `.better-web-ui.md` in the project root. If that file already exists, update the Design Context section in place. If a legacy `.better-ui.md` or `.impeccable.md` file exists, migrate or mirror the Design Context section into `.better-web-ui.md` so better-web-ui has a single canonical project context file going forward.
 
-Then ask the user directly to clarify what you cannot infer. whether they'd also like the Design Context appended to AGENTS.md. If yes, append or update the section there as well.
+Legacy files are fallback inputs for migration only. New work should keep `.better-web-ui.md` as the canonical destination.
+
+Make sure the persisted context captures this precedence clearly:
+
+1. detected existing project stack
+2. explicit user preference for a new project
+3. framework-based fallback defaults
+
+Then ask the user whether they'd also like the Design Context appended to `AGENTS.md`. If yes, append or update the section there as well.
 
 Confirm completion and summarize the key design principles that will now guide all future work.

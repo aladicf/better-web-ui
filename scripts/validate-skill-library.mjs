@@ -146,6 +146,19 @@ async function validateRepositoryDocs() {
   return documents;
 }
 
+async function validateRuntimeVersionFiles() {
+  const nvmrc = await readWorkspaceFile('.nvmrc');
+  const nodeVersion = await readWorkspaceFile('.node-version');
+
+  if (!nvmrc || !nodeVersion) {
+    return;
+  }
+
+  if (nvmrc.trim() !== nodeVersion.trim()) {
+    addError('.nvmrc and .node-version must stay in sync.');
+  }
+}
+
 function validateReadmeSkillCatalog(readmeContents, skills) {
   const skillCatalogSection = getSectionContents(readmeContents, '## Skill catalog');
   const wrapperSection = getSectionContents(readmeContents, '## Compatibility wrapper trees');
@@ -194,6 +207,7 @@ if (skills.length === 0) {
 
 if (!wrappersOnly) {
   const documents = await validateRepositoryDocs();
+  await validateRuntimeVersionFiles();
 
   const readmeContents = documents.get('README.md');
   if (readmeContents) {

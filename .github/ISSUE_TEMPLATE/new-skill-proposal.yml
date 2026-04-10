@@ -1,0 +1,59 @@
+name: New skill proposal
+description: Propose a brand-new skill for the better-web-ui library.
+title: "[new skill]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before proposing a new skill, please confirm this idea should not instead strengthen an existing skill or become shared doctrine under `skills/frontend-design/reference/`.
+  - type: input
+    id: skill-name
+    attributes:
+      label: Proposed skill name
+      description: Lowercase, hyphenated, trigger-friendly if possible.
+      placeholder: example-skill
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem this skill solves
+      description: What user problem or maintainer need would this skill address?
+      placeholder: Describe the distinct job this skill would do.
+    validations:
+      required: true
+  - type: textarea
+    id: overlap
+    attributes:
+      label: Existing skills considered
+      description: Which current skills are closest, and why are they not enough?
+      placeholder: I considered `distill` and `hierarchy`, but...
+    validations:
+      required: true
+  - type: textarea
+    id: doctrine
+    attributes:
+      label: Why this is a new skill instead of a shared reference
+      description: Explain why the idea needs a separate command/workflow instead of shared doctrine under `skills/frontend-design/reference/`.
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Expected workflow
+      description: What should this skill do, step by step, once invoked?
+      placeholder: 1. Assess... 2. Plan... 3. Implement...
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example prompts
+      description: Give 2-4 example user requests that should clearly trigger this skill.
+      placeholder: |
+        /example-skill improve...
+        /example-skill create...
+    validations:
+      required: true

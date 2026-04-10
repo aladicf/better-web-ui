@@ -24,6 +24,53 @@ This repository is a **skills package**, not a web app or starter template.
 
 If you want safe, generic UI output above all else, this package is probably not trying to be that. It is intentionally biased toward stronger design points of view.
 
+## What it works with
+
+`better-web-ui` is intentionally **framework-agnostic** and **library-agnostic**.
+
+It can be used with most modern frontend setups, including:
+
+- React / Tanstack Start / Next.js
+- Vue / Nuxt
+- Svelte / SvelteKit
+- Astro
+- plain HTML / CSS / JavaScript
+- custom design systems and in-house component libraries
+
+It can also work across common styling approaches such as:
+
+- Tailwind CSS
+- CSS modules
+- styled-components / CSS-in-JS
+- vanilla CSS
+- token-based design systems
+
+## How stack defaults are chosen
+
+When an agent using `better-web-ui` needs to make stack decisions, use this order:
+
+1. **Existing project setup wins first** — detect the framework, styling system, component library, and design system already present in the codebase and use those before introducing anything new.
+2. **Explicit user preferences win second** — if the user is creating a new project and names a styling system or component library, use that as the default.
+3. **Framework defaults win third** — if the project is new and the user does not specify styling or component foundations, use the defaults below.
+
+### Framework-specific defaults when the stack is open
+
+This library does **not** require Tailwind or a specific component system.
+
+However, when a project has no established styling or component direction yet, prefer these defaults:
+
+| Framework / runtime | Styling default | Component / block default |
+| --- | --- | --- |
+| React-based frameworks and meta-frameworks (`Next.js`, `TanStack Start`, `React Router`, Vite React) | **Tailwind CSS** | **shadcn/ui** components in the Base UI direction, plus **shadcn/ui Blocks** and **re-ui** components / blocks when helpful |
+| Astro | **Tailwind CSS** | **shadcn/ui** components in the Base UI direction, plus **shadcn/ui Blocks** |
+| Laravel + Inertia / React | **Tailwind CSS** | **shadcn/ui** components in the Base UI direction, plus **shadcn/ui Blocks** |
+| Vue / Nuxt | **Tailwind CSS** | **Nuxt UI** or **shadcn-vue** |
+| Svelte / SvelteKit | **Tailwind CSS** | **shadcn-svelte** |
+| Angular | **Tailwind CSS** | **Angular Material** or **ZardUI** |
+| SolidJS / SoliStart based meta-frameworks | **Tailwind CSS** | **SolidUI** |
+
+These are gentle defaults, not hard requirements. If a project already uses a different framework, design system, or styling approach, match the existing stack instead of forcing a migration just because it is fashionable this week.
+
 ## Runtime requirements
 
 Maintainer tooling in this repository is pinned to Node `24.14.1`.
@@ -99,6 +146,16 @@ Expected behavior:
 
 - `/setup design context for a B2B operations platform used by analysts all day`
 - `/setup design context for a consumer budgeting app that should feel calm and trustworthy`
+
+### Focused improvement requests
+
+- `/distill this settings screen that exposes too many options at once`
+- `/hierarchy this pricing page where all three CTAs feel equally loud`
+- `/empty-state no-results search state for a documentation product`
+- `/polish this dashboard before launch`
+- `/optimize laggy filter and autocomplete interactions`
+- `/bolder this landing page that feels too safe`
+- `/quieter this hero section that feels overstimulating`
 
 ## Shared design doctrine
 
@@ -223,7 +280,7 @@ When you add or change a skill:
 2. Run `npm run lint` if you changed repository scripts or tooling
 3. Regenerate wrapper trees with `npm run generate:wrappers`
 4. Validate canonical skills, docs, and wrapper sync with `npm run validate`
-5. Smoke-test local installation with the `skills` CLI
+5. Smoke-test discovery and installation with `npm run smoke:list` and `npm run smoke:install`
 6. Update this README if discoverability changed
 
 There is no separate `skills.sh` publish command. A public repo plus successful installs is the publish path.
@@ -236,9 +293,11 @@ Typical validation flow:
 
 ```bash
 npm run lint
-npm run validate
 npm run generate:wrappers
+npm run validate
 npm run smoke:list
+npm run smoke:install
+npm run verify
 npx skills-ref validate ./skills/frontend-design
 ```
 

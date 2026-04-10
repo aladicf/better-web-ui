@@ -1,6 +1,6 @@
 ---
 name: empty-state
-description: Design focused empty states for zero-data, no-results, permission, and error situations with clear value framing, strong CTAs, and less dead chrome. Use when the user mentions empty states, zero-data screens, blank pages, first-use experiences, no results, or dead controls.
+description: Design focused empty states for zero-data, no-results, permission, and error situations with clear value framing, strong CTAs, and less dead chrome. Use when the user mentions blank pages, zero-data screens, no results, permission states, or dead controls—not broader onboarding strategy.
 metadata:
    argument-hint: "[target]"
 ---

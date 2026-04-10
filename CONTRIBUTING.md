@@ -27,7 +27,7 @@ This repository is an opinionated Agent Skills library, not a generic starter. C
 4. Run `npm run generate:wrappers`.
 5. Run `npm run validate`.
 6. Run `npm run smoke:list`.
-7. If behavior changed materially, smoke-test installing at least one skill from the local checkout.
+7. If behavior changed materially, run `npm run smoke:install` to smoke-test installing at least one skill from the local checkout.
 
 ## Pull request checklist
 
@@ -35,6 +35,7 @@ This repository is an opinionated Agent Skills library, not a generic starter. C
 - [ ] Wrapper trees were regenerated after any skill rename, add, remove, or frontmatter change
 - [ ] `npm run validate` passes locally
 - [ ] `npm run smoke:list` passes locally
+- [ ] `npm run smoke:install` passes locally when install or discovery behavior changed
 - [ ] `README.md` was updated when discoverability or maintainer guidance changed
 - [ ] New or changed skills still describe both what they do and when to use them
 - [ ] Attribution in [`NOTICE.md`](NOTICE.md) remains accurate

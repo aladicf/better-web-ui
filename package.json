@@ -1,6 +1,6 @@
 {
   "name": "better-web-ui",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "description": "Opinionated frontend design Agent Skills package for AI coding agents.",
@@ -30,7 +30,9 @@
     "check:wrapper-drift": "node ./scripts/check-generated-wrapper-diff.mjs",
     "validate": "node ./scripts/validate-skill-library.mjs",
     "validate:wrappers": "node ./scripts/validate-skill-library.mjs --wrappers-only",
-    "smoke:list": "npx skills add . --list"
+    "smoke:list": "npx skills add . --list",
+    "smoke:install": "node ./scripts/smoke-install-skill.mjs",
+    "verify": "npm run lint && npm run generate:wrappers && npm run validate && npm run smoke:list && npm run smoke:install"
   },
   "devDependencies": {
     "oxlint": "^1.20.0",

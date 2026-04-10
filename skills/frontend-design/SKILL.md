@@ -1,6 +1,6 @@
 ---
 name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics. Use when the user asks to build web components, pages, artifacts, posters, or applications, or when any design skill requires project context.
+description: Create distinctive, production-grade frontend interfaces with high design quality, generating creative, polished code that avoids generic AI aesthetics. Use when the user asks to build web components, pages, artifacts, posters, or applications, or when any design skill requires project context.
 license: Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for attribution.
 ---
 
@@ -36,6 +36,65 @@ Individual skills may require additional context — check the skill's preparati
 2. **Check .better-web-ui.md (fast)**: If not in instructions, read `.better-web-ui.md` from the project root. If it exists and contains the required context, proceed.
 3. **Check legacy context files (fallback)**: If `.better-web-ui.md` does not exist yet, read `.better-ui.md` and then `.impeccable.md` from the project root. If either exists and contains the required context, proceed, but prefer migrating to `.better-web-ui.md` when possible.
 4. **Run setup (REQUIRED)**: If neither source has context, you MUST run $setup NOW before doing anything else. Do NOT skip this step. Do NOT attempt to infer context from the codebase instead.
+
+## Framework & Library Guidance
+
+This skill library is intentionally framework-agnostic and library-agnostic.
+
+When implementation details matter, use this precedence order:
+
+1. **Detect and match the existing project stack first**
+	 - infer the framework / runtime already in use
+	 - infer the current styling approach
+	 - infer the current component library, design system, and token setup
+	 - continue with the existing stack unless the user explicitly asks to change it
+
+2. **Respect explicit user choices for new projects second**
+	 - if the user says to use Tailwind, CSS modules, Nuxt UI, shadcn-vue, Angular Material, etc., treat that as the default
+	 - if the user runs `setup`, persist those implementation defaults so later design work reuses them
+
+3. **If the project is new and unspecified, use these framework defaults**
+
+	 - **React-based frameworks and meta-frameworks** (`Next.js`, `TanStack Start`, `React Router`, Vite React)
+		 - styling: **Tailwind CSS**
+		 - components: **shadcn/ui** in the Base UI direction
+		 - accelerators: **shadcn/ui Blocks** and **re-ui** components / blocks
+
+	 - **Astro**
+		 - styling: **Tailwind CSS**
+		 - components: **shadcn/ui** in the Base UI direction
+		 - accelerators: **shadcn/ui Blocks**
+
+	 - **Laravel + Inertia / React**
+		 - styling: **Tailwind CSS**
+		 - components: **shadcn/ui** in the Base UI direction
+		 - accelerators: **shadcn/ui Blocks**
+
+	 - **Vue / Nuxt**
+		 - styling: **Tailwind CSS**
+		 - components: **Nuxt UI** or **shadcn-vue**
+
+	 - **Svelte / SvelteKit**
+		 - styling: **Tailwind CSS**
+		 - components: **shadcn-svelte**
+
+	 - **Angular**
+		 - styling: **Tailwind CSS**
+		 - components: **Angular Material** or **ZardUI**
+
+	 - **SolidJS / Solid-based meta-frameworks**
+		 - styling: **Tailwind CSS**
+		 - components: **SolidUI**
+
+Treat those as preferred defaults, not universal truths:
+
+- do **not** force React-only component libraries into non-React stacks
+- do **not** replace an existing design system unless the task explicitly calls for it
+- do **not** describe `better-web-ui` itself as Tailwind-only or React-only
+
+When `setup` has already recorded implementation defaults for the project, follow those stored defaults before inventing new ones.
+
+The goal is pragmatic consistency: framework-agnostic at the library level, with helpful implementation defaults when no stronger project convention exists.
 
 ---
 

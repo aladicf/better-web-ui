@@ -110,6 +110,22 @@ Do not duplicate the full skill body into wrapper trees.
 - examples should use this skill library's commands and purpose
 - docs should reflect the actual repository contents, not hypothetical directories
 
+### 6. Keep stack guidance pragmatic
+
+- Preserve the library's framework-agnostic positioning in public docs and skill guidance
+- Detect the current project's styling system and component libraries first, and match those before introducing new defaults
+- If the user is creating a brand-new project and explicitly names a styling or component library, treat that as the default
+- If the user is creating a brand-new project and does not specify implementation preferences, use these fallbacks:
+  - React-based frameworks / meta-frameworks (`Next.js`, `TanStack Start`, `React Router`, Vite React) → **Tailwind CSS** + **shadcn/ui** in the Base UI direction, with **shadcn/ui Blocks** and **re-ui** as preferred accelerators
+  - Astro → **Tailwind CSS** + **shadcn/ui** in the Base UI direction, with **shadcn/ui Blocks**
+  - Laravel + Inertia / React → **Tailwind CSS** + **shadcn/ui** in the Base UI direction, with **shadcn/ui Blocks**
+  - Vue / Nuxt → **Tailwind CSS** + **Nuxt UI** or **shadcn-vue**
+  - Svelte / SvelteKit → **Tailwind CSS** + **shadcn-svelte**
+  - Angular → **Tailwind CSS** + **Angular Material** or **ZardUI**
+  - SolidJS / SolidStart → **Tailwind CSS** + **SolidUI**
+- Do not present those preferences as hard requirements or force them into incompatible or already-established stacks
+- When a project already has a framework, design system, or component library, match the existing setup first
+
 ## Adding or updating a skill
 
 When creating a new skill:
@@ -136,10 +152,10 @@ Follow the canonical instructions in [../../../skills/{skill-name}/SKILL.md](../
 Before release or after significant skill changes:
 
 1. Run `npm run lint` after changing repository scripts or tooling
-2. Validate canonical skills, docs, wrapper root readmes, and wrapper sync with `npm run validate`
-3. Regenerate wrappers with `npm run generate:wrappers`
-4. Smoke-test discovery with `npx skills add <local-path> --list`
-5. Smoke-test an actual local install of at least one skill into a temporary directory
+2. Regenerate wrappers with `npm run generate:wrappers`
+3. Validate canonical skills, docs, wrapper root readmes, and wrapper sync with `npm run validate`
+4. Smoke-test discovery with `npm run smoke:list`
+5. Smoke-test an actual local install with `npm run smoke:install`
 6. Ensure README install instructions still match observed behavior
 
 There is no special `skills.sh` publish command. A public repo plus successful installs is the publish mechanism.
