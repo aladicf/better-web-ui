@@ -36,6 +36,40 @@ Some skills still check legacy files such as `.better-ui.md` and `.impeccable.md
 
 Treat those legacy files as fallback inputs only. New work should write or update `.better-web-ui.md` so future sessions have a single canonical source of design context.
 
+## React fallback reference bridge
+
+When maintaining docs or skills related to the React/Tailwind fallback path, use the official upstream docs as the source of truth for current inventories and implementation details.
+
+Primary in-repo guidance:
+
+- [`skills/frontend-design/reference/component-and-block-strategy.md`](skills/frontend-design/reference/component-and-block-strategy.md)
+- [`skills/add-ui/reference/component-library-integration.md`](skills/add-ui/reference/component-library-integration.md)
+- [`skills/add-ui/assets/component-library-integration-checklist.md`](skills/add-ui/assets/component-library-integration-checklist.md)
+
+Primary upstream references:
+
+- [`shadcn/ui` components](https://ui.shadcn.com/docs/components)
+- [`shadcn/ui` TanStack Form docs](https://ui.shadcn.com/docs/forms/tanstack-form)
+- [`shadcn/ui` Blocks](https://ui.shadcn.com/blocks#blocks)
+- [`shadcn/ui` registry directory](https://ui.shadcn.com/docs/directory)
+- [ReUI components](https://reui.io/components)
+- [ReUI docs](https://reui.io/docs)
+- [Tailwind utility classes](https://tailwindcss.com/docs/styling-with-utility-classes)
+- [Tailwind states and variants](https://tailwindcss.com/docs/hover-focus-and-other-states)
+- [Tailwind responsive design](https://tailwindcss.com/docs/responsive-design)
+- [Tailwind dark mode](https://tailwindcss.com/docs/dark-mode)
+- [Tailwind theme variables](https://tailwindcss.com/docs/theme)
+- [Tailwind colors](https://tailwindcss.com/docs/colors)
+- [Tailwind adding custom styles](https://tailwindcss.com/docs/adding-custom-styles)
+- [Tailwind detecting classes in source files](https://tailwindcss.com/docs/detecting-classes-in-source-files)
+- [Tailwind functions and directives](https://tailwindcss.com/docs/functions-and-directives)
+- [Tailwind upgrade guide](https://tailwindcss.com/docs/upgrade-guide)
+- [Tailwind install with Vite](https://tailwindcss.com/docs/installation/using-vite)
+- [Tailwind install with PostCSS](https://tailwindcss.com/docs/installation/using-postcss)
+- [Tailwind framework guides](https://tailwindcss.com/docs/installation/framework-guides)
+
+Do not turn those upstream inventories into a frozen in-repo catalog. When the docs still leave gaps, do a focused web search and then verify the result against upstream documentation before updating the library guidance.
+
 ## Script reference
 
 - `npm run lint` — lint repository scripts with OXC (`oxlint`)

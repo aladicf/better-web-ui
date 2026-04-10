@@ -26,3 +26,14 @@ The skill should:
 3. explain tradeoffs in a compact comparison format
 4. recommend one direction when the goals clearly favor it
 5. help preview and apply the selected option
+
+## Layering examples
+
+- **Component-led** — `/add-ui dense analytics filter bar for an operations dashboard`  
+	Use when the artifact is workflow-heavy, stateful, or tightly coupled to existing product logic, so composition from primitives should lead.
+
+- **Pattern-led** — `/add-ui reusable settings section pattern for notifications, privacy, and billing preferences`  
+	Use when the main goal is a repeatable local structure built from existing components rather than a one-off screen.
+
+- **Block-led** — `/add-ui hero section for a new developer tool homepage`  
+	Use when the request is a familiar marketing surface and a prebuilt block can accelerate exploration before stronger differentiation.

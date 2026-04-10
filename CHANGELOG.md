@@ -6,6 +6,24 @@ The format is inspired by Keep a Changelog and uses a simple `Added` / `Changed`
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-04-10
+
+### Added
+
+- User-facing README guidance for how installed skills are typically invoked, including slash-command usage, natural-language fallback prompting, and clarification that internal `$skill` references are not user commands.
+- Shared React fallback guidance for respecting `shadcn create`, `shadcn apply`, and `components.json` baselines instead of reverting customized projects to generic defaults.
+- Official upstream documentation bridges for `shadcn/ui`, `shadcn/ui Blocks`, `re-ui`, and Tailwind across maintainer docs, shared references, and deterministic checklists.
+- Concise `add-ui` examples for component-led, pattern-led, and block-led requests.
+
+### Changed
+
+- `setup` now captures `components.json` usage, shadcn preset/apply baselines, and Radix-vs-Base-UI ecosystem preferences when they are relevant to future design work.
+- README, contributing docs, development docs, and React fallback references now align on where maintainers and agents should look first for shadcn and Tailwind guidance.
+
+### Fixed
+
+- Synced the root package version metadata in `package-lock.json` with the current package version.
+
 ## [1.2.0] - 2026-04-10
 
 ### Changed

@@ -11,6 +11,7 @@ Before asking questions, thoroughly scan the project to discover what you can:
 
 - **README and docs**: Project purpose, target audience, any stated goals
 - **Package.json / config files**: Tech stack, dependencies, existing design libraries
+- **shadcn project config**: `components.json`, shadcn schema usage, CLI-generated configuration, preset clues, Radix vs Base UI choice
 - **Styling system**: Tailwind, CSS modules, CSS-in-JS, vanilla CSS, utility systems, tokens
 - **Component libraries**: shadcn/ui, Nuxt UI, Angular Material, custom UI packages, in-house systems
 - **Existing components**: Current design patterns, spacing, typography in use
@@ -53,6 +54,10 @@ Skip questions where the answer is already clear from the codebase exploration.
 - What framework / runtime should future UI work assume by default?
 - If this is a brand-new project, does the user want a specific styling system?
 - If this is a brand-new project, does the user want a specific component library or block system?
+- If the project already uses `shadcn/ui`, is it mostly using the upstream primitives directly or local wrappers / compositions built on top of them?
+- If relevant, does the project already use `shadcn/ui Blocks` or `re-ui` as accelerators for common sections or flows?
+- If relevant, is the project primarily following a Radix-flavored or Base UI-flavored ecosystem for its headless primitives and composed components?
+- If the project uses shadcn, does it already have a `components.json` file or signs of `shadcn create` / `shadcn apply` customizations that should be treated as the current baseline?
 
 If the project already has a styling system or component library, treat that as the default unless the user explicitly wants to change it.
 
@@ -75,7 +80,7 @@ Synthesize your findings and the user's answers into a `## Design Context` secti
 [Visual tone, references, anti-references, theme]
 
 ### Implementation Defaults
-[Detected or chosen framework, styling system, component library defaults, and whether they came from the existing codebase, explicit user preference, or framework fallback defaults]
+[Detected or chosen framework, styling system, component library defaults, any block accelerators in use, any relevant Radix-vs-Base-UI ecosystem preference, any important `components.json` / `shadcn create` / `shadcn apply` customizations, and whether they came from the existing codebase, explicit user preference, or framework fallback defaults]
 
 ### Design Principles
 [3-5 principles derived from the conversation that should guide all design decisions]
@@ -96,6 +101,10 @@ Make sure the persisted context captures this precedence clearly:
 1. detected existing project stack
 2. explicit user preference for a new project
 3. framework-based fallback defaults
+
+When the distinction matters for React-oriented component ecosystems, also record whether the project is effectively Radix-flavored, Base UI-flavored, or mixed so later design work does not guess.
+
+If shadcn-specific project configuration exists, record it as part of the baseline instead of letting later sessions assume the generic fallback defaults.
 
 Then ask the user whether they'd also like the Design Context appended to `AGENTS.md`. If yes, append or update the section there as well.
 

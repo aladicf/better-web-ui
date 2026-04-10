@@ -53,6 +53,18 @@ Create a systematic extraction plan:
 
 **IMPORTANT**: Design systems grow incrementally. Extract what's clearly reusable now, not everything that might someday be reusable.
 
+## Extraction when a component library already exists
+
+If the project already uses a library such as `shadcn/ui`, prefer extracting:
+
+- local wrappers
+- reusable compositions
+- documented patterns
+
+Do **not** replace upstream primitives with redundant local copies unless the project truly needs a stable customized abstraction.
+
+A good extraction often sits one layer above the library primitive: not another generic `Button`, but a product-specific action bar, filter panel, settings section, or empty-state pattern that uses the existing primitives consistently.
+
 ## Extract & Enrich
 
 Build improved, reusable versions:

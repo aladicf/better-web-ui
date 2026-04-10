@@ -25,11 +25,14 @@ Use this precedence order when deciding implementation defaults:
 2. if this is a brand-new project and the user explicitly names a styling or component library, use that
 3. if this is a brand-new project and the user does not specify, use the framework defaults defined in `frontend-design`
 
+When React-based fallback defaults are relevant, also consult [component library integration](./reference/component-library-integration.md) to decide whether the requested artifact should be led by primitives, reusable patterns, or block accelerators.
+
 Ask only the missing questions. If you can infer the technical stack from the codebase, do so.
 
 Consult these references as needed:
 
 - [artifact taxonomy](./reference/artifact-taxonomy.md)
+- [component library integration](./reference/component-library-integration.md)
 - [variation quality bar](./reference/variation-quality-bar.md)
 - [preview and apply patterns](./reference/preview-apply-patterns.md)
 - [request mapping heuristics](./reference/request-mapping.md)
@@ -38,6 +41,7 @@ Consult these references as needed:
 Use these deterministic helper assets when they improve consistency across hosts and agents:
 
 - [comparison table template](./assets/comparison-table-template.md)
+- [component library integration checklist](./assets/component-library-integration-checklist.md)
 - [variant naming scheme](./assets/variant-naming-scheme.md)
 - [preview page checklist](./assets/preview-page-checklist.md)
 - [apply / cleanup checklist](./assets/apply-cleanup-checklist.md)

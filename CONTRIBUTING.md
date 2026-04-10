@@ -47,6 +47,16 @@ This repository is an opinionated Agent Skills library, not a generic starter. C
 - Avoid duplicate doctrine across skills when a shared reference would do.
 - Preserve canonical naming such as `add-ui` when hosts expose friendlier aliases.
 
+### React fallback defaults
+
+Before adding new React/Tailwind guidance, check the existing source-of-truth docs first:
+
+- [`skills/frontend-design/reference/component-and-block-strategy.md`](skills/frontend-design/reference/component-and-block-strategy.md)
+- [`skills/add-ui/reference/component-library-integration.md`](skills/add-ui/reference/component-library-integration.md)
+- [`skills/add-ui/assets/component-library-integration-checklist.md`](skills/add-ui/assets/component-library-integration-checklist.md)
+
+Prefer extending those docs over duplicating shadcn/ui, blocks, re-ui, or Tailwind usage guidance elsewhere.
+
 ## Proposing a new skill
 
 Before adding a brand-new skill, first check whether the idea should instead:

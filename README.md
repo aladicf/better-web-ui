@@ -22,7 +22,7 @@ Use `better-web-ui` when you want an agent to help with:
 
 This repository is a **skills package**, not a web app or starter template.
 
-If you want safe, generic UI output above all else, this package is probably not trying to be that. It is intentionally biased toward stronger design points of view.
+If you want safe, generic UI output above all else, this package is not trying to be that. It is intentionally biased toward stronger design points of view.
 
 ## What it works with
 
@@ -34,6 +34,7 @@ It can be used with most modern frontend setups, including:
 - Vue / Nuxt
 - Svelte / SvelteKit
 - Astro
+- Solidjs / SolidStart
 - plain HTML / CSS / JavaScript
 - custom design systems and in-house component libraries
 
@@ -47,7 +48,7 @@ It can also work across common styling approaches such as:
 
 ## How stack defaults are chosen
 
-When an agent using `better-web-ui` needs to make stack decisions, use this order:
+When an agent using `better-web-ui` needs to make stack decisions, it follows this order:
 
 1. **Existing project setup wins first** — detect the framework, styling system, component library, and design system already present in the codebase and use those before introducing anything new.
 2. **Explicit user preferences win second** — if the user is creating a new project and names a styling system or component library, use that as the default.
@@ -57,7 +58,7 @@ When an agent using `better-web-ui` needs to make stack decisions, use this orde
 
 This library does **not** require Tailwind or a specific component system.
 
-However, when a project has no established styling or component direction yet, prefer these defaults:
+However, when a project has no established styling or component direction yet, it prefers these defaults:
 
 | Framework / runtime | Styling default | Component / block default |
 | --- | --- | --- |
@@ -67,9 +68,11 @@ However, when a project has no established styling or component direction yet, p
 | Vue / Nuxt | **Tailwind CSS** | **Nuxt UI** or **shadcn-vue** |
 | Svelte / SvelteKit | **Tailwind CSS** | **shadcn-svelte** |
 | Angular | **Tailwind CSS** | **Angular Material** or **ZardUI** |
-| SolidJS / SoliStart based meta-frameworks | **Tailwind CSS** | **SolidUI** |
+| SolidJS / SolidStart based meta-frameworks | **Tailwind CSS** | **SolidUI** |
 
-These are gentle defaults, not hard requirements. If a project already uses a different framework, design system, or styling approach, match the existing stack instead of forcing a migration just because it is fashionable this week.
+**What this means:** for React-oriented fallback defaults, `shadcn/ui` is the primitive foundation in the Base UI direction, while `shadcn/ui Blocks` and `re-ui` are optional accelerators for common sections and flows. This repository documents **when and how to use those layers**, not a frozen inventory of every upstream component or block. For current availability, check the upstream docs. See [component and block strategy](skills/frontend-design/reference/component-and-block-strategy.md) for the selection guidance behind these defaults.
+
+These are gentle defaults, not hard requirements. If a project already uses a different framework, design system, or styling approach, it matches the existing stack instead of forcing a migration just because it is fashionable this week.
 
 ## Runtime requirements
 
@@ -109,6 +112,46 @@ npx skills add .
 npx skills add . --skill add-ui
 ```
 
+## How users invoke installed skills
+
+Once `better-web-ui` is installed in a project, users typically invoke skills in one of these ways:
+
+1. **Slash commands when the host exposes them**
+	- `/add-ui hero section for a B2B security product homepage`
+	- `/setup design context for a B2B operations platform`
+	- `/critique this analytics dashboard for hierarchy and cognitive load`
+
+2. **Natural-language prompts when the host does not expose slash commands clearly**
+	- `Use add-ui to generate five directions for a pricing section.`
+	- `Use setup before designing this app.`
+	- `Critique this dashboard for information architecture.`
+
+3. **Skill-name prompting as an explicit fallback**
+	- `Use the installed better-web-ui add-ui skill for this request.`
+
+In many hosts, users do **not** need to say `make sure to use better-web-ui skills` if the skills are already installed and the host surfaces them correctly.
+
+Important distinction:
+
+- Slash commands like `/add-ui`, `/setup`, or `/critique` are user-facing when supported by the host.
+- Internal references like `$frontend-design` or `$setup` are for skill-to-skill loading inside the library and are **not** commands users type themselves.
+
+Exact slash-command visibility depends on the chat host. If typing `/` does not show the installed commands, users can still ask naturally or explicitly mention the skill name.
+
+### Special note for shadcn projects
+
+If a project was created with `npx shadcn create`, updated with `npx shadcn@latest apply`, or already contains a `components.json` file with the shadcn schema, agents should match that project's existing customization baseline instead of assuming the classic defaults.
+
+That means respecting the project's current:
+
+- component library choice (Radix or Base UI)
+- preset or visual style baseline
+- theme tokens, colors, spacing, and geometry
+- fonts, icons, and Tailwind configuration
+- `components.json` settings such as `style`, `tailwind.baseColor`, `tailwind.cssVariables`, `tailwind.prefix`, aliases, registries, `rsc`, and `tsx`
+
+When that configuration is already present, the agent should continue from it instead of resetting the project back to a generic `shadcn/ui` look.
+
 ## Using `add-ui`
 
 `add-ui` is the canonical skill name in this repository. Some hosts may expose a friendly `/add` alias, but docs, wrappers, and source files should continue to refer to the skill as `add-ui`.
@@ -132,6 +175,8 @@ Expected behavior:
 - explain tradeoffs in a compact comparison format
 - recommend one direction when the goals clearly favor it
 - help preview and apply the selected option
+
+If you are using the React fallback defaults and want the decision logic behind primitives vs patterns vs block accelerators, start with [component library integration for `add-ui`](skills/add-ui/reference/component-library-integration.md) and the companion [component library integration checklist](skills/add-ui/assets/component-library-integration-checklist.md).
 
 ## More example requests
 
@@ -162,6 +207,12 @@ Expected behavior:
 Reusable guidance and anti-pattern references live primarily in [`skills/frontend-design/reference/`](skills/frontend-design/reference/).
 
 When adding or updating skills, prefer linking to shared doctrine there instead of duplicating long guidance blocks in multiple `SKILL.md` files.
+
+Helpful starting points:
+
+- [component and block strategy](skills/frontend-design/reference/component-and-block-strategy.md) — when to use primitives, reusable patterns, or prebuilt block accelerators in React-oriented fallback setups
+- [component library integration for `add-ui`](skills/add-ui/reference/component-library-integration.md) — how those choices affect the five-direction workflow
+- [design system alignment](skills/frontend-design/reference/design-system-alignment.md) — how to think about tokens vs components vs patterns without creating system drift
 
 ## Skill catalog
 

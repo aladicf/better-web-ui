@@ -96,6 +96,8 @@ When `setup` has already recorded implementation defaults for the project, follo
 
 The goal is pragmatic consistency: framework-agnostic at the library level, with helpful implementation defaults when no stronger project convention exists.
 
+When React-based fallback defaults are relevant, use [component and block strategy](reference/component-and-block-strategy.md) to decide when to compose from `shadcn/ui` primitives, when blocks are an appropriate accelerator, and how to avoid shipping generic library output unchanged.
+
 ---
 
 ## Design Direction
