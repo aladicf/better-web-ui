@@ -10,6 +10,7 @@ For current upstream inventories and implementation details, use the official do
 - [`shadcn/ui` TanStack Form docs](https://ui.shadcn.com/docs/forms/tanstack-form)
 - [`shadcn/ui` Blocks](https://ui.shadcn.com/blocks#blocks)
 - [ReUI components](https://reui.io/components)
+- [React shadcn accelerators](../../frontend-design/reference/react-shadcn-accelerators.md)
 - [Tailwind utility classes](https://tailwindcss.com/docs/styling-with-utility-classes)
 - [Tailwind responsive design](https://tailwindcss.com/docs/responsive-design)
 - [Tailwind states and variants](https://tailwindcss.com/docs/hover-focus-and-other-states)
@@ -21,6 +22,8 @@ For current upstream inventories and implementation details, use the official do
 - [Tailwind functions and directives](https://tailwindcss.com/docs/functions-and-directives)
 
 If the official docs are incomplete or the inventory appears to have changed, do a focused web search and then verify the result against upstream docs before treating it as current.
+
+Use the curated React/shadcn accelerator reference when a request maps to a known community-registry pattern like a theme switcher, consent surface, testimonial treatment, wheel picker, or slide gesture and you want fast feature-fit context before deciding whether a direction should be component-led, pattern-led, or block-led.
 
 ## Respect existing shadcn customization baselines
 

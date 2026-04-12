@@ -62,8 +62,8 @@ However, when a project has no established styling or component direction yet, i
 
 | Framework / runtime | Styling default | Component / block default |
 | --- | --- | --- |
-| React-based frameworks and meta-frameworks (`Next.js`, `TanStack Start`, `React Router`, Vite React) | **Tailwind CSS** | **shadcn/ui** components with the Base UI components, plus **shadcn/ui Blocks** and **re-ui** components / blocks when helpful |
-| Astro | **Tailwind CSS** | **shadcn/ui** components with the Base UI components, plus **shadcn/ui Blocks** |
+| React-based frameworks and meta-frameworks (`Next.js`, `TanStack Start`, `React Router`, Vite React) | **Tailwind CSS** | **shadcn/ui** components with the Base UI components, plus **shadcn/ui Blocks**, **re-ui**, and a curated React/shadcn accelerator shortlist when helpful |
+| Astro | **Tailwind CSS** | **HTML-first Astro components and native elements** by default; only reach for **React** + **shadcn/ui** when the user explicitly wants that integration or the project already uses it |
 | Laravel + Inertia / React | **Tailwind CSS** | **shadcn/ui** components with the Base UI components, plus **shadcn/ui Blocks** |
 | Vue / Nuxt | **Tailwind CSS** | **Nuxt UI** or **shadcn-vue** |
 | Svelte / SvelteKit | **Tailwind CSS** | **shadcn-svelte** |
@@ -71,6 +71,12 @@ However, when a project has no established styling or component direction yet, i
 | SolidJS / SolidStart based meta-frameworks | **Tailwind CSS** | **SolidUI** |
 
 These are gentle defaults, not hard requirements. If a project already uses a different framework, design system, or styling approach, it matches the existing stack instead of forcing a migration just because it is fashionable this week.
+
+For Astro specifically, the bias should stay with Astro's low-JavaScript model: prefer native HTML elements, Astro components, and Tailwind styling first; only add React islands and `shadcn/ui` when the user explicitly asks for them or the existing codebase already depends on that integration.
+
+For React-based fallback work that is already in the shadcn/Tailwind orbit, `better-web-ui` also keeps a curated shortlist of community accelerators with direct feature and installation links in [react shadcn accelerators](skills/frontend-design/reference/react-shadcn-accelerators.md). That list currently includes `Theme Toggle Effect`, `Consent Manager`, `Theme Switcher`, `Shimmering Text`, `Scroll Fade Effect`, `Text Flip`, `Testimonial`, `Testimonial Spotlight`, `Testimonials Marquee`, `React Wheel Picker`, and `Slide to Unlock`.
+
+When a task is tied to a specific frontend framework or meta-framework, agents should also start with the official docs for that framework before locking in implementation details. The shared [framework official docs](skills/frontend-design/reference/framework-official-docs.md) reference points agents to the official starting pages for React, Next.js, React Router, TanStack Start, Astro, Inertia, Vue, Nuxt, Svelte, SvelteKit, Solid, SolidStart, and Angular.
 
 ## Runtime requirements
 
@@ -208,7 +214,9 @@ When adding or updating skills, prefer linking to shared doctrine there instead 
 
 Helpful starting points:
 
+- [framework official docs](skills/frontend-design/reference/framework-official-docs.md) — official documentation map for framework-specific frontend work across React, Next.js, React Router, TanStack Start, Astro, Inertia, Vue, Nuxt, Svelte, SvelteKit, Solid, SolidStart, and Angular
 - [component and block strategy](skills/frontend-design/reference/component-and-block-strategy.md) — when to use primitives, reusable patterns, or prebuilt block accelerators in React-oriented fallback setups
+- [react shadcn accelerators](skills/frontend-design/reference/react-shadcn-accelerators.md) — curated community-registry components for React/shadcn fallback setups, with direct links to feature docs and integration guides
 - [component library integration for `add-ui`](skills/add-ui/reference/component-library-integration.md) — how those choices affect the five-direction workflow
 - [design system alignment](skills/frontend-design/reference/design-system-alignment.md) — how to think about tokens vs components vs patterns without creating system drift
 

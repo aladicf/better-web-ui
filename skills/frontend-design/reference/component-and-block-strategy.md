@@ -14,6 +14,7 @@ Use these as the primary source for current component availability, integration 
 - [`shadcn/ui` registry directory](https://ui.shadcn.com/docs/directory) — discover community registries when the core catalog is not enough
 - [ReUI components](https://reui.io/components) — browse composed components and in-house workflow-heavy pieces
 - [ReUI docs](https://reui.io/docs) — understand registry, Base UI / Radix compatibility, and usage model
+- [React shadcn accelerators](./react-shadcn-accelerators.md) — curated shortlist of ChanhDai community-registry components that better-web-ui treats as optional React fallback accelerators
 - [Tailwind utility-class guide](https://tailwindcss.com/docs/styling-with-utility-classes) — core utility-first workflow
 - [Tailwind responsive design](https://tailwindcss.com/docs/responsive-design) — breakpoint and adaptive layout guidance
 - [Tailwind states and variants](https://tailwindcss.com/docs/hover-focus-and-other-states) — `hover:`, `focus:`, group states, and related variants
@@ -29,6 +30,18 @@ Use these as the primary source for current component availability, integration 
 - [Tailwind framework guides](https://tailwindcss.com/docs/installation/framework-guides) — framework-specific install paths
 
 If the official docs still do not answer the question, do a focused web search and then verify what you find against upstream documentation before making implementation decisions.
+
+## Curated community accelerators for React fallback defaults
+
+When a React/Tailwind/shadcn project is new or still open-ended, `better-web-ui` may also consider the curated shortlist in [React shadcn accelerators](./react-shadcn-accelerators.md).
+
+Use that shortlist when:
+
+- the request clearly maps to an existing community component with strong documentation
+- the component page includes a concrete registry install path, usage examples, and API notes
+- the dependency model is acceptable for the current framework and browser targets
+
+Do **not** treat the shortlist as mandatory. It is a convenience layer for feature-fit acceleration, not a replacement for project-specific composition judgment.
 
 ## Respect `shadcn create`, `shadcn apply`, and `components.json`
 

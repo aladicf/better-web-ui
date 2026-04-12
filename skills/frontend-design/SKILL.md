@@ -58,12 +58,12 @@ When implementation details matter, use this precedence order:
 	 - **React-based frameworks and meta-frameworks** (`Next.js`, `TanStack Start`, `React Router`, Vite React)
 		 - styling: **Tailwind CSS**
 		 - components: **shadcn/ui** in the Base UI direction
-		 - accelerators: **shadcn/ui Blocks** and **re-ui** components / blocks
+		 - accelerators: **shadcn/ui Blocks**, **re-ui** components / blocks, and the curated React/shadcn accelerator shortlist in [react shadcn accelerators](reference/react-shadcn-accelerators.md) when the feature request matches
 
 	 - **Astro**
 		 - styling: **Tailwind CSS**
-		 - components: **shadcn/ui** in the Base UI direction
-		 - accelerators: **shadcn/ui Blocks**
+		 - components: **HTML-first Astro components and native elements by default**
+		 - integration rule: only reach for **React** + **shadcn/ui** when the user explicitly asks for React-compatible component integration or the existing Astro project already uses that stack
 
 	 - **Laravel + Inertia / React**
 		 - styling: **Tailwind CSS**
@@ -89,6 +89,7 @@ When implementation details matter, use this precedence order:
 Treat those as preferred defaults, not universal truths:
 
 - do **not** force React-only component libraries into non-React stacks
+- do **not** add React islands to Astro by default when plain Astro components and HTML solve the task cleanly
 - do **not** replace an existing design system unless the task explicitly calls for it
 - do **not** describe `better-web-ui` itself as Tailwind-only or React-only
 
@@ -96,7 +97,9 @@ When `setup` has already recorded implementation defaults for the project, follo
 
 The goal is pragmatic consistency: framework-agnostic at the library level, with helpful implementation defaults when no stronger project convention exists.
 
-When React-based fallback defaults are relevant, use [component and block strategy](reference/component-and-block-strategy.md) to decide when to compose from `shadcn/ui` primitives, when blocks are an appropriate accelerator, and how to avoid shipping generic library output unchanged.
+When the project uses a specific frontend framework or meta-framework, consult [framework official docs](reference/framework-official-docs.md) before making framework-specific implementation decisions. Use the official docs to confirm architecture, routing, rendering boundaries, data loading, forms, styling, and deployment expectations instead of guessing from generic cross-framework habits.
+
+When React-based fallback defaults are relevant, use [component and block strategy](reference/component-and-block-strategy.md) to decide when to compose from `shadcn/ui` primitives, when blocks are an appropriate accelerator, and how to avoid shipping generic library output unchanged. Use [react shadcn accelerators](reference/react-shadcn-accelerators.md) when the request maps to a curated community component such as theme controls, consent, text motion, testimonial patterns, wheel pickers, or slide actions.
 
 ---
 
