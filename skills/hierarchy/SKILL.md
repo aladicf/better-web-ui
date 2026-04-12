@@ -29,14 +29,30 @@ Analyze where the interface is failing to prioritize clearly:
    - Are supporting details too strong relative to the main task?
    - Are heavy icons, bold labels, or dark metadata outweighing the content they are supposed to support?
 
-3. **Check action priority**:
+3. **Check consistency and predictability**:
+   - Do action colors and button treatments keep the same meaning across the flow?
+   - Are similar success, error, or helper messages written with parallel structure?
+   - Are icon styles, typography roles, and familiar layout regions consistent enough that users can transfer what they learned?
+
+4. **Check action priority**:
    - Is there one obvious primary action?
    - Are secondary actions clear but quieter?
    - Are tertiary actions discoverable without competing?
 
-4. **Check labels and values**:
+5. **Check labels and values**:
    - Does everything use a rigid `label: value` pattern even when the value is self-explanatory?
    - Should labels be combined with values or de-emphasized?
+
+6. **Check visual harmony**:
+   - Is there a clear focal point?
+   - Is the page relying on one balance mode everywhere (for example, the same left-right split repeated section after section)?
+   - Are text and imagery balanced, or is one accidentally overpowering the other?
+
+7. **Check spacing, proximity, and alignment**:
+   - Is space within groups smaller than the space between groups?
+   - Are labels, inputs, cards, and navigation items grouped tightly enough to read as related?
+   - Are shared alignment lines and container widths helping the screen scan cleanly?
+   - Does the page support the right scan pattern for the content density (for example, denser F-pattern scanning vs lighter directed Z-pattern scanning)?
 
 If any of these are unclear from the codebase, ask the user directly to clarify what you cannot infer.
 
@@ -46,6 +62,8 @@ If any of these are unclear from the codebase, ask the user directly to clarify 
 
 Consult the [hierarchy checklist](../frontend-design/reference/hierarchy-checklist.md) for grayscale tests, label/value handling, action hierarchy, and de-emphasis techniques.
 Consult the [text hierarchy and readability](../frontend-design/reference/text-hierarchy-and-readability.md) when title restraint, label/value structure, line length, semantic-vs-visual hierarchy, or weight-versus-contrast balancing are part of the problem.
+Consult the [design-system alignment](../frontend-design/reference/design-system-alignment.md) when hierarchy problems are partly caused by inconsistent action styles, icon logic, or drifted component treatments across the product.
+Consult the [spatial design](../frontend-design/reference/spatial-design.md) and [spacing system](../frontend-design/reference/spacing-system.md) references when hierarchy problems are really spacing, grouping, or alignment problems in disguise.
 
 Use the shared references as the canonical source for hierarchy and readability doctrine, then focus this skill on fixing priority and emphasis in the actual interface.
 
@@ -54,6 +72,10 @@ Create a plan around these levers:
 - **What should become quieter?**
 - **Which labels can be removed, combined, or de-emphasized?**
 - **Which actions need differentiated treatments?**
+- **Which inconsistencies are teaching the wrong pattern?**
+- **What balance mode would make the screen feel clearer and more complete?**
+- **What spacing and alignment changes would make grouping more obvious?**
+- **What scan path should the layout support?**
 
 ## Improve Hierarchy Systematically
 
@@ -84,6 +106,35 @@ Create a plan around these levers:
 - Make titles smaller or lower contrast when the content should lead
 - Separate semantic importance from visual size; a structurally important heading can still be visually restrained
 
+### Preserve Predictability
+- Keep action colors and button styles semantically stable across similar contexts
+- Keep repeated message patterns and labels parallel so users learn the system faster
+- Keep icon families, layout regions, and familiar navigation structures consistent unless there is a strong workflow reason to change them
+
+### Improve Harmony, Not Just Loudness
+- Use symmetry when the section should feel stable and orderly, but avoid repeating the same symmetrical structure everywhere
+- Use asymmetry when the screen needs movement or stronger focal direction, but keep the weight balanced
+- Use centered or radial emphasis when one item truly deserves unmistakable focus
+- Rebalance text and images so neither side accidentally crushes the other
+
+### Use Space to Clarify Priority
+- Keep more space around groups than within them
+- Increase space around the primary element when it needs stronger focus
+- Keep text, controls, and media off container edges unless edge tension is intentional
+- Separate different sections enough that users can feel the topic change
+
+### Use Proximity and Alignment Deliberately
+- Pull related fields, labels, and support text closer together
+- Increase separation between unrelated groups
+- Top-align larger neighboring blocks when comparison matters
+- Keep major sections aligned to stable container edges so scanning stays effortless
+- Choose centered alignment only when the content is compact enough that it still reads clearly
+
+### Support the Intended Scan Pattern
+- Use denser left-to-right, top-to-bottom structure for information-heavy screens
+- Use cleaner directional composition for lighter, CTA-led screens
+- Place anchors like logos, main titles, and primary actions where the eye can find them quickly
+
 ### Balance Weight and Contrast
 - If icons feel louder than nearby text, soften their contrast before changing everything else
 - If separators are too faint, consider a slightly heavier treatment before making them darker and harsher
@@ -94,6 +145,7 @@ Create a plan around these levers:
 - Style every action as primary
 - Use color as the only hierarchy tool
 - Leave labels at the same visual weight as the data they describe when the data matters more
+- Randomly change action meaning, icon logic, or layout patterns that users already learned
 - Try to fix weak hierarchy only by adding more decoration
 
 ## Verify Hierarchy Improvements

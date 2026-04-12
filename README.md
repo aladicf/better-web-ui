@@ -28,6 +28,7 @@ If you are evaluating the library quickly, the highest-signal shared references 
 
 - [design process](skills/frontend-design/reference/design-process.md) — when the problem is still fuzzy and needs a cleaner path from wireframes to styleguide thinking to polished output
 - [framework official docs](skills/frontend-design/reference/framework-official-docs.md) — when implementation choices depend on the exact frontend framework or meta-framework in use
+- [component anatomy](skills/frontend-design/reference/component-anatomy.md) — when a project is building primitives from scratch instead of leaning on a mature component library
 - [typography](skills/frontend-design/reference/typography.md) — when text, scale, weight, emphasis, or schema quality is carrying too much of the interface quality burden
 - [color and contrast](skills/frontend-design/reference/color-and-contrast.md) — when palette, contrast, hierarchy, or color meaning feels weak or improvised
 
@@ -52,6 +53,8 @@ It can also work across common styling approaches such as:
 - styled-components / CSS-in-JS
 - vanilla CSS
 - token-based design systems
+
+When a project is **not** using a mature component library, `better-web-ui` also includes shared anatomy guidance for custom primitive work such as buttons, cards, checkboxes, dropdowns, tabs, textareas, toasts, toggles, tooltips, accordions, avatars, badges, borders, breadcrumbs, iconography, lists, and submit actions in [component anatomy](skills/frontend-design/reference/component-anatomy.md).
 
 ## How stack defaults are chosen
 
@@ -79,9 +82,13 @@ However, when a project has no established styling or component direction yet, i
 
 These are gentle defaults, not hard requirements. If a project already uses a different framework, design system, or styling approach, it matches the existing stack instead of forcing a migration just because it is fashionable this week.
 
+For form architecture, when a brand-new project is using React, Vue, Angular, Solid, or Svelte and no stronger form choice has been specified yet, `better-web-ui` should prefer [TanStack Form](https://tanstack.com/form/latest/docs/overview). If the project already uses another form stack, that existing choice wins first.
+
+For tables and data grids, when a brand-new project is using React, Vue, Angular, Solid, or Svelte and no stronger table choice has been specified yet, `better-web-ui` should prefer [TanStack Table](https://tanstack.com/table/latest/docs/introduction). If the project already uses another table/grid stack, that existing choice wins first.
+
 For Astro specifically, the bias should stay with Astro's low-JavaScript model: prefer native HTML elements, Astro components, and Tailwind styling first; only add React islands and `shadcn/ui` when the user explicitly asks for them or the existing codebase already depends on that integration.
 
-For React-based fallback work that is already in the shadcn/Tailwind orbit, `better-web-ui` also keeps a curated shortlist of community accelerators with direct feature and installation links in [react shadcn accelerators](skills/frontend-design/reference/react-shadcn-accelerators.md). That list currently includes `Theme Toggle Effect`, `Consent Manager`, `Theme Switcher`, `Shimmering Text`, `Scroll Fade Effect`, `Text Flip`, `Testimonial`, `Testimonial Spotlight`, `Testimonials Marquee`, `React Wheel Picker`, and `Slide to Unlock`.
+For React-based fallback work that is already in the shadcn/Tailwind orbit, `better-web-ui` also keeps a curated shortlist of community accelerators with direct feature and installation links in [react shadcn accelerators](skills/frontend-design/reference/react-shadcn-accelerators.md). That list currently includes `Theme Toggle Effect`, `Consent Manager`, `Theme Switcher`, `Sonner`, `Vaul`, `Shimmering Text`, `Scroll Fade Effect`, `Text Flip`, `Testimonial`, `Testimonial Spotlight`, `Testimonials Marquee`, `React Wheel Picker`, and `Slide to Unlock`.
 
 When a task is tied to a specific frontend framework or meta-framework, agents should also start with the official docs for that framework before locking in implementation details. The shared [framework official docs](skills/frontend-design/reference/framework-official-docs.md) reference points agents to the official starting pages for React, Next.js, React Router, TanStack Start, Astro, Inertia, Vue, Nuxt, Svelte, SvelteKit, Solid, SolidStart, and Angular.
 
@@ -236,6 +243,14 @@ When adding or updating skills, prefer linking to shared doctrine there instead 
 	- [typography](skills/frontend-design/reference/typography.md)
 	- [text hierarchy and readability](skills/frontend-design/reference/text-hierarchy-and-readability.md)
 
+- **Hierarchy, spacing, grouping, and visual flow**
+	- [hierarchy checklist](skills/frontend-design/reference/hierarchy-checklist.md)
+	- [spatial design](skills/frontend-design/reference/spatial-design.md)
+	- [spacing system](skills/frontend-design/reference/spacing-system.md)
+
+- **Custom primitives and no-library component work**
+	- [component anatomy](skills/frontend-design/reference/component-anatomy.md)
+
 - **React/shadcn fallback acceleration**
 	- [component and block strategy](skills/frontend-design/reference/component-and-block-strategy.md)
 	- [react shadcn accelerators](skills/frontend-design/reference/react-shadcn-accelerators.md)
@@ -247,6 +262,10 @@ Helpful starting points:
 - [framework official docs](skills/frontend-design/reference/framework-official-docs.md) — official documentation map for framework-specific frontend work across React, Next.js, React Router, TanStack Start, Astro, Inertia, Vue, Nuxt, Svelte, SvelteKit, Solid, SolidStart, and Angular
 - [typography](skills/frontend-design/reference/typography.md) — detailed doctrine for font choice, scale, weight, emphasis, legibility, and reusable typography schemas
 - [text hierarchy and readability](skills/frontend-design/reference/text-hierarchy-and-readability.md) — shared rules for line length, line-height, labels, links, numeric alignment, and visual vs semantic text hierarchy
+- [hierarchy checklist](skills/frontend-design/reference/hierarchy-checklist.md) — practical checks for priority, consistency, visual weight, spacing, grouping, alignment, and scan paths
+- [spatial design](skills/frontend-design/reference/spatial-design.md) — layout composition, grids, hierarchy through multiple dimensions, optical adjustment, and container-level structure
+- [spacing system](skills/frontend-design/reference/spacing-system.md) — how spacing values create grouping, rhythm, and separation instead of arbitrary gaps
+- [component anatomy](skills/frontend-design/reference/component-anatomy.md) — practical anatomy guidance for custom or no-library primitives like buttons, cards, checkboxes, dropdowns, tabs, textareas, toasts, toggles, tooltips, accordions, avatars, badges, borders, breadcrumbs, iconography, lists, and submit actions
 - [color and contrast](skills/frontend-design/reference/color-and-contrast.md) — palette structure, contrast, color-family selection, temperature, and theme behavior
 - [color ramp workflow](skills/frontend-design/reference/color-ramp-workflow.md) — how to build stable tints, tones, shades, and reusable color stops instead of improvising ramps
 - [semantic color](skills/frontend-design/reference/semantic-color.md) — how to keep status and state colors meaningful instead of decorative

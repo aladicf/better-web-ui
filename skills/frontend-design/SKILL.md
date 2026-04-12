@@ -95,11 +95,17 @@ Treat those as preferred defaults, not universal truths:
 
 When `setup` has already recorded implementation defaults for the project, follow those stored defaults before inventing new ones.
 
+When a project is new and the form architecture is still open, prefer **TanStack Form** across the supported React, Vue, Angular, Solid, and Svelte ecosystems. If the existing project already uses another form library or validation stack, preserve that baseline first instead of forcing a migration.
+
+When a project is new and the table or data-grid architecture is still open, prefer **TanStack Table** across the supported React, Vue, Angular, Solid, and Svelte ecosystems. If the existing project already uses another table/grid stack, preserve that baseline first instead of forcing a migration.
+
 The goal is pragmatic consistency: framework-agnostic at the library level, with helpful implementation defaults when no stronger project convention exists.
 
 When the project uses a specific frontend framework or meta-framework, consult [framework official docs](reference/framework-official-docs.md) before making framework-specific implementation decisions. Use the official docs to confirm architecture, routing, rendering boundaries, data loading, forms, styling, and deployment expectations instead of guessing from generic cross-framework habits.
 
 When React-based fallback defaults are relevant, use [component and block strategy](reference/component-and-block-strategy.md) to decide when to compose from `shadcn/ui` primitives, when blocks are an appropriate accelerator, and how to avoid shipping generic library output unchanged. Use [react shadcn accelerators](reference/react-shadcn-accelerators.md) when the request maps to a curated community component such as theme controls, consent, text motion, testimonial patterns, wheel pickers, or slide actions.
+
+When the project does **not** have a mature component library and you need to build or refine primitives from scratch, use [component anatomy](reference/component-anatomy.md) for practical anatomy guidance on custom components such as buttons, cards, checkboxes, dropdowns, tabs, textareas, toasts, toggles, tooltips, accordions, avatars, badges, borders, breadcrumbs, iconography, lists, and submit actions.
 
 ---
 

@@ -15,6 +15,11 @@ Use these as the primary source for current component availability, integration 
 - [ReUI components](https://reui.io/components) — browse composed components and in-house workflow-heavy pieces
 - [ReUI docs](https://reui.io/docs) — understand registry, Base UI / Radix compatibility, and usage model
 - [React shadcn accelerators](./react-shadcn-accelerators.md) — curated shortlist of ChanhDai community-registry components that better-web-ui treats as optional React fallback accelerators
+- [Sonner docs](https://sonner.emilkowal.ski/getting-started) — toast layer guidance when feedback/notification primitives are the feature in question
+- [Vaul docs](https://vaul.emilkowal.ski/getting-started) — drawer and bottom-sheet guidance when overlay patterns are the feature in question
+- [TanStack Form overview](https://tanstack.com/form/latest/docs/overview) — default headless form-state recommendation when the React form stack is still open
+- [TanStack Form React quick start](https://tanstack.com/form/latest/docs/framework/react/quick-start) — recommended React usage model and composition direction
+- [TanStack Table introduction](https://tanstack.com/table/latest/docs/introduction) — default headless table/data-grid recommendation when the React table stack is still open
 - [Tailwind utility-class guide](https://tailwindcss.com/docs/styling-with-utility-classes) — core utility-first workflow
 - [Tailwind responsive design](https://tailwindcss.com/docs/responsive-design) — breakpoint and adaptive layout guidance
 - [Tailwind states and variants](https://tailwindcss.com/docs/hover-focus-and-other-states) — `hover:`, `focus:`, group states, and related variants
@@ -42,6 +47,13 @@ Use that shortlist when:
 - the dependency model is acceptable for the current framework and browser targets
 
 Do **not** treat the shortlist as mandatory. It is a convenience layer for feature-fit acceleration, not a replacement for project-specific composition judgment.
+
+In practice, that means:
+
+- prefer **Sonner** when the request needs a React toast layer and the codebase does not already standardize on another one
+- prefer **Vaul** when the request needs a React drawer / bottom-sheet primitive and the codebase does not already standardize on another one
+- prefer **TanStack Form** when the request involves serious form work and the React form stack is still open
+- prefer **TanStack Table** when the request involves serious table or data-grid work and the React table stack is still open
 
 ## Respect `shadcn create`, `shadcn apply`, and `components.json`
 

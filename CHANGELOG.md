@@ -8,7 +8,37 @@ The format is inspired by Keep a Changelog and uses a simple `Added` / `Changed`
 
 ### Changed
 
-- README, development docs, and contributing guidance now surface the highest-signal shared references more clearly for design process, framework docs, typography, and color-system work.
+- The shared `component-anatomy` reference now also covers buttons, cards, checkboxes, dividers, dropdowns, tabs, textareas, toasts, toggles, and tooltips, and the related docs were updated so that expanded coverage is easier to discover.
+- The shared doctrine now also adds iconography, lists, submit-button guidance, stronger textarea state guidance, baseline-unit rules, and clearer grid/gutter spacing notes in the appropriate component and spacing references.
+- React fallback guidance now treats Sonner as the preferred toast layer and Vaul as the preferred drawer primitive for React-based web apps when the codebase does not already have a stronger standard, with linked docs for setup, API, styling, and behavior details.
+- New-project form defaults now prefer TanStack Form across supported React, Vue, Angular, Solid, and Svelte stacks when the form architecture is still open, while preserving existing project form libraries first.
+- New-project table defaults now prefer TanStack Table across supported React, Vue, Angular, Solid, and Svelte stacks when the table or data-grid architecture is still open, while preserving existing project table/grid libraries first.
+
+## [1.6.0] - 2026-04-13
+
+### Added
+
+- Shared component-anatomy doctrine for custom or no-library primitive work, covering accordions, avatars, badges, borders, and breadcrumbs.
+
+### Changed
+
+- README, development docs, contributing guidance, agent instructions, and the core frontend-design skill now surface the custom-primitives guidance more clearly alongside the existing process, framework, hierarchy, typography, and color references.
+
+### Fixed
+
+- Synced root package version metadata in `package-lock.json` with the bumped package version.
+
+## [1.5.0] - 2026-04-12
+
+### Changed
+
+- Shared hierarchy guidance now covers negative space, proximity, alignment, scan patterns, and stronger layout-flow checks alongside consistency and visual-weight doctrine.
+- The `hierarchy` skill now assesses spacing, grouping, alignment, and scan-path problems more explicitly, and points to the spacing and spatial references when hierarchy issues are really layout issues.
+- README, development docs, and contributing guidance now surface hierarchy, spacing, and layout-flow references more clearly so users and maintainers can find the right doctrine faster.
+
+### Fixed
+
+- Synced root package version metadata in `package-lock.json` with the bumped package version.
 
 ## [1.4.0] - 2026-04-12
 

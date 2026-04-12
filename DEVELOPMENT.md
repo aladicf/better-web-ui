@@ -53,6 +53,16 @@ When maintaining `better-web-ui`, these are the fastest in-repo references to ch
 - [`skills/frontend-design/reference/typography.md`](skills/frontend-design/reference/typography.md)
 - [`skills/frontend-design/reference/text-hierarchy-and-readability.md`](skills/frontend-design/reference/text-hierarchy-and-readability.md)
 
+### Hierarchy, spacing, and layout flow
+
+- [`skills/frontend-design/reference/hierarchy-checklist.md`](skills/frontend-design/reference/hierarchy-checklist.md)
+- [`skills/frontend-design/reference/spatial-design.md`](skills/frontend-design/reference/spatial-design.md)
+- [`skills/frontend-design/reference/spacing-system.md`](skills/frontend-design/reference/spacing-system.md)
+
+### Custom primitive component work
+
+- [`skills/frontend-design/reference/component-anatomy.md`](skills/frontend-design/reference/component-anatomy.md)
+
 ### Color systems and palette logic
 
 - [`skills/frontend-design/reference/color-and-contrast.md`](skills/frontend-design/reference/color-and-contrast.md)
@@ -64,6 +74,9 @@ When maintaining `better-web-ui`, these are the fastest in-repo references to ch
 - [`skills/frontend-design/reference/design-system-alignment.md`](skills/frontend-design/reference/design-system-alignment.md)
 - [`skills/frontend-design/reference/component-and-block-strategy.md`](skills/frontend-design/reference/component-and-block-strategy.md)
 - [`skills/frontend-design/reference/react-shadcn-accelerators.md`](skills/frontend-design/reference/react-shadcn-accelerators.md)
+- [TanStack Form overview](https://tanstack.com/form/latest/docs/overview)
+- [TanStack Form React quick start](https://tanstack.com/form/latest/docs/framework/react/quick-start)
+- [TanStack Table introduction](https://tanstack.com/table/latest/docs/introduction)
 
 If you are not sure where to place new doctrine, start by checking those files before creating a new reference. In many cases the right change is to strengthen one of them rather than add another document.
 

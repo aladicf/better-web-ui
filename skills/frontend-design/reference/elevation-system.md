@@ -15,6 +15,16 @@ Most products only need a few semantic elevation levels.
 
 Use semantic meaning first; exact shadow numbers come second.
 
+## Use Shadows Gradually
+
+Shadows should be built up in minimal, deliberate amounts.
+
+- low-opacity shadows often do enough
+- darker and larger shadows imply more depth, so use them sparingly
+- if a shadow is shouting louder than the component it belongs to, it is probably too strong
+
+In many interfaces, a restrained shadow around `0.1–0.15` opacity is already enough to suggest separation.
+
 ## Two-Part Shadow Logic
 
 Many strong shadows are really two shadows doing two jobs:
@@ -70,6 +80,26 @@ Even without strong shadows:
 
 Use subtle surface shifts to imply depth before reaching for dramatic effects.
 
+## Shadows vs Borders
+
+Sometimes a subtle shadow outlines a surface more gracefully than a border.
+
+When a shadow is already doing the containment work, adding a border on top can make the component feel over-described.
+
+Prefer:
+
+- a light shadow without a competing border when elevation is the real cue
+- borders only when state, containment, or contrast needs something more explicit than depth alone
+
+## Practical Uses
+
+Shadows can help with:
+
+- button hover and pressed states
+- active or focused form controls when the system supports that cue
+- stacked elements where one surface should feel above another
+- separating floating UI such as menus, popovers, toasts, and overlays from the base canvas
+
 ## Practical Review Questions
 
 - Does each elevation level have a job?
@@ -77,7 +107,8 @@ Use subtle surface shifts to imply depth before reaching for dramatic effects.
 - Do pressed and dragged states feel physically different?
 - Are inset elements clearly inset?
 - Is depth helping users understand structure and interaction?
+- Are borders being used out of habit where a subtle shadow would be cleaner?
 
 ---
 
-**Avoid**: Big default drop shadows on everything. Using the same shadow for buttons, popovers, and modals. Adding depth effects with no semantic meaning.
+**Avoid**: Big default drop shadows on everything. Using the same shadow for buttons, popovers, and modals. Adding depth effects with no semantic meaning. Full-opacity shadows. Layering strong borders and strong shadows on the same component without a clear reason.

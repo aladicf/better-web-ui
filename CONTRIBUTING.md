@@ -51,6 +51,10 @@ Before creating a new shared reference, check whether one of these high-signal d
 
 - [`skills/frontend-design/reference/design-process.md`](skills/frontend-design/reference/design-process.md)
 - [`skills/frontend-design/reference/framework-official-docs.md`](skills/frontend-design/reference/framework-official-docs.md)
+- [`skills/frontend-design/reference/component-anatomy.md`](skills/frontend-design/reference/component-anatomy.md)
+- [`skills/frontend-design/reference/hierarchy-checklist.md`](skills/frontend-design/reference/hierarchy-checklist.md)
+- [`skills/frontend-design/reference/spatial-design.md`](skills/frontend-design/reference/spatial-design.md)
+- [`skills/frontend-design/reference/spacing-system.md`](skills/frontend-design/reference/spacing-system.md)
 - [`skills/frontend-design/reference/typography.md`](skills/frontend-design/reference/typography.md)
 - [`skills/frontend-design/reference/text-hierarchy-and-readability.md`](skills/frontend-design/reference/text-hierarchy-and-readability.md)
 - [`skills/frontend-design/reference/color-and-contrast.md`](skills/frontend-design/reference/color-and-contrast.md)

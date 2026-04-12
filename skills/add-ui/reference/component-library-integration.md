@@ -8,6 +8,9 @@ For current upstream inventories and implementation details, use the official do
 
 - [`shadcn/ui` components](https://ui.shadcn.com/docs/components)
 - [`shadcn/ui` TanStack Form docs](https://ui.shadcn.com/docs/forms/tanstack-form)
+- [TanStack Form overview](https://tanstack.com/form/latest/docs/overview)
+- [TanStack Form React quick start](https://tanstack.com/form/latest/docs/framework/react/quick-start)
+- [TanStack Table introduction](https://tanstack.com/table/latest/docs/introduction)
 - [`shadcn/ui` Blocks](https://ui.shadcn.com/blocks#blocks)
 - [ReUI components](https://reui.io/components)
 - [React shadcn accelerators](../../frontend-design/reference/react-shadcn-accelerators.md)
@@ -23,7 +26,7 @@ For current upstream inventories and implementation details, use the official do
 
 If the official docs are incomplete or the inventory appears to have changed, do a focused web search and then verify the result against upstream docs before treating it as current.
 
-Use the curated React/shadcn accelerator reference when a request maps to a known community-registry pattern like a theme switcher, consent surface, testimonial treatment, wheel picker, or slide gesture and you want fast feature-fit context before deciding whether a direction should be component-led, pattern-led, or block-led.
+Use the curated React/shadcn accelerator reference when a request maps to a known community-registry or upstream React pattern like a theme switcher, consent surface, toast layer, drawer, testimonial treatment, wheel picker, slide gesture, form layer, or table/data-grid layer and you want fast feature-fit context before deciding whether a direction should be component-led, pattern-led, or block-led.
 
 ## Respect existing shadcn customization baselines
 

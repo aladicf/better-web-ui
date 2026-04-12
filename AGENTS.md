@@ -114,8 +114,11 @@ Do not duplicate the full skill body into wrapper trees.
 
 - Preserve the library's framework-agnostic positioning in public docs and skill guidance
 - Detect the current project's styling system and component libraries first, and match those before introducing new defaults
+- When a project is building primitives without a mature component library, use `skills/frontend-design/reference/component-anatomy.md` for anatomy guidance on custom components such as buttons, cards, checkboxes, dropdowns, tabs, textareas, toasts, toggles, tooltips, accordions, avatars, badges, borders, breadcrumbs, iconography, lists, and submit actions
 - When implementation work is specific to a known frontend framework or meta-framework, consult the official docs for that framework first using `skills/frontend-design/reference/framework-official-docs.md`, then follow the relevant architecture / routing / rendering / data-loading / forms / styling / deployment pages before making framework-specific decisions
 - If the user is creating a brand-new project and explicitly names a styling or component library, treat that as the default
+- If the user is creating a brand-new project and the form architecture is still open across React, Vue, Angular, Solid, or Svelte, prefer TanStack Form as the default unless the user explicitly asks for another form stack
+- If the user is creating a brand-new project and the table or data-grid architecture is still open across React, Vue, Angular, Solid, or Svelte, prefer TanStack Table as the default unless the user explicitly asks for another table/grid stack
 - If the user is creating a brand-new project and does not specify implementation preferences, use these fallbacks:
   - React-based frameworks / meta-frameworks (`Next.js`, `TanStack Start`, `React Router`, Vite React) → **Tailwind CSS** + **shadcn/ui** in the Base UI direction, with **shadcn/ui Blocks**, **re-ui**, and the curated shortlist in `skills/frontend-design/reference/react-shadcn-accelerators.md` as preferred accelerators when the feature request matches
   - Astro → **Tailwind CSS** + **HTML-first Astro components / native elements** by default to preserve Astro's low-JS model; only use **React** + **shadcn/ui** when the user explicitly asks for that integration or the existing Astro project already uses it
@@ -124,7 +127,7 @@ Do not duplicate the full skill body into wrapper trees.
   - Svelte / SvelteKit → **Tailwind CSS** + **shadcn-svelte**
   - Angular → **Tailwind CSS** + **Angular Material** or **ZardUI**
   - SolidJS / SolidStart → **Tailwind CSS** + **SolidUI**
-- For React/shadcn fallback work, use `skills/frontend-design/reference/react-shadcn-accelerators.md` when you need direct links to the curated Theme Toggle Effect, Consent Manager, Theme Switcher, Shimmering Text, Scroll Fade Effect, Text Flip, Testimonial, Testimonial Spotlight, Testimonials Marquee, React Wheel Picker, and Slide to Unlock docs.
+- For React/shadcn fallback work, use `skills/frontend-design/reference/react-shadcn-accelerators.md` when you need direct links to the curated Theme Toggle Effect, Consent Manager, Theme Switcher, Sonner, Vaul, Shimmering Text, Scroll Fade Effect, Text Flip, Testimonial, Testimonial Spotlight, Testimonials Marquee, React Wheel Picker, and Slide to Unlock docs.
 - If the official docs still leave gaps after that framework-specific pass, do a focused web search and verify the answer against the official docs before relying on it
 - Avoid introducing framework islands or client JavaScript in Astro unless the feature genuinely needs interactivity that Astro-native HTML/CSS cannot cover cleanly
 - Do not present those preferences as hard requirements or force them into incompatible or already-established stacks

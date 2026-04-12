@@ -14,6 +14,8 @@ Before asking questions, thoroughly scan the project to discover what you can:
 - **shadcn project config**: `components.json`, shadcn schema usage, CLI-generated configuration, preset clues, Radix vs Base UI choice
 - **Styling system**: Tailwind, CSS modules, CSS-in-JS, vanilla CSS, utility systems, tokens
 - **Component libraries**: shadcn/ui, Nuxt UI, Angular Material, custom UI packages, in-house systems
+- **Form architecture**: TanStack Form, React Hook Form, Formik, vee-validate, Angular forms, custom validation/state wiring
+- **Table / data-grid architecture**: TanStack Table, AG Grid, framework-native tables, custom table state wiring
 - **Existing components**: Current design patterns, spacing, typography in use
 - **Brand assets**: Logos, favicons, color values already defined
 - **Design tokens / CSS variables**: Existing color palettes, font stacks, spacing scales
@@ -54,14 +56,16 @@ Skip questions where the answer is already clear from the codebase exploration.
 - What framework / runtime should future UI work assume by default?
 - If this is a brand-new project, does the user want a specific styling system?
 - If this is a brand-new project, does the user want a specific component library or block system?
+- Does the project already use a form library or validation stack that later UI work should preserve?
+- Does the project already use a table or data-grid library that later UI work should preserve?
 - If the project already uses `shadcn/ui`, is it mostly using the upstream primitives directly or local wrappers / compositions built on top of them?
 - If relevant, does the project already use `shadcn/ui Blocks` or `re-ui` as accelerators for common sections or flows?
 - If relevant, is the project primarily following a Radix-flavored or Base UI-flavored ecosystem for its headless primitives and composed components?
 - If the project uses shadcn, does it already have a `components.json` file or signs of `shadcn create` / `shadcn apply` customizations that should be treated as the current baseline?
 
-If the project already has a styling system or component library, treat that as the default unless the user explicitly wants to change it.
+If the project already has a styling system, component library, form stack, or table/grid stack, treat that as the default unless the user explicitly wants to change it.
 
-If the project is new and the user does not specify implementation preferences, use the framework-default matrix from `frontend-design` and record the result.
+If the project is new and the user does not specify implementation preferences, use the framework-default matrix from `frontend-design` and record the result. When the form architecture is still open in a new React, Vue, Angular, Solid, or Svelte project, default to TanStack Form and record that too. When the table or data-grid architecture is still open in those ecosystems, default to TanStack Table and record that too.
 
 ## Step 3: Write Design Context
 
@@ -80,7 +84,7 @@ Synthesize your findings and the user's answers into a `## Design Context` secti
 [Visual tone, references, anti-references, theme]
 
 ### Implementation Defaults
-[Detected or chosen framework, styling system, component library defaults, any block accelerators in use, any relevant Radix-vs-Base-UI ecosystem preference, any important `components.json` / `shadcn create` / `shadcn apply` customizations, and whether they came from the existing codebase, explicit user preference, or framework fallback defaults]
+[Detected or chosen framework, styling system, component library defaults, form library / validation defaults, table/data-grid defaults, any block accelerators in use, any relevant Radix-vs-Base-UI ecosystem preference, any important `components.json` / `shadcn create` / `shadcn apply` customizations, and whether they came from the existing codebase, explicit user preference, or framework fallback defaults]
 
 ### Design Principles
 [3-5 principles derived from the conversation that should guide all design decisions]
