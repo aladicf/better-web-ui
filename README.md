@@ -24,7 +24,7 @@ The project follows the [Agent Skills](https://agentskills.io/) format and is de
 
 See [`NOTICE.md`](NOTICE.md) for the fuller attribution chain and source lineage.
 
-## What this package is for
+## What is this package for
 
 Use `better-web-ui` when you want an agent to help with:
 
