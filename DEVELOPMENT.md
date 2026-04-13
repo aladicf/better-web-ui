@@ -36,9 +36,20 @@ Some skills still check legacy files such as `.better-ui.md` and `.impeccable.md
 
 Treat those legacy files as fallback inputs only. New work should write or update `.better-web-ui.md` so future sessions have a single canonical source of design context.
 
+## Documentation map
+
+When the repo grows, use these files for distinct purposes instead of letting all four become near-duplicates:
+
+- [`README.md`](README.md) — public purpose, stack defaults, doctrine discoverability, and skill catalog
+- [`AGENTS.md`](AGENTS.md) — repo rules for coding agents and canonical editing constraints
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — pull request expectations and contributor checklist
+- [`DEVELOPMENT.md`](DEVELOPMENT.md) — maintainer commands, validation, and the quick doctrine map below
+
 ## High-signal doctrine map
 
 When maintaining `better-web-ui`, these are the fastest in-repo references to check first before editing broader guidance:
+
+Treat [`README.md` → Shared design doctrine](README.md#shared-design-doctrine) as the public annotated index. Treat this section as the faster maintainer map.
 
 ### Structure and process
 
@@ -47,6 +58,8 @@ When maintaining `better-web-ui`, these are the fastest in-repo references to ch
 ### Framework-specific implementation choices
 
 - [`skills/frontend-design/reference/framework-official-docs.md`](skills/frontend-design/reference/framework-official-docs.md)
+
+For Next.js maintenance work specifically, remember that modern Next.js can ship version-matched docs inside `node_modules/next/dist/docs/`, and `create-next-app` now includes `AGENTS.md` / `CLAUDE.md` support by default. Prefer those bundled local docs over memory when the project has them.
 
 ### Typography and text quality
 
@@ -58,6 +71,10 @@ When maintaining `better-web-ui`, these are the fastest in-repo references to ch
 - [`skills/frontend-design/reference/hierarchy-checklist.md`](skills/frontend-design/reference/hierarchy-checklist.md)
 - [`skills/frontend-design/reference/spatial-design.md`](skills/frontend-design/reference/spatial-design.md)
 - [`skills/frontend-design/reference/spacing-system.md`](skills/frontend-design/reference/spacing-system.md)
+
+### Performance-sensitive text layout
+
+- [`skills/frontend-design/reference/text-layout-prediction.md`](skills/frontend-design/reference/text-layout-prediction.md)
 
 ### Custom primitive component work
 
@@ -77,6 +94,7 @@ When maintaining `better-web-ui`, these are the fastest in-repo references to ch
 - [TanStack Form overview](https://tanstack.com/form/latest/docs/overview)
 - [TanStack Form React quick start](https://tanstack.com/form/latest/docs/framework/react/quick-start)
 - [TanStack Table introduction](https://tanstack.com/table/latest/docs/introduction)
+- [TanStack Virtual introduction](https://tanstack.com/virtual/latest/docs/introduction)
 
 If you are not sure where to place new doctrine, start by checking those files before creating a new reference. In many cases the right change is to strengthen one of them rather than add another document.
 

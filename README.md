@@ -86,11 +86,32 @@ For form architecture, when a brand-new project is using React, Vue, Angular, So
 
 For tables and data grids, when a brand-new project is using React, Vue, Angular, Solid, or Svelte and no stronger table choice has been specified yet, `better-web-ui` should prefer [TanStack Table](https://tanstack.com/table/latest/docs/introduction). If the project already uses another table/grid stack, that existing choice wins first.
 
+For long lists and virtualization, when a brand-new project is using React, Vue, Angular, Solid, or Svelte and no stronger virtualization choice has been specified yet, `better-web-ui` should prefer [TanStack Virtual](https://tanstack.com/virtual/latest/docs/introduction). If the project already uses another virtualization approach, that existing choice wins first.
+
+### Headless defaults by problem when the stack is open
+
+When a brand-new project is still open on tooling choices, use this shorthand:
+
+- **forms** → [TanStack Form](https://tanstack.com/form/latest/docs/overview)
+- **tables / datagrids** → [TanStack Table](https://tanstack.com/table/latest/docs/introduction)
+- **long lists / virtual lists** → [TanStack Virtual](https://tanstack.com/virtual/latest/docs/introduction)
+- **toasts** in React-based web apps → [Sonner](https://sonner.emilkowal.ski/getting-started)
+- **drawers / bottom sheets** in React-based web apps → [Vaul](https://vaul.emilkowal.ski/getting-started)
+- **predictive wrapped-text sizing before DOM measurement** → [`@chenglou/pretext`](https://github.com/chenglou/pretext)
+
+Important qualifier: if the project already uses another form layer, table/grid stack, virtualization layer, toast system, drawer primitive, or text-layout approach, match the existing choice first instead of forcing these defaults.
+
 For Astro specifically, the bias should stay with Astro's low-JavaScript model: prefer native HTML elements, Astro components, and Tailwind styling first; only add React islands and `shadcn/ui` when the user explicitly asks for them or the existing codebase already depends on that integration.
 
 For React-based fallback work that is already in the shadcn/Tailwind orbit, `better-web-ui` also keeps a curated shortlist of community accelerators with direct feature and installation links in [react shadcn accelerators](skills/frontend-design/reference/react-shadcn-accelerators.md). That list currently includes `Theme Toggle Effect`, `Consent Manager`, `Theme Switcher`, `Sonner`, `Vaul`, `Shimmering Text`, `Scroll Fade Effect`, `Text Flip`, `Testimonial`, `Testimonial Spotlight`, `Testimonials Marquee`, `React Wheel Picker`, and `Slide to Unlock`.
 
 When a task is tied to a specific frontend framework or meta-framework, agents should also start with the official docs for that framework before locking in implementation details. The shared [framework official docs](skills/frontend-design/reference/framework-official-docs.md) reference points agents to the official starting pages for React, Next.js, React Router, TanStack Start, Astro, Inertia, Vue, Nuxt, Svelte, SvelteKit, Solid, SolidStart, and Angular.
+
+For **Next.js** specifically, `better-web-ui` should follow the modern Next.js agent workflow:
+
+- if the project includes bundled docs at `node_modules/next/dist/docs/`, agents should read the relevant local doc there before writing Next.js code
+- modern `create-next-app` includes `AGENTS.md` and `CLAUDE.md` by default unless the project opted out with `--no-agents-md`
+- on older Next.js versions, agents should follow the official codemod/setup guidance instead of pretending stale training data is good enough
 
 ## Runtime requirements
 
@@ -248,6 +269,9 @@ When adding or updating skills, prefer linking to shared doctrine there instead 
 	- [spatial design](skills/frontend-design/reference/spatial-design.md)
 	- [spacing system](skills/frontend-design/reference/spacing-system.md)
 
+- **Performance-sensitive text layout and virtualization**
+	- [text layout prediction](skills/frontend-design/reference/text-layout-prediction.md)
+
 - **Custom primitives and no-library component work**
 	- [component anatomy](skills/frontend-design/reference/component-anatomy.md)
 
@@ -256,23 +280,15 @@ When adding or updating skills, prefer linking to shared doctrine there instead 
 	- [react shadcn accelerators](skills/frontend-design/reference/react-shadcn-accelerators.md)
 	- [component library integration for `add-ui`](skills/add-ui/reference/component-library-integration.md)
 
-Helpful starting points:
+- **Quick defaults by problem when the stack is open**
+	- forms → [TanStack Form](https://tanstack.com/form/latest/docs/overview)
+	- tables / datagrids → [TanStack Table](https://tanstack.com/table/latest/docs/introduction)
+	- long lists / virtual lists → [TanStack Virtual](https://tanstack.com/virtual/latest/docs/introduction)
+	- React toasts → [Sonner](https://sonner.emilkowal.ski/getting-started)
+	- React drawers / bottom sheets → [Vaul](https://vaul.emilkowal.ski/getting-started)
+	- predictive text sizing before DOM measurement → [text layout prediction](skills/frontend-design/reference/text-layout-prediction.md)
 
-- [design process](skills/frontend-design/reference/design-process.md) — how to move from wireframes to styleguide thinking to higher-fidelity prototypes without polishing too early
-- [framework official docs](skills/frontend-design/reference/framework-official-docs.md) — official documentation map for framework-specific frontend work across React, Next.js, React Router, TanStack Start, Astro, Inertia, Vue, Nuxt, Svelte, SvelteKit, Solid, SolidStart, and Angular
-- [typography](skills/frontend-design/reference/typography.md) — detailed doctrine for font choice, scale, weight, emphasis, legibility, and reusable typography schemas
-- [text hierarchy and readability](skills/frontend-design/reference/text-hierarchy-and-readability.md) — shared rules for line length, line-height, labels, links, numeric alignment, and visual vs semantic text hierarchy
-- [hierarchy checklist](skills/frontend-design/reference/hierarchy-checklist.md) — practical checks for priority, consistency, visual weight, spacing, grouping, alignment, and scan paths
-- [spatial design](skills/frontend-design/reference/spatial-design.md) — layout composition, grids, hierarchy through multiple dimensions, optical adjustment, and container-level structure
-- [spacing system](skills/frontend-design/reference/spacing-system.md) — how spacing values create grouping, rhythm, and separation instead of arbitrary gaps
-- [component anatomy](skills/frontend-design/reference/component-anatomy.md) — practical anatomy guidance for custom or no-library primitives like buttons, cards, checkboxes, dropdowns, tabs, textareas, toasts, toggles, tooltips, accordions, avatars, badges, borders, breadcrumbs, iconography, lists, and submit actions
-- [color and contrast](skills/frontend-design/reference/color-and-contrast.md) — palette structure, contrast, color-family selection, temperature, and theme behavior
-- [color ramp workflow](skills/frontend-design/reference/color-ramp-workflow.md) — how to build stable tints, tones, shades, and reusable color stops instead of improvising ramps
-- [semantic color](skills/frontend-design/reference/semantic-color.md) — how to keep status and state colors meaningful instead of decorative
-- [component and block strategy](skills/frontend-design/reference/component-and-block-strategy.md) — when to use primitives, reusable patterns, or prebuilt block accelerators in React-oriented fallback setups
-- [react shadcn accelerators](skills/frontend-design/reference/react-shadcn-accelerators.md) — curated community-registry components for React/shadcn fallback setups, with direct links to feature docs and integration guides
-- [component library integration for `add-ui`](skills/add-ui/reference/component-library-integration.md) — how those choices affect the five-direction workflow
-- [design system alignment](skills/frontend-design/reference/design-system-alignment.md) — how to think about tokens vs components vs patterns without creating system drift
+If you need a fuller maintainer-oriented map of the same doctrine set, use the categorized reference map in [`DEVELOPMENT.md`](DEVELOPMENT.md).
 
 ## Skill catalog
 

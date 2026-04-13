@@ -6,10 +6,12 @@ This repository is an opinionated Agent Skills library, not a generic starter. C
 
 ## Before you start
 
-- read [`README.md`](README.md) for project purpose and install behavior
-- read [`AGENTS.md`](AGENTS.md) for repository-specific rules and wrapper contracts
-- read [`DEVELOPMENT.md`](DEVELOPMENT.md) for local setup, commands, and validation scope
-- use Node `24.14.1` via `.nvmrc` or `.node-version`
+Use this reading order so you do not have to reconstruct the repo from four overlapping documents at once:
+
+1. [`README.md`](README.md) — project purpose, public discoverability, stack defaults, and the shared doctrine index
+2. [`AGENTS.md`](AGENTS.md) — repository-specific agent rules, wrapper contracts, and canonical editing rules
+3. [`DEVELOPMENT.md`](DEVELOPMENT.md) — local setup, maintainer workflow, validation coverage, and the maintainer doctrine map
+4. use Node `24.14.1` via `.nvmrc` or `.node-version`
 
 ## Contribution principles
 
@@ -47,20 +49,12 @@ This repository is an opinionated Agent Skills library, not a generic starter. C
 - Avoid duplicate doctrine across skills when a shared reference would do.
 - Preserve canonical naming such as `add-ui` when hosts expose friendlier aliases.
 
-Before creating a new shared reference, check whether one of these high-signal docs is the better home:
+Before creating a new shared reference, check the existing doctrine maps first instead of maintaining another copy of the same catalog here:
 
-- [`skills/frontend-design/reference/design-process.md`](skills/frontend-design/reference/design-process.md)
-- [`skills/frontend-design/reference/framework-official-docs.md`](skills/frontend-design/reference/framework-official-docs.md)
-- [`skills/frontend-design/reference/component-anatomy.md`](skills/frontend-design/reference/component-anatomy.md)
-- [`skills/frontend-design/reference/hierarchy-checklist.md`](skills/frontend-design/reference/hierarchy-checklist.md)
-- [`skills/frontend-design/reference/spatial-design.md`](skills/frontend-design/reference/spatial-design.md)
-- [`skills/frontend-design/reference/spacing-system.md`](skills/frontend-design/reference/spacing-system.md)
-- [`skills/frontend-design/reference/typography.md`](skills/frontend-design/reference/typography.md)
-- [`skills/frontend-design/reference/text-hierarchy-and-readability.md`](skills/frontend-design/reference/text-hierarchy-and-readability.md)
-- [`skills/frontend-design/reference/color-and-contrast.md`](skills/frontend-design/reference/color-and-contrast.md)
-- [`skills/frontend-design/reference/color-ramp-workflow.md`](skills/frontend-design/reference/color-ramp-workflow.md)
-- [`skills/frontend-design/reference/semantic-color.md`](skills/frontend-design/reference/semantic-color.md)
-- [`skills/frontend-design/reference/design-system-alignment.md`](skills/frontend-design/reference/design-system-alignment.md)
+- [`README.md` → Shared design doctrine](README.md#shared-design-doctrine) for the public-facing reference index grouped by need
+- [`DEVELOPMENT.md` → High-signal doctrine map](DEVELOPMENT.md#high-signal-doctrine-map) for the maintainer-oriented map grouped by editing workflow
+
+In many cases the right fix is to strengthen an existing reference instead of adding a new one.
 
 ### React fallback defaults
 

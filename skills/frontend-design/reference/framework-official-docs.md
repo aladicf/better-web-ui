@@ -69,6 +69,8 @@ Use when the project is Next.js, especially App Router work.
 - [Server and Client Components](https://nextjs.org/docs/app/getting-started/server-and-client-components) — when code belongs on the server vs client, serialization, provider placement, environment poisoning pitfalls
 - [Rendering Philosophy](https://nextjs.org/docs/app/guides/rendering-philosophy) — how Next treats static vs dynamic as a component-level spectrum
 - [Forms](https://nextjs.org/docs/app/guides/forms) — Server Actions, validation, pending states, optimistic updates
+- [AI Coding Agents](https://nextjs.org/docs/app/guides/ai-agents) — version-matched bundled docs, `AGENTS.md`, `CLAUDE.md`, and local agent setup
+- [create-next-app](https://nextjs.org/docs/app/api-reference/cli/create-next-app) — modern scaffolding defaults, including `--agents-md` support and `--no-agents-md` opt-out
 
 Consult Next docs first for:
 
@@ -77,6 +79,19 @@ Consult Next docs first for:
 - caching and revalidation
 - Server Actions and forms
 - deployment/runtime implications
+
+Next.js-specific agent rule for modern projects:
+
+- if the project uses modern Next.js and has bundled docs at `node_modules/next/dist/docs/`, read the relevant local doc there **before** writing Next.js code
+- prefer those bundled local docs over stale model memory because they match the exact installed Next.js version
+- if the project was created with modern `create-next-app`, expect `AGENTS.md` and `CLAUDE.md` to already exist unless the project opted out with `--no-agents-md`
+- for existing projects on `v16.2.0-canary.37` or later, recommend the minimal `AGENTS.md` rule that points agents to `node_modules/next/dist/docs/` and a `CLAUDE.md` file containing `@AGENTS.md`
+- for older Next.js projects, use the `npx @next/codemod@latest agents-md` codemod, which writes the docs reference to `.next-docs/`
+
+Practical rule:
+
+- official Next.js web docs are the starting map
+- bundled local docs are the source of truth when they exist in the project
 
 ### TanStack Start
 

@@ -99,9 +99,24 @@ When a project is new and the form architecture is still open, prefer **TanStack
 
 When a project is new and the table or data-grid architecture is still open, prefer **TanStack Table** across the supported React, Vue, Angular, Solid, and Svelte ecosystems. If the existing project already uses another table/grid stack, preserve that baseline first instead of forcing a migration.
 
+When a project is new and the long-list or virtualization architecture is still open, prefer **TanStack Virtual** across the supported React, Vue, Angular, Solid, and Svelte ecosystems. If the existing project already uses another virtualization approach, preserve that baseline first instead of forcing a migration.
+
+When the stack is still open, keep this shorthand in mind:
+
+- **forms** → **TanStack Form**
+- **tables / datagrids** → **TanStack Table**
+- **long lists / virtual lists** → **TanStack Virtual**
+- **React toasts** → **Sonner**
+- **React drawers / bottom sheets** → **Vaul**
+- **predictive wrapped-text sizing before DOM measurement** → **Pretext**
+
+Those are defaults, not mandates. Existing project choices still win first.
+
 The goal is pragmatic consistency: framework-agnostic at the library level, with helpful implementation defaults when no stronger project convention exists.
 
 When the project uses a specific frontend framework or meta-framework, consult [framework official docs](reference/framework-official-docs.md) before making framework-specific implementation decisions. Use the official docs to confirm architecture, routing, rendering boundaries, data loading, forms, styling, and deployment expectations instead of guessing from generic cross-framework habits.
+
+For **Next.js** specifically, if the project includes bundled version-matched docs at `node_modules/next/dist/docs/`, read the relevant local Next.js doc there before coding. Treat those bundled docs as the source of truth for the installed version instead of relying on stale memory. If the project is on an older Next.js version that does not bundle docs there yet, follow the official AI-agents setup guidance and codemod path described in [framework official docs](reference/framework-official-docs.md).
 
 When React-based fallback defaults are relevant, use [component and block strategy](reference/component-and-block-strategy.md) to decide when to compose from `shadcn/ui` primitives, when blocks are an appropriate accelerator, and how to avoid shipping generic library output unchanged. Use [react shadcn accelerators](reference/react-shadcn-accelerators.md) when the request maps to a curated community component such as theme controls, consent, text motion, testimonial patterns, wheel pickers, or slide actions.
 

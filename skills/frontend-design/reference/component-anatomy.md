@@ -185,6 +185,8 @@ If users mostly need to inspect one item at a time on a small screen, a cardifie
 
 Consult [text hierarchy and readability](./text-hierarchy-and-readability.md) for numeric alignment, [spacing system](./spacing-system.md) for row/cell rhythm, and [interaction design](./interaction-design.md) when table controls, bulk actions, and filtering behaviors need stronger structure.
 
+If the table, list, or card system becomes performance-sensitive because wrapped text height determines row or item layout, consult [text layout prediction](./text-layout-prediction.md) before defaulting to repeated DOM measurement.
+
 ## Iconography
 
 Icons are visual symbols meant to be read quickly.

@@ -8,11 +8,25 @@ The format is inspired by Keep a Changelog and uses a simple `Added` / `Changed`
 
 ### Changed
 
+- README, contributing guidance, and development docs now use a clearer documentation map, reduce duplicated reference catalogs, and make the shared doctrine index easier to scan and maintain as the repository grows.
+
+## [1.7.0] - 2026-04-13
+
+### Changed
+
 - The shared `component-anatomy` reference now also covers buttons, cards, checkboxes, dividers, dropdowns, tabs, textareas, toasts, toggles, and tooltips, and the related docs were updated so that expanded coverage is easier to discover.
 - The shared doctrine now also adds iconography, lists, submit-button guidance, stronger textarea state guidance, baseline-unit rules, and clearer grid/gutter spacing notes in the appropriate component and spacing references.
 - React fallback guidance now treats Sonner as the preferred toast layer and Vaul as the preferred drawer primitive for React-based web apps when the codebase does not already have a stronger standard, with linked docs for setup, API, styling, and behavior details.
 - New-project form defaults now prefer TanStack Form across supported React, Vue, Angular, Solid, and Svelte stacks when the form architecture is still open, while preserving existing project form libraries first.
 - New-project table defaults now prefer TanStack Table across supported React, Vue, Angular, Solid, and Svelte stacks when the table or data-grid architecture is still open, while preserving existing project table/grid libraries first.
+- New-project long-list and virtualization defaults now prefer TanStack Virtual across supported React, Vue, Angular, Solid, and Svelte stacks when the virtualization architecture is still open, while preserving existing project virtualization layers first.
+- A new shared `text-layout-prediction` reference now documents when a Pretext-like approach is useful for virtualization, wrapped-text sizing, and repeated relayouts without hot-path DOM measurement.
+- README, the core `frontend-design` skill, and repo agent guidance now surface a one-glance default-by-problem summary for TanStack Form, TanStack Table, Sonner, Vaul, and Pretext when the stack is still open.
+- Next.js-specific guidance now tells agents to prefer the bundled version-matched docs in `node_modules/next/dist/docs/` when present, follow the official AI-agents setup for existing projects, and respect modern `create-next-app` agent-file defaults.
+
+### Fixed
+
+- Synced root package version metadata in `package-lock.json` with the bumped package version.
 
 ## [1.6.0] - 2026-04-13
 

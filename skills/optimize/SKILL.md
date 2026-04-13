@@ -8,6 +8,8 @@ metadata:
 Identify and fix performance issues to create faster, smoother user experiences.
 
 Consult the [image treatment](../frontend-design/reference/image-treatment.md) when image performance problems intersect with screenshot sizing, icon scaling, cropping strategy, or user-uploaded media handling.
+Consult the [text layout prediction](../frontend-design/reference/text-layout-prediction.md) when performance issues come from measuring many wrapped text blocks, variable-height virtualization, repeated resize relayouts, or hot-path DOM reads like `offsetHeight` / `getBoundingClientRect()` for text-heavy UI.
+When a project needs virtualization for very long lists and the stack is still open, prefer TanStack Virtual as the default headless virtualization layer across the supported React, Vue, Angular, Solid, and Svelte ecosystems. If the project already uses another virtualization layer, preserve that first.
 
 ## MANDATORY PREPARATION
 
@@ -132,7 +134,8 @@ elements.forEach((el, i) => {
 - Minimize DOM depth (flatter is faster)
 - Reduce DOM size (fewer elements)
 - Use `content-visibility: auto` for long lists
-- Virtual scrolling for very long lists (react-window, react-virtualized)
+- Virtual scrolling for very long lists — prefer TanStack Virtual when the architecture is still open; preserve the existing virtualization stack first if the project already has one
+- For text-heavy variable-height lists or cards, prefer predictive text measurement over repeated live DOM height reads when wrapping is the real bottleneck
 
 **Reduce Paint & Composite**:
 - Use `transform` and `opacity` for animations (GPU-accelerated)
