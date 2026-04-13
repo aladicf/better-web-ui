@@ -22,6 +22,16 @@ They should stay in sync and currently both point to Node `24.14.1`.
 2. Edit canonical files under `skills/` or repository source files such as `scripts/` and top-level docs.
 3. Regenerate wrappers and validate before committing.
 
+## Public directory links
+
+When you need to verify public discoverability on `skills.sh`, use the direct pages first instead of relying only on keyword search:
+
+- [Creator page](https://skills.sh/aladicf)
+- [Repository page](https://skills.sh/aladicf/better-web-ui)
+- [Example skill page: `add-ui`](https://skills.sh/aladicf/better-web-ui/add-ui)
+
+If the direct pages exist and show install counts, indexing and telemetry are already working even when owner/repo keyword search is unhelpful.
+
 ## Source-of-truth rules
 
 - Canonical skill content lives under `skills/`.

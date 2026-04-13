@@ -8,6 +8,20 @@ This repository is a **skills package**, not a starter app or deployment templat
 
 The project follows the [Agent Skills](https://agentskills.io/) format and is designed to be installed through the [`skills` CLI](https://skills.sh/docs/cli).
 
+## Direct `skills.sh` links
+
+If search is being moody, use the direct directory pages:
+
+- [Creator page on `skills.sh`](https://skills.sh/aladicf)
+- [Repository page on `skills.sh`](https://skills.sh/aladicf/better-web-ui)
+- [Example skill page: `add-ui`](https://skills.sh/aladicf/better-web-ui/add-ui)
+
+The most reliable install command is still:
+
+```bash
+npx skills add aladicf/better-web-ui
+```
+
 ## Inspired by
 
 - **[Impeccable](https://github.com/pbakaus/impeccable)** — by **Paul Bakaus**
@@ -63,6 +77,11 @@ Install from GitHub:
 ```bash
 npx skills add aladicf/better-web-ui
 ```
+
+You can also browse the live directory entry directly on `skills.sh`:
+
+- [Creator page](https://skills.sh/aladicf)
+- [Repository page](https://skills.sh/aladicf/better-web-ui)
 
 Useful variations:
 
