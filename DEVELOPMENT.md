@@ -140,7 +140,7 @@ Do not turn those upstream inventories into a frozen in-repo catalog. When the d
 - `npm run validate` — validate canonical skill metadata, local markdown links, README skill catalog sync, wrapper root readmes, and wrapper drift
 - `npm run validate:wrappers` — validate wrapper trees and wrapper-root readmes only
 - `npm run smoke:list` — smoke-test local `skills` CLI discovery from the repository root; verifies that `npx skills add . --list` discovers and lists the canonical skills as expected
-- `npm run smoke:install` — perform a disposable local install smoke test for the `add-ui` skill in a temporary directory and verify that the installed skill is listed successfully
+- `npm run smoke:install` — perform a disposable local install smoke test for the `add-ui` skill in a temporary directory, report which wrapper root or roots the CLI wrote to, and verify that the installed skill is listed successfully
 - `npm run verify` — run the main maintainer checks in sequence: lint, wrapper generation, validation, discovery smoke test, and install smoke test
 
 ## Choosing the right skill
@@ -202,7 +202,9 @@ If you skip regeneration when it is needed, validation will fail with wrapper-dr
 
 Use `npm run smoke:install` when you want to verify a real local install flow instead of just discovery.
 
-The helper script creates a disposable temporary directory, installs the `add-ui` skill into that temporary project scope, verifies the installed skill appears in `skills list --json`, and then cleans the temp directory up on success.
+The helper script creates a disposable temporary directory, installs the `add-ui` skill into that temporary project scope, reports which generated wrapper root or roots the `skills` CLI chose, verifies the installed skill appears in `skills list --json`, and then cleans the temp directory up on success.
+
+If you need to assert that a specific install root is present while reproducing host-routing behavior, set `SKILLS_EXPECTED_INSTALL_ROOT` to one of the configured wrapper roots such as `.github/skills` or `.cursor/skills` before running the smoke test. The script will fail if the CLI does not write that root.
 
 ## Validation coverage
 

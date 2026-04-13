@@ -73,6 +73,10 @@ npx skills add aladicf/better-web-ui --skill add-ui --skill critique
 npx skills add aladicf/better-web-ui -g
 ```
 
+The external [`skills` CLI](https://skills.sh/docs/cli) owns the interactive install UI, the `--all` behavior, and the host-to-wrapper-root routing. This repository ships compatibility wrappers for multiple host layouts — including `.github/skills` for GitHub Copilot / VS Code, `.cursor/skills` for Cursor, plus the other supported roots listed below — but it does not contain the editor-detection logic that decides which wrapper root or wrapper-root set gets written during installation.
+
+If a GitHub Copilot / VS Code install lands in `.agents/skills` instead of `.github/skills`, or if the interactive picker does not show an obvious install-all option at the top, that behavior is coming from the upstream `skills` CLI rather than from the canonical skills in this repository. As a current workaround, use `npx skills add aladicf/better-web-ui --all` when you want every skill without manually selecting each entry.
+
 For contributor setup, local installs, and maintainer commands, see [`DEVELOPMENT.md`](DEVELOPMENT.md).
 
 ## First thing to do after installing

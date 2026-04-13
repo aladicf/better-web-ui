@@ -70,6 +70,8 @@ LICENSE
 - Treat `>=24.14.1 <25` as the supported engine range for repository tooling and CI.
 - Run `npm install` before using repository scripts.
 - Use `npm run lint` for repository scripts, `npm run generate:wrappers` for compatibility trees, `npm run check:wrapper-drift` for generated wrapper diff checks, and `npm run validate` for canonical skill, doc, and wrapper checks.
+- The repository generates all supported wrapper roots up front; it does **not** decide which root a host installs into.
+- Host/editor detection during `npx skills add ...` is owned by the external `skills` CLI. If VS Code installs into `.agents/skills` instead of `.github/skills`, or Cursor misses `.cursor/skills`, treat that as an upstream CLI routing issue rather than a wrapper-generation bug in this repository.
 
 ### 1. Edit canonical skills first
 
@@ -103,6 +105,8 @@ Each wrapper should:
 - link to `../../../skills/{skill-name}/SKILL.md`
 
 Do not duplicate the full skill body into wrapper trees.
+
+Do not add host-detection logic or editor-specific installation rules to this repository. Those belong in the upstream installer, while this repository only needs to keep the generated wrapper trees accurate and in sync.
 
 ### 5. Preserve project identity
 
