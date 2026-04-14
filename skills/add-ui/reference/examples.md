@@ -8,6 +8,7 @@ Some hosts may expose a friendly `/add` alias, but documentation, wrappers, and 
 
 - `/add-ui hero section for a B2B security product homepage`
 - `/add-ui pricing section for a developer tool with monthly and annual billing`
+- `/add-ui upgrade paywall for a freemium AI writing app after the user hits the monthly generation limit`
 - `/add-ui dashboard shell for an operations analytics platform`
 - `/add-ui onboarding flow for a budgeting app aimed at first-time users`
 - `/add-ui product comparison table for a high-consideration ecommerce category`

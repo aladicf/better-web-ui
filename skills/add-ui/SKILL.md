@@ -52,7 +52,7 @@ Generate multiple **meaningfully different** UI directions for a requested artif
 
 This skill is for requests like:
 
-- marketing surfaces: hero, features, pricing, testimonials, FAQ, CTA, logo cloud, gallery, blog, about, contact
+- marketing and monetization surfaces: hero, features, pricing, testimonials, FAQ, CTA, logo cloud, gallery, blog, about, contact, plan pickers, upgrade modals, paywalls
 - navigation and shell: navbar, footer, dashboard shell, onboarding feed, settings, card nav
 - auth and account: login, register, forgot password, reset password, verify email, two-factor auth
 - commerce: product overview, product category, product list, filters, cart, checkout, reviews, order summary, gift card
@@ -167,7 +167,7 @@ Once a direction is selected:
 
 When a reusable pattern emerges, apply the spirit of `extract` — but do not build a bloated design system for one request.
 
-Use the [request mapping heuristics](./reference/request-mapping.md) for artifact-specific priorities such as hero sections, pricing, auth, dashboards, commerce flows, and content surfaces.
+Use the [request mapping heuristics](./reference/request-mapping.md) for artifact-specific priorities such as hero sections, pricing, paywalls, auth, dashboards, commerce flows, and content surfaces.
 
 ## Output Contract
 

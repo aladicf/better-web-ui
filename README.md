@@ -170,6 +170,8 @@ If you are evaluating the library quickly, these are the best places to start:
 - [design process](skills/frontend-design/reference/design-process.md) — for rough exploration, styleguide thinking, and moving from vague requirements to sharper direction
 - [framework official docs](skills/frontend-design/reference/framework-official-docs.md) — for framework-specific implementation decisions and current Motion adapter guidance
 - [component anatomy](skills/frontend-design/reference/component-anatomy.md) — for custom primitives, skeletons, comboboxes, disclosure details, and no-library component work
+- [pricing and packaging](skills/frontend-design/reference/pricing-and-packaging.md) — for pricing-page structure, tier logic, billing clarity, and packaging-aware UI
+- [paywalls and upgrade flows](skills/frontend-design/reference/paywalls-and-upgrade-flows.md) — for feature locks, trial endings, usage limits, and ethical upgrade conversion surfaces
 - [motion design](skills/frontend-design/reference/motion-design.md) — for motion principles, interaction feedback, and animation quality
 - [native motion with CSS and Tailwind](skills/frontend-design/reference/native-motion-with-css-and-tailwind.md) — for modern CSS, Tailwind, and WAAPI-first implementation guidance
 - [typography](skills/frontend-design/reference/typography.md) — for text hierarchy, scale, and readability

@@ -237,7 +237,7 @@ Focus on high-impact moments: one well-orchestrated page load with staggered rev
 **DON'T**: Use bounce or elastic easing—they feel dated and tacky; real objects decelerate smoothly
 
 ### Interaction
-→ *Consult [interaction reference](reference/interaction-design.md) for forms, focus, loading patterns, Jakob's Law, and Fitts's Law. Use [cognitive load](reference/cognitive-load.md) for Hick's Law and Miller's Law in practice. Use [empty-state patterns](reference/empty-state-patterns.md) when a feature has no content yet.*
+→ *Consult [interaction reference](reference/interaction-design.md) for forms, focus, loading patterns, Jakob's Law, and Fitts's Law. Use [cognitive load](reference/cognitive-load.md) for Hick's Law and Miller's Law in practice. Use [empty-state patterns](reference/empty-state-patterns.md) when a feature has no content yet. Use [pricing and packaging](reference/pricing-and-packaging.md) when working on pricing pages, plan comparison, billing settings, or packaging clarity. Use [paywalls and upgrade flows](reference/paywalls-and-upgrade-flows.md) when designing feature locks, usage limits, trials, or in-product upgrade prompts.*
 
 Use [action hierarchy](reference/action-hierarchy.md) when deciding which controls should lead, recede, disappear, or escalate in destructive confirmations.
 
@@ -264,7 +264,7 @@ Make interactions feel fast. Use optimistic UI—update immediately, sync later.
 **DON'T**: Hide critical functionality on mobile—adapt the interface, don't amputate it
 
 ### UX Writing
-→ *Consult [ux-writing reference](reference/ux-writing.md) for labels, errors, and empty states.*
+→ *Consult [ux-writing reference](reference/ux-writing.md) for labels, errors, and empty states. Pair it with [pricing and packaging](reference/pricing-and-packaging.md) and [paywalls and upgrade flows](reference/paywalls-and-upgrade-flows.md) when the copy needs to explain plans, billing, renewals, upgrades, or value without sliding into pressure tactics.*
 
 **DO**: Make every word earn its place
 **DON'T**: Repeat information users can already see
