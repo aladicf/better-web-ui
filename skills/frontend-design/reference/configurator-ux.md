@@ -39,7 +39,7 @@ If a configurator adds more confusion than value, the right answer may be to sim
 
 ## Responsive is not optional for long-consideration products
 
-Do not assume mobile is irrelevant just because final purchase conversion happens on desktop.
+Do not assume compact-layout access is irrelevant just because final purchase conversion often happens in wider layouts.
 
 For high-consideration products, users often explore in small in-between moments:
 
@@ -48,9 +48,9 @@ For high-consideration products, users often explore in small in-between moments
 - on the couch
 - between other tasks
 
-That exploratory interaction may happen on mobile or tablet, while the eventual commitment happens later elsewhere.
+That exploratory interaction may happen in a narrow or medium-width browser, while the eventual commitment happens later elsewhere.
 
-If the configurator supports a long decision-making journey, responsive access often matters even when direct mobile checkout does not.
+If the configurator supports a long decision-making journey, responsive access often matters even when direct checkout rarely happens in the narrowest layout.
 
 ## Decide where the configurator lives
 
@@ -344,7 +344,7 @@ Strong summary views include:
 
 Place the summary near the interaction:
 
-- on mobile, often from a bottom bar or bottom sheet
+- in compact layouts, often from a bottom bar or bottom sheet
 - on larger screens, often near the preview and price
 
 If the summary is hidden behind ambiguous iconography, many users will miss it.
@@ -353,11 +353,11 @@ If the summary is hidden behind ambiguous iconography, many users will miss it.
 
 Responsive configurators are not desktop layouts scaled down.
 
-### Mobile-specific guidance
+### Compact-layout guidance
 
 - make pins and touch targets larger on narrow screens
 - prefer bottom or near-thumb controls for repeated actions
-- keep critical controls a little below the very top edge when thumb reach matters
+- keep critical controls away from the very top edge when repeated reach and visibility matter
 - if a pin opens options, showing them above the pin is often better than below it because the thumb otherwise covers them
 - when space is tight, switch secondary controls into sliding panels, bottom sheets, or tabs rather than preserving desktop spacing logic
 
@@ -404,5 +404,5 @@ If the flow depends on color alone, precise dragging alone, or unlabeled custom 
 - Does every step have a smart default or recommendation?
 - Are preview and price updates effectively real-time?
 - Can the system preserve work, resolve conflicts early, and let users undo safely?
-- Does mobile rethink the interaction instead of just shrinking it?
+- Do narrow layouts rethink the interaction instead of just shrinking it?
 - Are all controls keyboard-accessible and clearly labeled?

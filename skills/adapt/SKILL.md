@@ -1,8 +1,8 @@
 ---
 name: adapt
-description: Adapt designs to work across different screen sizes, devices, contexts, or platforms. Implements breakpoints, fluid layouts, and touch targets. Use when the user mentions responsive design, mobile layouts, breakpoints, viewport adaptation, or cross-device compatibility.
+description: Adapt designs to work across different screen sizes, devices, contexts, or platforms. Implements breakpoints, fluid layouts, and robust target sizing. Use when the user mentions responsive design, narrow layouts, breakpoints, viewport adaptation, or cross-context compatibility.
 metadata:
-   argument-hint: "[target] [context (mobile, tablet, print...)]"
+   argument-hint: "[target] [context (narrow, medium, wide, print...)]"
 ---
 
 Adapt existing designs to work effectively across different contexts - different screen sizes, devices, platforms, or use cases.
@@ -11,7 +11,7 @@ Adapt existing designs to work effectively across different contexts - different
 
 Users start this workflow with `/adapt`. Once this skill is active, load $frontend-design — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow that protocol before proceeding — if no design context exists yet, you MUST load $setup first. Additionally gather: target platforms/devices and usage contexts.
 
-Consult the [responsive reference](../frontend-design/reference/responsive-design.md) for mobile-first adaptation, fluid behavior, and container-query strategy.
+Consult the [responsive reference](../frontend-design/reference/responsive-design.md) for narrow-first adaptation, fluid behavior, and container-query strategy.
 Consult the [spacing system](../frontend-design/reference/spacing-system.md) when adaptation problems are really grouping, rhythm, or width-discipline issues.
 Consult the [cognitive load](../frontend-design/reference/cognitive-load.md) when smaller screens or constrained contexts amplify too many visible choices at once.
 
@@ -22,12 +22,12 @@ Consult the [cognitive load](../frontend-design/reference/cognitive-load.md) whe
 Understand what needs adaptation and why:
 
 1. **Identify the source context**:
-   - What was it designed for originally? (Desktop web? Mobile app?)
+   - What was it designed for originally? (Wide-layout web? Compact responsive web?)
    - What assumptions were made? (Large screen? Mouse input? Fast connection?)
    - What works well in current context?
 
 2. **Understand target context**:
-   - **Device**: Mobile, tablet, desktop, TV, watch, print?
+   - **Viewport / context**: Narrow, medium, wide, TV, embedded, print?
    - **Input method**: Touch, mouse, keyboard, voice, gamepad?
    - **Screen constraints**: Size, resolution, orientation?
    - **Connection**: Fast wifi, slow 3G, offline?
@@ -37,7 +37,7 @@ Understand what needs adaptation and why:
 3. **Identify adaptation challenges**:
    - What won't fit? (Content, navigation, features)
    - What won't work? (Hover states on touch, tiny touch targets)
-   - What's inappropriate? (Desktop patterns on mobile, mobile patterns on desktop)
+   - What's inappropriate? (Wide-layout patterns in narrow layouts, hover-only patterns in coarse-pointer contexts)
 
 **CRITICAL**: Adaptation is not just scaling - it's rethinking the experience for the new context.
 
@@ -49,24 +49,24 @@ Create context-appropriate strategy:
 
 ### First Principles
 - **Shrink the canvas first**: Start with the smaller constraint and solve the core task there
-- **Design mobile as its own layout**: Don't just compress desktop relationships proportionally
+- **Design narrow layouts as their own layout**: Don't just compress wide-layout relationships proportionally
 - **Preserve natural widths**: Use max-widths and content-appropriate widths instead of percentage worship
 - **Let large elements shrink faster than small ones**: Relationships change across breakpoints
 
-### Mobile Adaptation (Desktop → Mobile)
+### Narrow-Layout Adaptation (Wide → Compact)
 
 **Layout Strategy**:
 - Single column instead of multi-column
 - Vertical stacking instead of side-by-side
 - Components should use the width they actually need; full-width is fine when helpful, not as a reflex
-- Bottom navigation instead of top/side navigation
+- Compact navigation instead of assuming a persistent top or side structure
 
 **Interaction Strategy**:
 - Touch targets 44x44px minimum (not hover-dependent)
-- Swipe gestures where appropriate (lists, carousels)
-- Bottom sheets instead of dropdowns
-- Thumbs-first design (controls within thumb reach)
-- Larger tap areas with more spacing
+- Gesture support where appropriate and discoverable
+- Edge-attached or anchored overlays instead of cramped dropdowns when space is tight
+- Keep repeated actions in reachable zones for compact touch-capable layouts
+- Larger hit areas with more spacing
 
 **Content Strategy**:
 - Progressive disclosure (don't show everything at once)
@@ -75,12 +75,12 @@ Create context-appropriate strategy:
 - Larger text (16px minimum)
 
 **Navigation Strategy**:
-- Hamburger menu or bottom navigation
+- Clear compact navigation entry points such as drawers, accordions, or condensed menus
 - Reduce navigation complexity
 - Sticky headers for context
 - Back button in navigation flow
 
-### Tablet Adaptation (Hybrid Approach)
+### Mid-Width Adaptation
 
 **Layout Strategy**:
 - Two-column layouts (not single or three-column)
@@ -90,11 +90,11 @@ Create context-appropriate strategy:
 
 **Interaction Strategy**:
 - Support both touch and pointer
-- Touch targets 44x44px but allow denser layouts than phone
+- Preserve generous target sizes while allowing denser layouts than the narrowest viewport
 - Side navigation drawers
 - Multi-column forms where appropriate
 
-### Desktop Adaptation (Mobile → Desktop)
+### Wide-Layout Expansion
 
 **Layout Strategy**:
 - Multi-column layouts (use horizontal space)
@@ -150,9 +150,9 @@ Apply changes systematically:
 ### Responsive Breakpoints
 
 Choose appropriate breakpoints:
-- Mobile: 320px-767px
-- Tablet: 768px-1023px
-- Desktop: 1024px+
+- Narrow: 320px-767px
+- Medium: 768px-1023px
+- Wide: 1024px+
 - Or content-driven breakpoints (where design breaks)
 
 ### Layout Adaptation Techniques
@@ -181,19 +181,18 @@ Choose appropriate breakpoints:
 
 ### Navigation Adaptation
 
-- Transform complex nav to hamburger/drawer on mobile
-- Bottom nav bar for mobile apps
+- Transform complex navigation into compact menus, drawers, or accordion structures on narrow layouts
 - Persistent side navigation on desktop
-- Breadcrumbs on smaller screens for context
+- Breadcrumbs or compact context cues on narrower layouts
 
 **IMPORTANT**: Test on real devices, not just browser DevTools. Device emulation is helpful but not perfect.
 
 **NEVER**:
-- Hide core functionality on mobile (if it matters, make it work)
+- Hide core functionality in narrow layouts (if it matters, make it work)
 - Assume desktop = powerful device (consider accessibility, older machines)
 - Use different information architecture across contexts (confusing)
-- Break user expectations for platform (mobile users expect mobile patterns)
-- Forget landscape orientation on mobile/tablet
+- Break user expectations for responsive web behavior in a given input context
+- Forget narrow landscape or medium-width window states
 - Use generic breakpoints blindly (use content-driven breakpoints)
 - Ignore touch on desktop (many desktop devices have touch)
 - Scale desktop relationships down proportionally and call it responsive design
@@ -203,10 +202,10 @@ Choose appropriate breakpoints:
 
 Test thoroughly across contexts:
 
-- **Real devices**: Test on actual phones, tablets, desktops
+- **Real devices**: Test on actual touch-capable browsers, laptops/desktops, and constrained hardware where relevant
 - **Different orientations**: Portrait and landscape
 - **Different browsers**: Safari, Chrome, Firefox, Edge
-- **Different OS**: iOS, Android, Windows, macOS
+- **Different OS**: Windows, macOS, Linux, ChromeOS, and touch-capable browser environments when relevant
 - **Different input methods**: Touch, mouse, keyboard
 - **Edge cases**: Very small screens (320px), very large screens (4K)
 - **Slow connections**: Test on throttled network

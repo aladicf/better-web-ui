@@ -99,7 +99,7 @@ Also:
 - make annual billing, limits, and enterprise escalation easy to understand
 - keep the most decision-shaping differences visible before any long comparison matrix
 - keep plan headers available in dense comparison views so users do not lose orientation
-- avoid raw horizontal-scroll pricing tables on mobile when tabs, stacked comparisons, or two-plan compare patterns would work better
+- avoid raw horizontal-scroll pricing tables in narrow layouts when tabs, stacked comparisons, or two-plan compare patterns would work better
 
 Pair this with [../../frontend-design/reference/pricing-and-packaging.md](../../frontend-design/reference/pricing-and-packaging.md) when the work touches packaging logic, billing clarity, or pricing-page strategy.
 
@@ -120,7 +120,7 @@ Also:
 - keep product identity visible with sticky headers in long scans
 - support add, remove, and reorder flows without sending users back on scavenger hunts for the compare action
 - use a persistent compare bar or shortlist surface instead of interruptive lightboxes after every add action
-- on mobile, prefer a focused two-item or stepper-based comparison over a squeezed desktop clone
+- in narrow layouts, prefer a focused two-item or stepper-based comparison over a squeezed wide-layout clone
 
 Pair this with [../../frontend-design/reference/feature-comparison-ux.md](../../frontend-design/reference/feature-comparison-ux.md) when the request involves side-by-side product comparison, shortlist compare UX, compare bars, difference highlighting, or responsive feature-comparison behavior.
 
@@ -164,7 +164,7 @@ Pair this with [../../frontend-design/reference/onboarding-ux.md](../../frontend
 Pair this with [../../frontend-design/reference/behavioral-design.md](../../frontend-design/reference/behavioral-design.md) when the work depends on priming, completion cues, step framing, or reducing abandonment through better sequencing.
 Pair this with [../../frontend-design/reference/permissions-and-roles-ux.md](../../frontend-design/reference/permissions-and-roles-ux.md) when onboarding includes invites, role selection, request-access paths, or progressive permission requests.
 Pair this with [../../frontend-design/reference/loading-feedback-and-perceived-performance.md](../../frontend-design/reference/loading-feedback-and-perceived-performance.md) when setup, import, or first-run data preparation creates waits that need honest progress feedback.
-Pair this with [../../frontend-design/reference/responsive-design.md](../../frontend-design/reference/responsive-design.md) when the onboarding flow, checklist, or setup wizard must reflow across phones, tablets, and split-screen contexts.
+Pair this with [../../frontend-design/reference/responsive-design.md](../../frontend-design/reference/responsive-design.md) when the onboarding flow, checklist, or setup wizard must reflow across narrow, medium, and split-screen contexts.
 
 ### Auth / account / settings
 
@@ -196,7 +196,7 @@ Pair this with [../../frontend-design/reference/authentication-and-account-recov
 Pair this with [../../frontend-design/reference/disabled-buttons-ux.md](../../frontend-design/reference/disabled-buttons-ux.md) when the work depends on blocked `Continue` / `Verify` / `Create account` actions, unavailable states, or in-progress button locking.
 Pair this with [../../frontend-design/reference/language-and-locale-selection.md](../../frontend-design/reference/language-and-locale-selection.md) when the work touches language selectors, region pickers, currency preferences, or locale settings.
 Pair this with [../../frontend-design/reference/information-architecture-ux.md](../../frontend-design/reference/information-architecture-ux.md) when the work depends on settings structure, role-based grouping, or keeping account and organization scope clear.
-Pair this with [../../frontend-design/reference/responsive-design.md](../../frontend-design/reference/responsive-design.md) when settings navigation, authentication forms, or account-management layouts need different structures across mobile, desktop, and split-screen contexts.
+Pair this with [../../frontend-design/reference/responsive-design.md](../../frontend-design/reference/responsive-design.md) when settings navigation, authentication forms, or account-management layouts need different structures across narrow, wide, and split-screen contexts.
 
 ### Permissions / roles / access management
 
@@ -233,7 +233,7 @@ Also:
 
 - prefer enabled submit plus clear validation feedback over mystery-disabled primary actions when the task can recover cleanly on submit
 - disable actions mainly for true unavailability or short in-progress duplicate-prevention states, not as a vague proxy for hidden validation problems
-- explain why an action is unavailable close to the button, especially on mobile where the root cause may be far away
+- explain why an action is unavailable close to the button, especially in long narrow layouts where the root cause may be far away
 - use default selections, alternative actions, or support/notify-me paths when those keep users moving more honestly than a blocked CTA
 - if a disabled state is necessary, keep keyboard and assistive-technology discoverability in mind instead of turning the control into a silent dead zone
 
@@ -332,7 +332,7 @@ Prioritize:
 
 - predictability over cleverness
 - clear distinction between links and expanders
-- hierarchy clarity across desktop and mobile
+- hierarchy clarity across wide and narrow layouts
 - calmer alternatives when the site is too broad for one overlay to carry honestly
 
 Also:
@@ -341,12 +341,12 @@ Also:
 - avoid making the same category label both a destination and a disclosure trigger unless the split is unmistakable
 - keep search, cart, and other frequent header targets away from accidental-menu territory
 - reduce nesting before polishing animations or tunnel math
-- on mobile, prefer split menus or accordions before deep overlay stacks when they preserve orientation better
+- in narrow layouts, prefer split menus or accordions before deep overlay stacks when they preserve orientation better
 - consider guides, section indexes, or `Browse all` paths when a mega-dropdown is compensating for weak IA
 
-Pair this with [../../frontend-design/reference/navigation-menu-ux.md](../../frontend-design/reference/navigation-menu-ux.md) when the request involves header nav redesigns, mega-dropdowns, deep mobile menus, click-vs-hover decisions, or alternative wayfinding for broad sites.
+Pair this with [../../frontend-design/reference/navigation-menu-ux.md](../../frontend-design/reference/navigation-menu-ux.md) when the request involves header nav redesigns, mega-dropdowns, deep compact menus, click-vs-hover decisions, or alternative wayfinding for broad sites.
 Pair this with [../../frontend-design/reference/information-architecture-ux.md](../../frontend-design/reference/information-architecture-ux.md) when the issue is broader than one menu and really concerns product structure, multi-level wayfinding, settings sprawl, or cross-product organization.
-Pair this with [../../frontend-design/reference/responsive-design.md](../../frontend-design/reference/responsive-design.md) when the navigation model needs different hierarchy, reveal, or density strategies across mobile, tablet, desktop, and split-screen contexts.
+Pair this with [../../frontend-design/reference/responsive-design.md](../../frontend-design/reference/responsive-design.md) when the navigation model needs different hierarchy, reveal, or density strategies across narrow, medium, wide, and split-screen contexts.
 Pair this with [../../frontend-design/reference/sidebar-and-footer-ux.md](../../frontend-design/reference/sidebar-and-footer-ux.md) when local sidebars, support rails, or footer wayfinding are part of the shell or discovery model.
 
 ### Information architecture / settings / enterprise product structure
@@ -429,7 +429,7 @@ Prioritize:
 - smart presets before raw choice overload
 - clear product preview and price feedback
 - predictable step navigation
-- responsive interaction that stays usable on phones and tablets
+- responsive interaction that stays usable in narrow and medium-width browsers
 
 Also:
 
@@ -441,11 +441,11 @@ Also:
 - resolve dependencies and incompatibilities as soon as they appear, not only in the final summary
 - use sliders only when they speed up exploration; pair them with visible value/output changes and exact-input fallbacks when users may need precision
 - make save, share, resume, undo, and reset paths feel trustworthy for long consideration flows
-- rethink the interaction on mobile instead of shrinking desktop navigation into tiny controls or deep drawers
+- rethink the interaction in narrow layouts instead of shrinking wide-layout navigation into tiny controls or deep drawers
 
 Pair this with [../../frontend-design/reference/configurator-ux.md](../../frontend-design/reference/configurator-ux.md) when the work involves product builders, customizers, step-based option flows, real-time previews, dependency-heavy selection, or save-and-resume configuration.
 Pair this with [../../frontend-design/reference/slider-ux.md](../../frontend-design/reference/slider-ux.md) when the flow depends on range sliders, calculators, dual-handle controls, or slider-driven package exploration.
-Pair this with [../../frontend-design/reference/responsive-design.md](../../frontend-design/reference/responsive-design.md) when the builder must re-balance previews, controls, summaries, and steps across phones, tablets, and wide desktop layouts.
+Pair this with [../../frontend-design/reference/responsive-design.md](../../frontend-design/reference/responsive-design.md) when the builder must re-balance previews, controls, summaries, and steps across narrow, medium, and wide layouts.
 
 ### Dashboard / charts / widgets / data tables
 
@@ -477,14 +477,14 @@ Prioritize:
 - support content with a real job
 - footer usefulness over link dumping
 - side content that helps the main task instead of competing with it
-- mobile compression without hiding key fallback paths
+- compact-layout compression without hiding key fallback paths
 
 Also:
 
 - question whether a sidebar is helping the current task or merely surviving because the template expects one
 - move critical information inline when users truly need it to finish the main job
 - keep footers focused on recovery, trust, support, locale, and next-step utility instead of turning them into mini sitemaps with no hierarchy
-- adapt sidebars and footers across breakpoints instead of assuming a desktop rail can simply shrink into a narrow mobile afterthought
+- adapt sidebars and footers across breakpoints instead of assuming a wide-layout rail can simply shrink into a narrow-layout afterthought
 
 Pair this with [../../frontend-design/reference/sidebar-and-footer-ux.md](../../frontend-design/reference/sidebar-and-footer-ux.md) when the request involves right rails, article sidebars, support panels, persistent summaries, footer redesigns, or end-of-page recovery/navigation surfaces.
 Pair this with [../../frontend-design/reference/responsive-design.md](../../frontend-design/reference/responsive-design.md) when those supporting surfaces need different structure, density, or collapse behavior across device contexts.
@@ -522,11 +522,11 @@ Also:
 
 - choose the list continuation pattern by browsing mode: exploratory category browsing can support `Load more` plus lazy-loading, but ranked search results usually need a more deliberate `Load more` or pagination rhythm
 - avoid infinite scroll where footer access, backtracking, or careful result comparison matter
-- keep filters and sorting stable and close to the results; top-aligned controls often adapt better than heavy sidebars, especially across mobile and desktop
+- keep filters and sorting stable and close to the results; top-aligned controls often adapt better than heavy sidebars, especially across narrow and wide layouts
 - keep filter panels stable while results update; do not auto-scroll, freeze, or collapse the user out of their current narrowing flow
-- prefer full-height overlays or calmer top-aligned filter surfaces over cramped split-screen mobile filtering
+- prefer full-height overlays or calmer top-aligned filter surfaces over cramped narrow-layout split filtering
 - keep search visible and predictive when it is a common shortcut through the catalog
-- use breadcrumbs when the hierarchy is deep enough that users need help climbing back up through categories, and keep the nearest useful parent obvious on mobile
+- use breadcrumbs when the hierarchy is deep enough that users need help climbing back up through categories, and keep the nearest useful parent obvious in narrow layouts
 - make the product page capable of a convincing 30-second pitch above the fold: product name, price, critical options, primary CTA, and high-trust delivery / returns information should be easy to find immediately
 - show review trust signals with enough context: decimal rating, rating count, and richer distribution or attribute detail when the purchase is high-consideration
 - make negative reviews, customer photos, pros/cons, and recommendation signals work as confidence builders rather than burying them below generic social-proof polish
@@ -542,7 +542,7 @@ Pair this with [../../frontend-design/reference/accordion-ux.md](../../frontend-
 
 Pair this with [../../frontend-design/reference/collection-browsing-and-filtering.md](../../frontend-design/reference/collection-browsing-and-filtering.md) when the brief hinges on filters, sorting, result browsing, `Load more`, pagination, infinite scroll, or return-to-list behavior.
 
-Pair this with [../../frontend-design/reference/ecommerce-ux.md](../../frontend-design/reference/ecommerce-ux.md) when the brief spans merchandising, trust, product understanding, cart/checkout flow, support-widget restraint, or commerce-specific mobile behavior across more than one commerce surface.
+Pair this with [../../frontend-design/reference/ecommerce-ux.md](../../frontend-design/reference/ecommerce-ux.md) when the brief spans merchandising, trust, product understanding, cart/checkout flow, support-widget restraint, or commerce-specific responsive behavior across more than one commerce surface.
 
 Pair this with [../../frontend-design/reference/reviews-and-ratings.md](../../frontend-design/reference/reviews-and-ratings.md) when reviews, recommendations, rating distributions, or customer-photo credibility cues materially affect the purchase decision.
 Pair this with [../../frontend-design/reference/social-proof-patterns.md](../../frontend-design/reference/social-proof-patterns.md) when testimonials, customer logos, certifications, badges, or case-study proof need to support the buying decision beyond product-review mechanics alone.
@@ -579,7 +579,7 @@ Prioritize:
 
 Also:
 
-- choose vertical cards for browse-first, image-led, mobile-friendly discovery unless users clearly need denser per-item text
+- choose vertical cards for browse-first, image-led discovery unless users clearly need denser per-item text
 - choose horizontal cards when the item needs stronger metadata, summary text, or desktop-efficient list scanning
 - treat aspect ratio as part of the system, not a one-off styling accident
 - vary ratio or orientation only when it adds meaning, emphasis, or a clearer content distinction

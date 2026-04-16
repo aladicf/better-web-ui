@@ -11,7 +11,7 @@ It is a coordinated system of:
 - product understanding
 - friction control
 - decision confidence
-- mobile resilience
+- narrow-layout resilience
 
 ## Start with shopper behavior, not the template
 
@@ -24,9 +24,9 @@ Before polishing layouts, ask:
 
 If the team cannot answer those, the design work risks optimizing the shell while missing the actual shopping friction.
 
-## Mobile and speed are core commerce requirements
+## Narrow-layout resilience and speed are core commerce requirements
 
-Large parts of ecommerce browsing happen on mobile.
+Large parts of ecommerce browsing happen in narrow, touch-capable browser contexts.
 
 That means:
 
@@ -197,7 +197,7 @@ Commerce UX needs ongoing iteration because friction shows up in the details.
 
 Useful checkpoints:
 
-- where users bounce on mobile
+- where users bounce in narrow layouts
 - where filters, search, or list restoration break trust
 - where product pages fail to answer key questions fast enough
 - where checkout abandonment spikes
@@ -214,7 +214,7 @@ Track the quiet exits as seriously as the loud errors.
 - Are trust signals concrete and relevant rather than decorative?
 - Is checkout short, legible, and low-pressure?
 - Are related products and support widgets helpful without hijacking the flow?
-- Does the experience stay strong on mobile and under ordinary performance constraints?
+- Does the experience stay strong in narrow layouts and under ordinary performance constraints?
 
 ## Anti-patterns
 

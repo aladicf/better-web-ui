@@ -20,7 +20,7 @@ Ask only the missing questions.
 ### User context
 
 - are users likely to return from the same trusted device?
-- do they commonly work on mobile, desktop, shared devices, or while traveling?
+- do they commonly work in narrow layouts, wide layouts, on shared devices, or while traveling?
 - how urgent is access when they are locked out?
 - what channels are realistically available: primary email, secondary email, phone, authenticator app, hardware key, support?
 

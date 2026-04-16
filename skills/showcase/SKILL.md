@@ -138,7 +138,7 @@ The gap between "cool" and "extraordinary" is in the last 20% of refinement: the
 
 - **The wow test**: Show it to someone who hasn't seen it. Do they react?
 - **The removal test**: Take it away. Does the experience feel diminished, or does nobody notice?
-- **The device test**: Run it on a phone, a tablet, a Chromebook. Still smooth?
+- **The device test**: Run it in a narrow browser, a medium-width browser, and a laptop/desktop browser. Still smooth?
 - **The accessibility test**: Enable reduced motion. Still beautiful?
 - **The context test**: Does this make sense for THIS brand and audience?
 

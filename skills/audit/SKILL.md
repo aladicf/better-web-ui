@@ -67,13 +67,13 @@ Run comprehensive checks across 5 dimensions. Score each dimension 0-4 using the
 ### 4. Responsive Design
 
 **Check for**:
-- **Fixed widths**: Hard-coded widths that break on mobile
+- **Fixed widths**: Hard-coded widths that break on narrow viewports
 - **Touch targets**: Interactive elements < 44x44px
 - **Horizontal scroll**: Content overflow on narrow viewports
 - **Text scaling**: Layouts that break when text size increases
-- **Missing breakpoints**: No mobile/tablet variants
+- **Missing breakpoints**: No narrow/medium viewport variants
 
-**Score 0-4**: 0=Desktop-only (breaks on mobile), 1=Major issues (some breakpoints, many failures), 2=Partial (works on mobile, rough edges), 3=Good (responsive, minor touch target or overflow issues), 4=Excellent (fluid, all viewports, proper touch targets)
+**Score 0-4**: 0=Wide-layout-only (breaks on narrow viewports), 1=Major issues (some breakpoints, many failures), 2=Partial (works across viewports, rough edges), 3=Good (responsive, minor target or overflow issues), 4=Excellent (fluid, all viewports, proper target sizing)
 
 ### 5. Anti-Patterns (CRITICAL)
 
@@ -150,7 +150,7 @@ For each issue, document:
 
 Identify recurring problems that indicate systemic gaps rather than one-off mistakes:
 - "Hard-coded colors appear in 15+ components, should use design tokens"
-- "Touch targets consistently too small (<44px) throughout mobile experience"
+- "Interactive targets consistently too small (<44px) throughout narrow-layout flows"
 - "Spacing values appear arbitrary; groups and sections don't use a recognizable rhythm"
 - "Multiple actions are styled as primary, flattening decision-making"
 - "Section titles are consistently louder than the content they introduce"

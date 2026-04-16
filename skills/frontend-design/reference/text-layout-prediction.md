@@ -106,7 +106,7 @@ Examples:
 - split views
 - dashboards with panels that resize often
 - editors with collapsible sidebars
-- mobile/desktop transitions that repeatedly change available width
+- narrow/wide layout transitions that repeatedly change available width
 
 This is where Pretext's `prepare()` once / `layout()` many times model pays off.
 

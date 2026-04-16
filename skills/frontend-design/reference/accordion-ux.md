@@ -19,7 +19,7 @@ Common strong fits:
 
 - FAQs
 - shipping, returns, and policy sections
-- mobile navigation groups
+- compact navigation groups
 - product-detail subsections
 - settings grouped by topic
 - filters grouped by category

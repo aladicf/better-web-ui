@@ -116,14 +116,14 @@ If the current page is shown:
 
 If space is tight, reduce duplication before reducing meaning.
 
-## Mobile patterns
+## Narrow-layout patterns
 
 Breadcrumbs become fragile quickly on small screens.
 
 ### Avoid
 
 - multi-line breadcrumb wraps
-- tiny, crowded tap targets
+- tiny, crowded interaction targets
 - removing breadcrumbs entirely when the hierarchy still matters
 - replacing the full path with mysterious ellipses and no recovery affordance
 
@@ -186,5 +186,5 @@ Do not rely on color alone to distinguish links from the current page.
 - Are all ancestor items real links?
 - Is the current page either omitted intentionally or clearly differentiated?
 - Are separators familiar and directionally sensible?
-- On mobile, does the pattern avoid wrapping, crowding, and disappearance?
+- In narrow layouts, does the pattern avoid wrapping, crowding, and disappearance?
 - If sibling jumps matter, would sideways breadcrumbs help more than they confuse?

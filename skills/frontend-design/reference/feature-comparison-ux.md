@@ -191,7 +191,7 @@ Feature comparison tables are especially hard on narrow screens because users ne
 
 That leaves very little space for actual values.
 
-### Better mobile patterns
+### Better narrow-layout patterns
 
 - compare only `2` items at a time
 - use a stepper or tabs to switch the active product predictably
@@ -203,9 +203,9 @@ That leaves very little space for actual values.
 
 - brute-force squeezed multi-column tables
 - 2 × 2 product / attribute grids with weak mapping
-- hiding comparison entirely on mobile if the purchase still happens there
+- hiding comparison entirely in narrow layouts if the purchase still happens there
 
-On mobile, a focused difference-first view usually beats a literal table clone.
+In narrow layouts, a focused difference-first view usually beats a literal table clone.
 
 ## Preserve user control over the compared set
 
@@ -341,7 +341,7 @@ One coherent comparison surface is usually easier to understand than scattered f
 - Are attributes grouped and collapsible?
 - Can users switch between all attributes, differences, and similarities when helpful?
 - Are sticky product headers present in long comparisons?
-- Does mobile comparison use a focused alternative instead of a squeezed desktop clone?
+- Does narrow-layout comparison use a focused alternative instead of a squeezed wide-layout clone?
 - Can users add, remove, and reorder items without friction?
 - Is the selection confirmed through a persistent comparison bar or equivalent non-disruptive pattern?
 - Are comparison states saveable, shareable, and resilient across refresh?

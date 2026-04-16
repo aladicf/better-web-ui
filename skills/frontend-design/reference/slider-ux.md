@@ -137,7 +137,7 @@ Good defaults:
 - keep minimum and maximum boundaries visible
 - if there are many labels, space them vertically away from the track so the thumb does not obscure them
 
-If the current value sits below the track on mobile, fingers can hide it at exactly the wrong moment.
+If the current value sits below the track in a compact layout, the pointer or hand can hide it at exactly the wrong moment.
 
 ## Dual Sliders Need Stronger Range Cues
 

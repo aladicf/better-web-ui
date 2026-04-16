@@ -2,7 +2,7 @@
 
 Use this reference when the work involves long product lists, search results, category pages, faceted browsing, filter overlays, result continuation, or any interface where users must narrow and browse a large set of entries.
 
-If the project already uses a mature filter, faceting, or list-control library, keep its baseline primitives first. Use this reference mainly to decide which filters deserve prominence, how continuation should work, how the panel behaves on mobile, and how filtering coordinates with sorting, restoration, and results.
+If the project already uses a mature filter, faceting, or list-control library, keep its baseline primitives first. Use this reference mainly to decide which filters deserve prominence, how continuation should work, how the panel behaves in narrow layouts, and how filtering coordinates with sorting, restoration, and results.
 
 This is not just a list-layout problem.
 
@@ -95,7 +95,7 @@ Avoid it when users need to:
 - reach the footer reliably
 - move between list and detail repeatedly
 
-Infinite scroll is usually a weak fit for ranked search results and often a weak fit for mobile-heavy product grids.
+Infinite scroll is usually a weak fit for ranked search results and often a weak fit for product grids dominated by narrow-layout use.
 
 ## Practical thresholds by context
 
@@ -103,7 +103,7 @@ These are starting points, not fixed laws.
 
 - **broad category browsing on desktop**: show a modest initial set, continue in smaller lazy-loaded batches, then interrupt with `Load more` after roughly `50–100` items
 - **ranked search results**: start with a more focused set, often around `25–75` results, then use `Load more` or pagination
-- **mobile browsing**: lower the threshold further, often around `15–30` items before an explicit continuation control
+- **compact-layout browsing**: lower the threshold further, often around `15–30` items before an explicit continuation control
 
 The more spec-heavy, comparison-heavy, or text-heavy the list is, the lower the threshold should usually be.
 
@@ -206,7 +206,7 @@ Helpful UI cues include:
 `Apply` is especially useful when:
 
 - filters live in overlays
-- mobile space is tight
+- overlay space is tight or the layout is narrow
 - multiple filters are expected before closing the surface
 - you can show result count feedback such as `Show 24 results`
 
@@ -225,9 +225,9 @@ Good defaults:
 
 Applied filters often work better above the result list than above the filter controls, because that keeps the narrowing surface calmer.
 
-## Mobile filtering patterns
+## Narrow-layout filtering patterns
 
-On mobile, cramped split-screen filtering often creates a worst-of-both-worlds layout.
+In narrow layouts, cramped split-screen filtering often creates a worst-of-both-worlds layout.
 
 Prefer:
 
@@ -277,4 +277,4 @@ Avoid forcing users to reopen the same filter group repeatedly after every singl
 - Are filters stable while results update?
 - Can long filter groups be searched or expanded comfortably?
 - Do sliders include precise fallbacks?
-- On mobile, is filtering roomy and thumb-friendly rather than cramped and split?
+- In narrow layouts, is filtering roomy and easy to use rather than cramped and split?

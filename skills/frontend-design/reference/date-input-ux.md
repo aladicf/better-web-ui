@@ -81,7 +81,7 @@ Typical problems:
 - long year lists
 - repetitive scrolling
 - confusing differences between dropdown and text-entry behavior
-- broken flow on mobile
+- broken flow in compact layouts
 - zoom and small-target issues
 
 If the year list spans decades, dropdowns are usually too slow for routine use.
@@ -215,9 +215,9 @@ Input masks often look helpful but introduce new confusion:
 
 If a mask exists, it should never become a cage.
 
-## Mobile guidance
+## Compact-layout guidance
 
-On mobile:
+In compact layouts:
 
 - keep fields large enough to tap comfortably
 - use labels above the inputs
@@ -236,7 +236,7 @@ Typing eight or so digits into three fields is usually much faster than month-by
 - Are we using autocomplete purpose tokens for date of birth?
 - Are the validation messages specific to the actual error state?
 - If a date picker is used, is it because users need to choose a date rather than recall one?
-- Does the control remain workable across keyboard, touch, screen reader, and zoomed/mobile contexts?
+- Does the control remain workable across keyboard, touch, screen reader, zoomed, and narrow-layout contexts?
 - Would the pattern still make sense to someone entering a birth year several decades in the past?
 
 Good date-input UX respects whether the date is something users know already or something they need help choosing.

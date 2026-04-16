@@ -80,7 +80,7 @@ Analyze where motion would improve the experience:
 
 2. **Understand the context**:
    - What's the personality? (Playful vs serious, energetic vs calm)
-   - What's the performance budget? (Mobile-first? Complex page?)
+  - What's the performance budget? (Compact-layout-first? Complex page?)
    - Who's the audience? (Motion-sensitive users? Power users who want speed?)
    - What matters most? (One hero animation vs many micro-interactions?)
    - Which inputs matter? (mouse, touch, keyboard, stylus)
@@ -193,7 +193,7 @@ Use these as the default guidelines for animation work unless the product contex
 - Scroll reveals should trigger before the user has fully passed the element, but not so early that the effect feels detached from scroll context.
 - Fill hover gaps between triggers and floating surfaces so tooltips, menus, and popovers do not flicker closed during pointer travel.
 - Toast stacks can use offset, scale, and opacity to imply depth without becoming chaotic.
-- Respect motion sensitivity on mobile as much as desktop. Touch-driven movement can be especially uncomfortable if overdone.
+- Respect motion sensitivity in compact and touch-capable contexts as much as in wide layouts. Gesture-led movement can be especially uncomfortable if overdone.
 
 ## Implement Animations
 

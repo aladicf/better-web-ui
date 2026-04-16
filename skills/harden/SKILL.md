@@ -113,7 +113,7 @@ Systematically improve resilience:
 
 **Responsive text sizing**:
 - Use `clamp()` for fluid typography
-- Set minimum readable sizes (14px on mobile)
+- Set minimum readable sizes (14px in compact layouts)
 - Test text scaling (zoom to 200%)
 - Ensure containers expand with text
 

@@ -115,30 +115,30 @@ Test the interface through the eyes of 5 distinct user archetypes. Each persona 
 
 ---
 
-## 5. Distracted Mobile User — "Casey"
+## 5. Distracted Narrow-Screen Web User — "Casey"
 
-**Profile**: Using phone one-handed on the go. Frequently interrupted. Possibly on a slow connection.
+**Profile**: Using a narrow browser viewport in a distraction-heavy context. Frequently interrupted. Possibly on a slow connection.
 
 **Behaviors**:
-- Uses thumb only — prefers bottom-of-screen actions
+- Prefers nearby, easy-to-reach actions and low-travel interaction patterns
 - Gets interrupted mid-flow and returns later
-- Switches between apps frequently
+- Switches between tabs, windows, and tasks frequently
 - Has limited attention span and low patience
-- Types as little as possible, prefers taps and selections
+- Types as little as possible, prefers obvious selection patterns
 
 **Test Questions**:
-- Are primary actions in the thumb zone (bottom half of screen)?
+- Are primary actions easy to reach without excessive travel in compact layouts?
 - Is state preserved if the user leaves and returns?
 - Does it work on slow connections (3G)?
 - Can forms leverage autocomplete and smart defaults?
-- Are touch targets at least 44×44pt?
+- Are interactive targets at least 44×44px?
 
 **Red Flags** (report these specifically):
-- Important actions positioned at the top of the screen (unreachable by thumb)
+- Important actions positioned far from the main reading and interaction path
 - No state persistence — progress lost on tab switch or interruption
 - Large text inputs required where selection would work
 - Heavy assets loading on every page (no lazy loading)
-- Tiny tap targets or targets too close together
+- Tiny interaction targets or targets too close together
 
 ---
 
@@ -148,12 +148,12 @@ Choose personas based on the interface type:
 
 | Interface Type | Primary Personas | Why |
 |---------------|-----------------|-----|
-| Landing page / marketing | Jordan, Riley, Casey | First impressions, trust, mobile |
+| Landing page / marketing | Jordan, Riley, Casey | First impressions, trust, responsive clarity |
 | Dashboard / admin | Alex, Sam | Power users, accessibility |
-| E-commerce / checkout | Casey, Riley, Jordan | Mobile, edge cases, clarity |
+| E-commerce / checkout | Casey, Riley, Jordan | Narrow-layout resilience, edge cases, clarity |
 | Onboarding flow | Jordan, Casey | Confusion, interruption |
 | Data-heavy / analytics | Alex, Sam | Efficiency, keyboard nav |
-| Form-heavy / wizard | Jordan, Sam, Casey | Clarity, accessibility, mobile |
+| Form-heavy / wizard | Jordan, Sam, Casey | Clarity, accessibility, responsive resilience |
 
 ---
 

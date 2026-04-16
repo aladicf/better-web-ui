@@ -268,9 +268,9 @@ Strong responsive guidance:
 
 - keep large operational tables primarily desktop-oriented when the workflow demands it
 - let small and medium tables become cards or compact summaries when one-item-at-a-time inspection is enough
-- do not pretend a giant spreadsheet remains equally powerful on a phone
+- do not pretend a giant spreadsheet remains equally powerful in a narrow viewport
 
-If the mobile job is different, design a different interaction model rather than shrinking the desktop grid into misery.
+If the narrow-layout job is different, design a different interaction model rather than shrinking the wide-layout grid into misery.
 
 ## Use Occam’s razor on table features
 
@@ -306,4 +306,4 @@ Only keep features that materially improve real work.
 - choose a clear table mode
 - keep command logic and validation logic explicit
 - prefer rational widths over uncontrolled full-width stretching
-- adapt small tables to cards, but be honest about the limits of giant tables on phones
+- adapt small tables to cards, but be honest about the limits of giant tables in narrow viewports

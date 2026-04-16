@@ -42,7 +42,7 @@ Before writing, gather only what the prompt or workspace does not already make c
 
 - Where is traffic coming from: ads, organic, referral, marketplace, app-store search, existing product?
 - How warm is the visitor: cold, aware, comparison-stage, already evaluating?
-- Mobile or desktop? Language or regional constraints?
+- Narrow layout or wide layout? Language or regional constraints?
 
 ### 5. Constraints
 
@@ -100,7 +100,7 @@ Good landing-page copy usually starts with a sharper value proposition before it
 
 ### One idea per section, one job per screen
 
-Especially on mobile, each screen should answer one question and support one next step.
+Especially in narrow layouts, each screen should answer one question and support one next step.
 
 ### Proof near the claim
 
@@ -133,7 +133,7 @@ Prefer:
 - `leading`
 - `trusted by thousands`
 
-### Mobile microcopy rules
+### Compact-layout microcopy rules
 
 - keep it short and scannable
 - lead with the action or benefit

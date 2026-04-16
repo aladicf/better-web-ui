@@ -19,7 +19,7 @@ If you only open a few files first, make them these:
 - [micro failures and perceived quality](./micro-failures-and-perceived-quality.md) — tiny repeated jank, weak feedback, state loss, and other trust-eroding papercuts that make products feel broken before they actually crash
 - [loading feedback and perceived performance](./loading-feedback-and-perceived-performance.md) — honest waiting states, skeleton decisions, stale-data cues, and trust-preserving loading behavior
 - [aspect ratio and card orientation](./aspect-ratio-and-card-orientation.md) — ratio tokens, cropping logic, browse-vs-evaluate card choices, and responsive card/media rhythm
-- [hero sections UX](./hero-sections-ux.md) — above-the-fold clarity, hero-image tradeoffs, first-screen proof, and mobile/performance-aware hero decisions
+- [hero sections UX](./hero-sections-ux.md) — above-the-fold clarity, hero-image tradeoffs, first-screen proof, and narrow-layout/performance-aware hero decisions
 - [component accessibility](./component-accessibility.md) — cross-cutting keyboard support, focus handling, skip links, hidden content, and accessibility checks for custom or third-party components
 - [colorblindness UX](./colorblindness-ux.md) — semantic states, chart palettes, non-color-only cues, and lightness-aware color choices for color-vision deficiencies
 - [disabled buttons UX](./disabled-buttons-ux.md) — blocked primary actions, disabled submit/continue buttons, in-progress locking, and better alternatives to mystery-disabled CTAs
@@ -31,9 +31,9 @@ If you only open a few files first, make them these:
 - [interface honesty](./interface-honesty.md) — assertive UX language, honest progress and consent copy, anti-gaslighting microcopy, and trust-preserving product behavior
 - [information architecture UX](./information-architecture-ux.md) — large-product navigation models, settings architecture, cross-product structure, and grouping across broad surfaces
 - [language and locale selection](./language-and-locale-selection.md) — language switches, country selectors, regional overrides, and locale-preference UX
-- [navigation menu UX](./navigation-menu-ux.md) — mega-dropdowns, click-vs-hover behavior, mobile menu structures, and alternatives for large-site navigation
-- [breadcrumb UX](./breadcrumb-ux.md) — breadcrumb placement, current-location clarity, mobile reduction, and sibling-jump wayfinding
-- [collection browsing and filtering](./collection-browsing-and-filtering.md) — result-list continuation, comfortable-range filtering, mobile filter surfaces, and browse-vs-search collection UX
+- [navigation menu UX](./navigation-menu-ux.md) — mega-dropdowns, click-vs-hover behavior, compact menu structures, and alternatives for large-site navigation
+- [breadcrumb UX](./breadcrumb-ux.md) — breadcrumb placement, current-location clarity, narrow-layout reduction, and sibling-jump wayfinding
+- [collection browsing and filtering](./collection-browsing-and-filtering.md) — result-list continuation, comfortable-range filtering, narrow-layout filter surfaces, and browse-vs-search collection UX
 - [feature comparison UX](./feature-comparison-ux.md) — considered-purchase comparison tables, shortlist compare flows, difference highlighting, sticky headers, and responsive product comparison
 - [configurator UX](./configurator-ux.md) — presets, step navigation, responsive product builders, real-time previews, dependencies, and save/resume configuration UX
 - [slider UX](./slider-ux.md) — value and range slider decisions, scale design, histogram-backed filtering, precise fallbacks, and responsive slider behavior
@@ -165,7 +165,7 @@ For the deeper motion doctrine library, also see the [animate reference index](.
 - [responsive design](./responsive-design.md)
 - [sidebar and footer UX](./sidebar-and-footer-ux.md)
 
-Use these when the work depends on mobile-first layout strategy, component reflow across contexts, sidebars or right rails, footer utility/recovery paths, or deciding whether secondary content belongs in a peripheral support surface at all.
+Use these when the work depends on narrow-first layout strategy, component reflow across contexts, sidebars or right rails, footer utility/recovery paths, or deciding whether secondary content belongs in a peripheral support surface at all.
 
 ## Components and systems
 
@@ -289,7 +289,7 @@ Use these when users need to compare shortlisted products or plans, understand t
 
 - [carousel UX](./carousel-ux.md)
 
-Use this when the work touches swipe galleries, testimonial sliders, feature rails, onboarding walkthroughs, hero carousels, or other multi-panel content where discoverability and accessibility are easy to get wrong.
+Use this when the work touches gesture-enabled galleries, testimonial sliders, feature rails, onboarding walkthroughs, hero carousels, or other multi-panel content where discoverability and accessibility are easy to get wrong.
 
 ## Navigation and wayfinding
 

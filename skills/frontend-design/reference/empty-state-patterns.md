@@ -128,7 +128,7 @@ Use when the user reached a route or page that does not exist, was moved, or was
 - own the problem instead of implying the user simply failed
 - use personality carefully: friendly, clever, or lightly funny can help, but navigation must still do the real work
 - keep the recovery actions more prominent than the decorative illustration
-- make the recovery paths work well on mobile too, not just desktop
+- make the recovery paths work well in narrow layouts too, not just in wide ones
 
 ### Useful recovery actions
 

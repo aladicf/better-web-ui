@@ -126,7 +126,7 @@ Then identify:
 
 - primary user goal
 - core content blocks
-- critical states (loading, empty, error, success, validation, mobile)
+- critical states (loading, empty, error, success, validation, responsive layout)
 - placement context (new page, inside existing page, inside dashboard, inside marketing site)
 - which structural elements are fixed versus flexible
 - which current qualities should remain recognizable versus which should change
@@ -248,7 +248,7 @@ Use the [apply / cleanup checklist](./assets/apply-cleanup-checklist.md) after t
 - bulldoze an existing artifact's structure after the user asked to preserve its essence or recognizable parts
 - default to generic startup aesthetics just because the prompt is broad
 - make every option loud, card-heavy, gradient-heavy, or animation-heavy
-- skip loading/error/empty/mobile states when they materially affect the artifact
+- skip loading/error/empty/responsive-layout states when they materially affect the artifact
 - apply a chosen variant without making it clear what changed
 
 Remember: this skill is not a slot machine for interchangeable UI. It is a structured exploration workflow that helps the user choose among genuinely different, production-credible directions and end up with maintainable source code.

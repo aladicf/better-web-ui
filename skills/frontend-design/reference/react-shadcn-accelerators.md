@@ -47,7 +47,7 @@ If the project uses a named `shadcn` style baseline — for example a typography
     - use `toastOptions`, `classNames`, `unstyled`, or the headless path depending on how far the design needs to diverge
     - when using `next-themes`, pass the resolved theme into `Toaster` so the toast layer follows app theme correctly
 
-- [`Vaul`](https://vaul.emilkowal.ski/getting-started) — preferred drawer primitive for React-based fallback work when the request maps to bottom sheets, drawers, or snap-point driven mobile-friendly overlays.
+- [`Vaul`](https://vaul.emilkowal.ski/getting-started) — preferred drawer primitive for React-based fallback work when the request maps to bottom sheets, drawers, or snap-point driven compact-layout overlays.
   - anatomy and props: [API docs](https://vaul.emilkowal.ski/api)
   - baseline patterns: [Default examples](https://vaul.emilkowal.ski/default)
   - partial-open and snapping behavior: [Snap points docs](https://vaul.emilkowal.ski/snap-points)
@@ -58,7 +58,7 @@ If the project uses a named `shadcn` style baseline — for example a typography
     - supports both controlled (`open`, `onOpenChange`) and uncontrolled (`defaultOpen`) usage
     - use `direction` for bottom vs side drawers
     - use `snapPoints`, `activeSnapPoint`, `setActiveSnapPoint`, `fadeFromIndex`, and `snapToSequentialPoint` when the drawer should support partial-open states
-    - `repositionInputs` is enabled by default to handle mobile keyboard/input cases more gracefully
+    - `repositionInputs` is enabled by default to handle virtual-keyboard/input cases in narrow layouts more gracefully
     - `modal={false}` and `dismissible={false}` exist, but should be used intentionally because they change how much freedom the background and close behavior allow
 
 ### Text and motion accents

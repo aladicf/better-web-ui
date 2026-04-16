@@ -160,7 +160,7 @@ Usually replace:
 - one idea per sentence when possible
 - front-load the important part
 - avoid more than 3 conjunctions in a sentence unless the rhythm truly works
-- keep most mobile-facing sentences short
+- keep most narrow-layout-facing sentences short
 
 ### Paragraph checks
 

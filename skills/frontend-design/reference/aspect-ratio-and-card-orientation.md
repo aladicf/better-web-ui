@@ -99,9 +99,9 @@ The same ratio does not need to survive unchanged on every screen.
 
 Good responsive adaptation:
 
-- wide editorial image on desktop → slightly less wide on tablet
-- landscape listing image on desktop → square or slightly taller on narrow mobile if that preserves legibility
-- horizontal card on desktop → vertical stack on mobile when text and actions otherwise become cramped
+- wide editorial image in wide layouts → slightly less wide in medium layouts
+- landscape listing image in wide layouts → square or slightly taller in narrow layouts if that preserves legibility
+- horizontal card in wide layouts → vertical stack in narrow layouts when text and actions otherwise become cramped
 
 Do not change ratio randomly at breakpoints.
 
@@ -113,7 +113,7 @@ Card orientation is a structural decision.
 
 It determines whether the interface favors discovery, evaluation, comparison, or conversation.
 
-## Vertical cards are strongest for browse-first, image-led, mobile-friendly flows
+## Vertical cards are strongest for browse-first, image-led flows that must stay calm in narrow layouts
 
 Vertical cards work well when the main job is:
 
@@ -133,7 +133,7 @@ They are usually the safer default for:
 Their main strengths:
 
 - predictable scan pattern
-- strong mobile behavior
+- strong narrow-layout behavior
 - easy image-first storytelling
 - clear repetition across a grid
 
@@ -147,7 +147,7 @@ Horizontal cards work well when the main job is:
 
 - reading a bit more before choosing
 - comparing metadata quickly
-- using wider desktop or tablet space efficiently
+- using wider and medium-width layouts efficiently
 - supporting message-like, list-like, or summary-heavy content
 
 They are often better for:
@@ -166,7 +166,7 @@ Their main strengths:
 
 Their main risk:
 
-- awkward collapse on mobile if the layout rules are not explicit
+- awkward collapse in narrow layouts if the layout rules are not explicit
 
 ## A useful shortcut: browse vertically, evaluate horizontally
 
@@ -222,7 +222,7 @@ Ask these in order:
 
 1. Is this content mainly **browsed**, **read**, or **compared**?
 2. Does the media need to show **context**, **identity**, or **detail**?
-3. Is the default environment mainly **mobile**, **wide desktop**, or both?
+3. Is the default environment mainly **narrow-layout web**, **wide-layout web**, or both?
 4. Will users move through many repeated items, or focus on one at a time?
 5. Does variation improve hierarchy, or only add noise?
 
@@ -237,10 +237,10 @@ If the answers are unclear, default to:
 - Does each ratio have a job, not just a look?
 - Can users compare adjacent items without fighting inconsistent crops?
 - Does the main card orientation match the user’s task?
-- On mobile, does the card still read cleanly without awkward compression?
+- In narrow layouts, does the card still read cleanly without awkward compression?
 - Do crop rules protect the important part of the media?
 - When orientation or ratio changes, does the component still feel like the same family?
 
 ---
 
-**Avoid**: arbitrary ratios, mixed-ratio grids without purpose, horizontal cards squeezed into narrow mobile widths, crop rules that hide key meaning, and switching orientation so freely that the same content feels like a different component on every screen.
+**Avoid**: arbitrary ratios, mixed-ratio grids without purpose, horizontal cards squeezed into narrow layout widths, crop rules that hide key meaning, and switching orientation so freely that the same content feels like a different component on every screen.

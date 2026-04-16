@@ -59,7 +59,7 @@ Avoid designing as if the audience is fragile, inattentive, or incapable by defa
 
 ### Match the real device context
 
-Do not build from desktop assumptions when the audience is primarily on mobile. Do not build from ideal office conditions when the audience uses the product on the go, in noisy environments, or with shared attention.
+Do not build from wide-layout assumptions when the audience is primarily in narrow browser contexts. Do not build from ideal office conditions when the audience uses the product on the go, in noisy environments, or with shared attention.
 
 ### Support intrinsic motivation when behavior matters
 
@@ -101,18 +101,18 @@ Because the audience is diverse, the baseline should already include:
 - inclusive identity and profile options when relevant
 - dark and light themes when the product benefits from both
 
-### Design for mobile reality, not just mobile-first slides
+### Design for narrow-layout reality, not just responsive slides
 
-Many Gen Z-heavy consumer experiences are not merely mobile-first; they are close to mobile-only in practice.
+Many Gen Z-heavy consumer experiences are not merely narrow-first; they are close to narrow-browser-only in practice.
 
 Useful defaults:
 
-- prioritize the mobile screen first in content and layout decisions
-- keep paragraphs short enough to read on phones comfortably
+- prioritize the narrowest common browser layout first in content and layout decisions
+- keep paragraphs short enough to read in compact windows comfortably
 - front-load key meaning with inverted-pyramid writing
 - offer plain-language summaries for dense, legal, or policy-heavy content
 
-Do not confuse “mobile” with “dumbed down.” Keep depth available; just make the entry clearer.
+Do not confuse “narrow-layout” with “dumbed down.” Keep depth available; just make the entry clearer.
 
 ### Default captions and transcript-friendly media matter
 
@@ -158,7 +158,7 @@ Design for:
 - assuming short-form content means shallow curiosity
 - reducing everything to hyper-compressed marketing filler
 - relying on glossy perfection instead of believable proof
-- designing desktop-first for a mobile-heavy audience without a strong reason
+- designing wide-layout-first for a narrow-layout-heavy audience without a strong reason
 
 ## Designing for Children and Their Parents
 

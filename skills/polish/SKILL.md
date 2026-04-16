@@ -98,7 +98,7 @@ Every interactive element needs all states:
 - **Default**: Resting state
 - **Hover**: Subtle feedback (color, scale, shadow)
 - **Focus**: Keyboard focus indicator (never remove without replacement)
-- **Active**: Click/tap feedback
+- **Active**: Click / press feedback
 - **Disabled**: Clearly non-interactive
 - **Loading**: Async action feedback
 - **Error**: Validation or error state
@@ -157,9 +157,9 @@ Make sure action hierarchy remains intact across states: the primary action shou
 
 ### Responsiveness
 
-- **All breakpoints**: Test mobile, tablet, desktop
+- **All breakpoints**: Test narrow, medium, and wide layouts
 - **Touch targets**: 44x44px minimum on touch devices
-- **Readable text**: No text smaller than 14px on mobile
+- **Readable text**: No text smaller than 14px in compact layouts
 - **No horizontal scroll**: Content fits viewport
 - **Appropriate reflow**: Content adapts logically
 

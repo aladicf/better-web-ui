@@ -218,7 +218,7 @@ Practical defaults:
 
 - treat `16px / 1rem` as the accessibility floor for UI body text
 - use larger body sizes on wide, reading-heavy layouts when the content density supports it
-- let headings step down sooner than paragraphs on tablet and mobile
+- let headings step down sooner than paragraphs in medium and narrow layouts
 - avoid giant headings that wrap into weak, ragged blocks when the viewport narrows
 
 No single universal size works for every product. The right size depends on reading length, audience, device context, and how much visual competition exists on the screen.
@@ -366,7 +366,7 @@ Beyond contrast ratios (which are well-documented), consider:
 
 - **Never disable zoom**: `user-scalable=no` breaks accessibility. If your layout breaks at 200% zoom, fix the layout.
 - **Use rem/em for font sizes**: This respects user browser settings. Never `px` for body text.
-- **Minimum 16px body text**: Smaller than this strains eyes and fails WCAG on mobile.
+- **Minimum 16px body text**: Smaller than this strains eyes and becomes fragile in compact browsing contexts.
 - **Adequate touch targets**: Text links need padding or line-height that creates 44px+ tap targets.
 
 ---

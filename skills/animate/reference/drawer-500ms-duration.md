@@ -13,7 +13,7 @@ For sheet-like motion, `500ms` paired with the right easing can feel more native
 Why it works:
 
 - the surface travels a large visual distance
-- users expect mobile sheet behavior rather than tiny component timing
+- users expect sheet-like surface behavior rather than tiny component timing
 - the easing makes the motion feel more decisive than the raw duration suggests
 
 This does not mean every sidebar or popover should get `500ms`. Reserve it for real sheet or drawer motion.

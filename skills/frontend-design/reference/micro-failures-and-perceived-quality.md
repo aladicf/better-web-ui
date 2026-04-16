@@ -170,7 +170,7 @@ Do not wait for a dramatic crash report before taking these signals seriously.
 - Does the product preserve filters, drafts, position, and progress across common interruptions?
 - Can users tell the difference between loading, stale, paused, failed, and finished?
 - Are local errors recoverable without losing work or hunting for the cause?
-- Does the interface still feel dependable on mobile, weak networks, and assistive-tech paths?
+- Does the interface still feel dependable in narrow layouts, on weak networks, and along assistive-tech paths?
 
 ## Anti-patterns
 

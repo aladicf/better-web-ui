@@ -171,11 +171,11 @@ Use them when people need to compare records, scan repeated fields, sort, filter
 - if an error explanation is long, allow the row to expand rather than pushing the message into a distant global container
 - if one error affects many rows, pair row highlighting with one higher-level explanation so users understand the pattern quickly
 
-### Mobile adaptation
+### Compact-layout adaptation
 
 Do not try to force a wide desktop table onto a narrow screen unchanged.
 
-For many mobile cases, the better move is to transform rows into cards or compact item summaries that show only the most important fields.
+For many narrow-layout cases, the better move is to transform rows into cards or compact item summaries that show only the most important fields.
 
 Keep:
 
@@ -186,7 +186,7 @@ Keep:
 Drop or defer:
 
 - low-priority columns
-- wide comparison-only fields that do not help on mobile
+- wide comparison-only fields that do not help in narrow layouts
 
 ### Practical rule
 
@@ -261,7 +261,7 @@ Its treatment should reflect the importance of the action, not just visual taste
 
 ### Avoid
 
-- shrinking buttons until they are hard to tap on mobile or fiddly to click on desktop
+- shrinking buttons until they are awkward in compact touch-capable layouts or fiddly in precise pointer contexts
 - making primary, secondary, and tertiary actions so similar that priority becomes guesswork
 - using color alone to separate action importance when size, weight, spacing, and placement should help too
 
@@ -290,7 +290,7 @@ A card is a container for one distinct unit of information, often with optional 
 - keep text left-aligned unless there is a strong compositional reason not to
 - adjust layout by breakpoint instead of forcing the same arrangement everywhere
 - choose a dominant orientation for the card family instead of letting every card improvise between stacked and side-by-side layouts
-- use vertical cards for browse-first, image-led, mobile-friendly discovery flows unless the content clearly needs denser text treatment
+- use vertical cards for browse-first, image-led discovery flows unless the content clearly needs denser text treatment
 - use horizontal cards for wider, text-heavy, metadata-rich lists where users need more evaluation context per item
 - define media ratios by card type so repeated cards feel comparable and calm
 - when media and text need to coexist on larger screens, moving media to the side can work well if the crop still preserves the important content
@@ -394,7 +394,7 @@ A checkbox lets users select one or more items from a set.
 - make the label and checkbox read as one click/tap target whenever possible
 - keep labels written positively and clearly
 - keep checkbox labels aligned consistently and easy to scan in a vertical list
-- increase the hit target on mobile so the control feels finger-friendly instead of pixel-hunt-y
+- increase the hit target in compact touch-capable layouts so the control feels forgiving instead of pixel-hunt-y
 - use the indeterminate state intentionally where it clarifies partial selection
 
 ### Avoid
@@ -564,7 +564,7 @@ That means:
 
 Filters help users reduce a large result set into a more comfortable, more relevant range.
 
-Consult [collection browsing and filtering](./collection-browsing-and-filtering.md) for deeper guidance on comfortable-range decisions, async filter/result coordination, mobile filter surfaces, and continuation-pattern tradeoffs.
+Consult [collection browsing and filtering](./collection-browsing-and-filtering.md) for deeper guidance on comfortable-range decisions, async filter/result coordination, narrow-layout filter surfaces, and continuation-pattern tradeoffs.
 
 That means the job is not merely "show all possible filters." The job is to help users arrive at a manageable set of relevant results quickly and without friction.
 
@@ -650,9 +650,9 @@ Examples:
 
 This helps users understand whether they are moving toward or away from a comfortable result range.
 
-### Mobile adaptation
+### Compact-layout adaptation
 
-On mobile, a larger overlay or full-page filter surface is often more reliable than a cramped split-screen or narrow side panel.
+In narrow layouts, a larger overlay or full-page filter surface is often more reliable than a cramped split-screen or narrow side panel.
 
 Good defaults:
 
@@ -689,7 +689,7 @@ Consult [collection browsing and filtering](./collection-browsing-and-filtering.
 ### Good defaults
 
 - keep sort and filter controls close to the results they affect
-- prefer stable controls above the result area when that preserves more space and translates better to mobile
+- prefer stable controls above the result area when that preserves more space and translates better to narrow layouts
 - keep the current scope visible so users know whether they are browsing a category, a search result, or a narrowed subset
 - let the list grow in a way that still preserves orientation and comparison
 
@@ -702,7 +702,7 @@ Consult [collection browsing and filtering](./collection-browsing-and-filtering.
 
 If the list is ranked by relevance, slow users down slightly with a more deliberate continuation pattern rather than pushing them into endless shallow scanning.
 
-### Mobile adaptation
+### Compact-layout adaptation
 
 - lower the amount shown before the continuation control appears
 - keep the next-step control large and obvious
@@ -901,7 +901,7 @@ Use restrained state changes.
 ### Error and guidance placement
 
 - for many fields, nearby below-field help still works well
-- when mobile keyboards, browser autofill, magnification, or autocomplete would hide the guidance below, consider placing important error copy above the field instead
+- when virtual keyboards, browser autofill, magnification, or autocomplete would hide the guidance below, consider placing important error copy above the field instead
 - if a field needs an example of correct input, show it early instead of waiting for the user to fail repeatedly
 
 ### Avoid
@@ -934,7 +934,7 @@ Radio buttons allow users to choose exactly one option from a mutually exclusive
 - wrap or associate the label so the clickable area is larger than the circle alone
 - keep labels clear, distinct, and mutually exclusive
 - let longer text wrap cleanly without breaking the association between control and label
-- scale the target size up on mobile so selection is finger-friendly
+- scale the target size up in compact touch-capable layouts so selection is forgiving
 
 ### Avoid
 
@@ -978,7 +978,7 @@ Tabs let users switch between related views that share the same context.
 - keep labels visible; icons can support, but should not replace, the label in most product UIs
 - make the active tab clearly higher contrast than inactive tabs
 - keep inactive tabs quieter but still readable
-- keep targets comfortably tappable, especially on mobile
+- keep targets comfortably tappable, especially in compact touch-capable layouts
 - keep the tab set parallel — each tab should represent a comparable type of destination or view
 - if icons are used, keep them aligned consistently and restrained relative to the label
 
@@ -988,10 +988,10 @@ Tabs let users switch between related views that share the same context.
 - stacking tabs vertically when the pattern is meant to act as a horizontal related-view switcher
 - using oversized icons that overpower the labels
 
-### Mobile adaptation
+### Compact-layout adaptation
 
 - preserve tap comfort
-- horizontal swipe support can help when the pattern is genuinely mobile-friendly, but only if the active state remains obvious and the interaction is not hidden from users
+- horizontal gesture support can help when the pattern genuinely benefits from compact layouts, but only if the active state remains obvious and the interaction is not hidden from users
 
 ## Textareas
 
@@ -1449,7 +1449,7 @@ Consult [surface separation](./surface-separation.md) for the broader doctrine o
 
 Breadcrumbs show the user's current location inside a nested structure and help them move back up the hierarchy.
 
-Consult [breadcrumb UX](./breadcrumb-ux.md) for deeper guidance on placement, current-page handling, mobile reduction, sideways breadcrumbs, and when a stronger navigation pattern is a better answer.
+Consult [breadcrumb UX](./breadcrumb-ux.md) for deeper guidance on placement, current-page handling, narrow-layout reduction, sideways breadcrumbs, and when a stronger navigation pattern is a better answer.
 
 ### Typical parts
 
@@ -1476,7 +1476,7 @@ Consult [breadcrumb UX](./breadcrumb-ux.md) for deeper guidance on placement, cu
 - linking the current page item
 - cluttering small screens with a full deep trail when a shorter parent path would do
 
-### Mobile adaptation
+### Compact-layout adaptation
 
 - keep the most useful parent path visible even when the full lineage is condensed
 - keep the trail compact enough that it supports orientation without crowding the top of the screen

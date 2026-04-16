@@ -253,7 +253,7 @@ Before calling the selector done, check:
 - the current selection is clearly indicated
 - disabled options are explained when relevant
 - long lists are searchable, grouped, or otherwise reduced to a sane scanning burden
-- the control remains usable under browser translation, zoom, and mobile constraints
+- the control remains usable under browser translation, zoom, and narrow-layout constraints
 
 ## Practical Checklist
 

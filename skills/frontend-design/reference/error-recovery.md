@@ -105,7 +105,7 @@ Field-level errors are often shown below inputs, but that is not always the best
 
 Placing an error above the field can help when:
 
-- a virtual keyboard could cover the message on mobile
+- a virtual keyboard could cover the message in a narrow layout
 - browser autofill or autocomplete could overlap the message below
 - magnification makes right-side or lower placement easy to miss
 

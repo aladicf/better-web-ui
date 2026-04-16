@@ -28,4 +28,4 @@ The goal is simple:
 - dragging should feel like dragging
 - momentum from one should not accidentally trigger the other
 
-This matters most for mobile drawers, bottom sheets, and any nested scrollable overlay.
+This matters most for edge-attached drawers, bottom sheets, and any nested scrollable overlay in touch-capable browsers.

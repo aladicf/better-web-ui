@@ -1,8 +1,8 @@
 # Carousel UX
 
-Use this reference when the UI needs a carousel, slider, swipe gallery, onboarding walkthrough, product image gallery, feature highlight rail, testimonial slider, or another horizontally or vertically paged multi-panel surface.
+Use this reference when the UI needs a carousel, slider, gesture-enabled gallery, onboarding walkthrough, product image gallery, feature highlight rail, testimonial slider, or another horizontally or vertically paged multi-panel surface.
 
-If the project already uses a mature carousel or gallery primitive, keep its baseline focus management, keyboard and swipe behavior, and slide mechanics first. Use this reference mainly to decide whether a carousel should exist at all, what content belongs in it, how the sequence should work, and what navigation and discoverability behavior should surround the primitive.
+If the project already uses a mature carousel or gallery primitive, keep its baseline focus management, keyboard and gesture behavior, and slide mechanics first. Use this reference mainly to decide whether a carousel should exist at all, what content belongs in it, how the sequence should work, and what navigation and discoverability behavior should surround the primitive.
 
 Carousels are not automatically bad. They are simply easy to misuse.
 
@@ -12,7 +12,7 @@ Their strongest use cases are narrow:
 - feature or option browsing in a clearly relevant context
 - testimonials or reviews with meaningful previews
 - fullscreen media browsing for travel, hospitality, or booking flows
-- mobile card rails where the next panel is obviously related to the current task
+- compact card rails where the next panel is obviously related to the current task
 
 They are usually weak when used as generic homepage promotion storage, “important things you hope people notice,” or decorative movement.
 
@@ -24,7 +24,7 @@ Before designing one, clarify:
 - does the user benefit from seeing more than one panel in the same space?
 - would static sections, cards, tabs, or `Load more` work better?
 - is every slide equally important, or do some deserve primary placement outside the carousel?
-- is this on desktop, touch, or both?
+- is this in a wide layout, a gesture-capable context, or both?
 - will users need keyboard and screen-reader access? *(yes, assume yes)*
 
 If the carousel is the only way to reach important content, the pattern is already too risky.
@@ -142,8 +142,8 @@ Prev/next controls are not garnish. They are the primary precision-navigation sy
 
 ### Placement heuristics
 
-- **desktop:** controls often work best above the carousel, where they are clearly visible and detached from clickable slide content
-- **mobile:** controls often work best below the carousel, where fingers do not obscure the content while reading it
+- **wide layouts:** controls often work best above the carousel, where they are clearly visible and detached from clickable slide content
+- **compact layouts:** controls often work best below the carousel, where controls stay visible without obscuring the content while reading it
 
 Avoid floating tiny arrows directly over clickable slides unless the hit targets are generous and accidental clicks are unlikely.
 
@@ -167,9 +167,9 @@ Mid-size jumps can be acceptable, but become confusing if users cannot tell what
 
 The right answer depends on how people browse the set.
 
-## Dragging and Swiping Are Helpers, Not the Whole Pattern
+## Dragging and Gesture Panning Are Helpers, Not the Whole Pattern
 
-On touch devices, support swipe gestures.
+On gesture-capable browsers, support horizontal or vertical panning when it is discoverable.
 
 On all devices, do not rely on dragging alone.
 
@@ -210,18 +210,18 @@ Auto-advancing content steals attention, breaks reading flow, and makes accident
 
 ### Strong warning
 
-Avoid auto-advance on touch-heavy or mobile-first experiences whenever possible. Lack of hover makes safe interruption much harder.
+Avoid auto-advance in gesture-heavy or compact-layout experiences whenever possible. Lack of hover makes safe interruption much harder.
 
-## Mobile Rules Are Different
+## Compact-layout rules are different
 
 Touch changes the tradeoffs.
 
-### Strong defaults for mobile
+### Strong defaults for compact layouts
 
 - support swiping
 - keep controls reachable without covering the content
 - keep slide height reasonable; huge panels encourage users to scroll past the whole thing
-- ensure artwork and any overlaid text are genuinely readable at mobile size
+- ensure artwork and any overlaid text are genuinely readable at compact sizes
 - optimize media weight and loading behavior
 
 Do not simply scale down desktop carousel artwork and call it responsive.
@@ -261,11 +261,11 @@ Before calling a carousel done, check:
 - the first slide is the strongest or most important one
 - direction cues match real movement
 - the current position and total are visible enough to understand quickly
-- users have visible prev/next controls in addition to swipe support where relevant
+- users have visible prev/next controls in addition to gesture support where relevant
 - dragging is not the only navigation method
 - there is information scent for hidden panels
 - controls are large, contrasted, and not dangerously overlaid on click targets
-- mobile artwork, height, and loading behavior are optimized separately from desktop assumptions
+- compact-layout artwork, height, and loading behavior are optimized separately from wide-layout assumptions
 - auto-advance is avoided, or if unavoidable, delayed, pausable, and stopped on interaction
 - the carousel is keyboard-accessible
 

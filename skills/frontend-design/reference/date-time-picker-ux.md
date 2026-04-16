@@ -251,7 +251,7 @@ Strong defaults:
 
 - keep dates easy to scan horizontally or in a compact calendar
 - keep times list-like and tappable
-- preserve thumb-friendly placement on mobile
+- preserve reachable placement in compact touch-capable layouts
 
 If the time picker becomes a wall of tiny exact-minute buttons, the combination has gone too far.
 
@@ -269,7 +269,7 @@ They become weak when you need:
 - visible pricing or availability
 - flexible dates
 - clear relationship between start and end dates
-- consistent desktop and mobile behavior
+- consistent wide and narrow layout behavior
 
 If native controls cannot express the real decision, they are the wrong abstraction.
 

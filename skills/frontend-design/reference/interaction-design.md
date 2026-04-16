@@ -78,7 +78,7 @@ Primary and frequent actions should be large enough, close enough, and separated
 - Expand the hit area for icon buttons, close controls, tiny toggles, and row actions even if the visible glyph stays small
 - Place the next likely action near the content or cursor/focus location that leads to it
 - Separate destructive actions from high-frequency safe actions so slips are less likely
-- On mobile, keep important actions within comfortable thumb reach instead of pinning everything to the top edge
+- In compact touch-heavy layouts, keep important actions within comfortable reach instead of pinning everything to the top edge
 
 ### Good tradeoffs
 
@@ -304,7 +304,7 @@ Personalization is not just convenience. It reduces cognitive load by letting ea
 
 ## Infinite Scroll vs Load More vs Pagination
 
-Consult [collection browsing and filtering](./collection-browsing-and-filtering.md) when the continuation pattern depends on filters, result ranking, footer reachability, back-button restoration, mobile overlay behavior, or the tradeoff between exploration and careful evaluation.
+Consult [collection browsing and filtering](./collection-browsing-and-filtering.md) when the continuation pattern depends on filters, result ranking, footer reachability, back-button restoration, narrow-layout overlay behavior, or the tradeoff between exploration and careful evaluation.
 
 Long result lists do not all want the same continuation pattern.
 
@@ -346,7 +346,7 @@ Avoid infinite scroll when users need to:
 - jump back and forth between list and detail views
 - maintain a strong sense of place in a long operational dataset
 
-In practice, infinite scroll is usually a poor fit for search results and often a weak fit for mobile-heavy product grids.
+In practice, infinite scroll is usually a poor fit for search results and often a weak fit for product grids dominated by narrow-layout use.
 
 ### Use pagination when stable slices matter more than continuity
 
@@ -366,7 +366,7 @@ These are starting points, not fixed laws:
 
 - **broad category / collection browsing on desktop**: show a modest initial set, continue in smaller lazy-loaded batches, then interrupt with `Load more` after roughly a screenful cluster such as `50–100` items
 - **ranked search results**: show a more focused set such as `25–75` results, then use `Load more` or pagination so users examine the strongest matches more carefully
-- **mobile browsing**: lower the threshold further, often around `15–30` items before an explicit continuation control, because screen size and scrolling effort amplify fatigue quickly
+- **compact-layout browsing**: lower the threshold further, often around `15–30` items before an explicit continuation control, because limited viewport depth and scrolling effort amplify fatigue quickly
 
 The more spec-heavy and comparison-heavy the list is, the lower the threshold should usually be.
 

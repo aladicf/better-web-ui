@@ -35,7 +35,7 @@ That leads to guesswork:
 - searching for hidden validation problems
 - abandoning the task entirely
 
-This is especially bad on mobile, where the disabled CTA may be off-screen and the error cause may be nowhere near it.
+This is especially bad in narrow layouts, where the disabled CTA may be off-screen and the error cause may be nowhere near it.
 
 ## Large disabled areas feel like a frozen system
 

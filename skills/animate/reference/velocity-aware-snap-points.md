@@ -24,6 +24,6 @@ Why this feels better:
 
 - fast intent reads as decisive
 - slow intent reads as precise
-- partial-open surfaces feel closer to native mobile behavior
+- partial-open surfaces feel closer to native sheet behavior on the web
 
 Use this for drawers, sheets, and other multi-stop draggable surfaces where gesture energy should influence the final resting point.

@@ -63,7 +63,7 @@ Focus on:
 Common states to consider:
 
 - collapsed navigation
-- mobile navigation adaptation
+- compact navigation adaptation
 - empty or first-run content areas
 
 ### Data or content component

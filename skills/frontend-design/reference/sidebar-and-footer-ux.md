@@ -58,7 +58,7 @@ Instead of a default sidebar, consider:
 - expandable `Read more` or glossary sections
 - a persistent but compact summary bar
 
-These patterns often fit scroll-first and mobile-heavy interfaces better than a segregated right rail.
+These patterns often fit scroll-first and narrow-layout-heavy interfaces better than a segregated right rail.
 
 ## Footers are support surfaces, not link graveyards
 
@@ -124,9 +124,9 @@ But keep a stable baseline for:
 
 Users should not lose the core fallback surface just because the page changed.
 
-## Mobile needs compression, not amputation
+## Compact layouts need compression, not amputation
 
-Mobile users still reach the footer.
+Users in narrow layouts still reach the footer.
 
 Good defaults:
 
@@ -150,7 +150,7 @@ Avoid sidebars that:
 
 - disrupt reading order
 - create confusing landmark noise
-- hide meaningful support content in collapsed junk drawers on mobile
+- hide meaningful support content in collapsed junk drawers in narrow layouts
 
 ## Practical checklist
 
@@ -158,7 +158,7 @@ Avoid sidebars that:
 - Would the main experience improve if a sidebar item moved inline, later, or disappeared entirely?
 - Is critical information placed where users will actually notice it?
 - Does the footer help with recovery, verification, or next steps instead of serving as a dumping ground?
-- Is the footer still usable and scannable on mobile?
+- Is the footer still usable and scannable in narrow layouts?
 - Are branding and CTAs restrained enough that support and navigation stay easy to find?
 
 ## Anti-patterns

@@ -1,8 +1,8 @@
 # Responsive Design
 
-## Mobile-First: Write It Right
+## Narrow-First: Write It Right
 
-Start with base styles for mobile, use `min-width` queries to layer complexity. Desktop-first (`max-width`) means mobile loads unnecessary styles first.
+Start with base styles for the narrowest practical layout, then use `min-width` queries to layer complexity. Wide-first (`max-width`) usually means constrained layouts inherit too much baggage too early.
 
 ## Breakpoints: Content-Driven
 
@@ -10,7 +10,7 @@ Don't chase device sizes—let content tell you where to break. Start narrow, st
 
 ## Detect Input Method, Not Just Screen Size
 
-**Screen size doesn't tell you input method.** A laptop with touchscreen, a tablet with keyboard—use pointer and hover queries:
+**Screen size doesn't tell you input method.** A laptop with touchscreen, a small window on desktop, a touch-capable convertible—use pointer and hover queries:
 
 ```css
 /* Fine pointer (mouse, trackpad) */
@@ -28,17 +28,17 @@ Don't chase device sizes—let content tell you where to break. Start narrow, st
   .card:hover { transform: translateY(-2px); }
 }
 
-/* Device doesn't support hover (touch) */
+/* Device doesn't support hover */
 @media (hover: none) {
   .card { /* No hover state - use active instead */ }
 }
 ```
 
-**Critical**: Don't rely on hover for functionality. Touch users can't hover.
+**Critical**: Don't rely on hover for functionality. Coarse-pointer and non-hover users cannot hover.
 
-## Safe Areas: Handle the Notch
+## Safe Areas: Handle Viewport Insets
 
-Modern phones have notches, rounded corners, and home indicators. Use `env()`:
+Modern browsers can expose display cutouts, rounded corners, and browser-chrome insets. Use `env()` when the edge treatment actually matters:
 
 ```css
 body {
@@ -95,7 +95,7 @@ When you need different crops/compositions (not just resolutions):
 
 ## Layout Adaptation Patterns
 
-**Navigation**: Three stages—hamburger + drawer on mobile, horizontal compact on tablet, full with labels on desktop. **Tables**: Transform to cards on mobile using `display: block` and `data-label` attributes. **Progressive disclosure**: Use `<details>/<summary>` for content that can collapse on mobile.
+**Navigation**: Three stages—compact menu or drawer in narrow layouts, condensed horizontal navigation in medium widths, fuller labeled navigation in wide layouts. **Tables**: Transform to cards or summaries in narrow layouts using `display: block` and `data-label` attributes when the table job changes. **Progressive disclosure**: Use `<details>/<summary>` for content that can collapse in compact layouts.
 
 ## You Don’t Have to Fill the Whole Screen
 
@@ -182,10 +182,10 @@ DevTools device emulation is useful for layout but misses:
 - Font rendering differences
 - Browser chrome/keyboard appearances
 
-**Test on at least**: One real iPhone, one real Android, a tablet if relevant. Cheap Android phones reveal performance issues you'll never see on simulators.
+**Test on at least**: One real low-power touch-capable browser, one mainstream laptop/desktop browser, and a constrained mid-width window if relevant. Lower-powered devices reveal performance issues you'll never see on simulators.
 
 For decisions about whether side content should live in a rail, move inline, or drop into a footer/support surface at different breakpoints, also use [sidebar and footer UX](./sidebar-and-footer-ux.md).
 
 ---
 
-**Avoid**: desktop-first design, filling the whole screen just because you can, making every element fluid by default, proportionally shrinking everything across breakpoints, separate mobile/desktop codebases, ignoring tablet and landscape, and assuming all mobile devices are powerful.
+**Avoid**: wide-first design, filling the whole screen just because you can, making every element fluid by default, proportionally shrinking everything across breakpoints, separate narrow/wide codepaths, ignoring medium-width and landscape states, and assuming all constrained devices are powerful.

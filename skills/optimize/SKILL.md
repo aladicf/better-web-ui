@@ -31,7 +31,7 @@ Understand current performance and identify problems:
    - What's slow? (Initial load? Interactions? Animations?)
    - What's causing it? (Large images? Expensive JavaScript? Layout thrashing?)
    - How bad is it? (Perceivable? Annoying? Blocking?)
-   - Who's affected? (All users? Mobile only? Slow connections?)
+  - Who's affected? (All users? Narrow-layout users? Slow connections?)
 
 **CRITICAL**: Measure before and after. Premature optimization wastes time. Optimize what actually matters.
 
@@ -271,7 +271,7 @@ const observer = new IntersectionObserver((entries) => {
 - Use `will-change` everywhere (creates new layers, uses memory)
 - Lazy load above-fold content
 - Optimize micro-optimizations while ignoring major issues (optimize the biggest bottleneck first)
-- Forget about mobile performance (often slower devices, slower connections)
+- Forget about constrained-browser performance (often slower hardware, tighter CPU budgets, slower connections)
 
 ## Verify Improvements
 
@@ -279,7 +279,7 @@ Test that optimizations worked:
 
 - **Before/after metrics**: Compare Lighthouse scores
 - **Real user monitoring**: Track improvements for real users
-- **Different devices**: Test on low-end Android, not just flagship iPhone
+- **Different devices**: Test on low-power touch-capable hardware and mainstream laptop/desktop browsers
 - **Slow connections**: Throttle to 3G, test experience
 - **No regressions**: Ensure functionality still works
 - **User perception**: Does it *feel* faster?

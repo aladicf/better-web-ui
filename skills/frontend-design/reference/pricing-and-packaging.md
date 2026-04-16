@@ -358,9 +358,9 @@ Prefer:
 
 Use a tooltip only for short, non-essential clarification. If the user needs the explanation to choose a plan confidently, it probably deserves more space than a hover bubble.
 
-## Mobile Comparison Patterns
+## Comparison patterns for narrow layouts
 
-Raw horizontally scrolling comparison tables are usually a last resort on mobile.
+Raw horizontally scrolling comparison tables are usually a last resort in narrow layouts.
 
 The narrower the screen and the denser the plan structure, the more likely horizontal scroll will destroy orientation.
 
@@ -372,7 +372,7 @@ Prefer patterns such as:
 - per-feature stacked rows that compare one attribute at a time
 - step-by-step evaluators that help users identify the right plan by needs or role
 
-If a full matrix must exist on mobile, keep orientation aids visible and reduce the amount of simultaneous horizontal navigation as much as possible.
+If a full matrix must exist in a narrow layout, keep orientation aids visible and reduce the amount of simultaneous horizontal navigation as much as possible.
 
 Dropdown-based plan switching can work, but it is usually slower and less legible than visible tabs or a deliberate two-plan compare pattern.
 
@@ -458,7 +458,7 @@ Before calling a pricing surface "done," check:
 - key plan differences are visible before the full comparison matrix
 - the recommended plan is clear without shouting
 - long comparison tables keep plan context visible while users scan
-- mobile comparison avoids raw horizontal-scroll dependence when the content is dense
+- narrow-layout comparison avoids raw horizontal-scroll dependence when the content is dense
 - essential plan understanding does not depend on hover-only tooltip behavior
 - annual billing language is accurate and legible
 - nuanced pricing includes a transparent example or clear explanation of what counts
@@ -472,7 +472,7 @@ Before calling a pricing surface "done," check:
 - pricing cards that look nice but hide the actual tradeoffs
 - comparison tables that force users to keep scrolling back to the header just to remember which plan they are reading
 - making the full feature matrix the only way to understand the offer
-- forcing dense horizontal scrolling on mobile for serious plan comparison
+- forcing dense horizontal scrolling in narrow layouts for serious plan comparison
 - relying on hover-only tooltips for essential differences or pricing caveats
 - tiers differentiated by filler features rather than meaningful value
 - annual savings claims that require math archaeology

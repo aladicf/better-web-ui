@@ -13,7 +13,7 @@ Ask only what is missing.
 - What has the user already experienced before the ask appears?
 - What is the product's activation or "aha" moment?
 - What is the current impression, click-through, and conversion performance if known?
-- Is this web, mobile, or both?
+- Is this a narrow-layout web flow, a wide-layout web flow, or both?
 - Is the pricing model flat, per seat, usage-based, or something else?
 
 You cannot judge whether a paywall is well-timed without understanding what value the user has already felt.

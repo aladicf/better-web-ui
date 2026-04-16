@@ -1,6 +1,6 @@
 # Navigation Menu UX
 
-Use this reference when the work involves mega-dropdowns, deep site navigation, desktop hover menus, click-triggered submenus, mobile navigation drawers, split menus, or any navigation system where users need to browse breadth without losing control.
+Use this reference when the work involves mega-dropdowns, deep site navigation, desktop hover menus, click-triggered submenus, compact-layout navigation drawers, split menus, or any navigation system where users need to browse breadth without losing control.
 
 If the project already uses a mature menu or navigation primitive, keep its baseline semantics, focus handling, and disclosure behavior first. Use this reference mainly to decide whether a mega-menu is appropriate, whether hover vs click is honest, and how the menu fits the product's information architecture.
 
@@ -39,7 +39,7 @@ That prediction fails often because people:
 
 The safest default is:
 
-- **open submenus on tap/click**, not on hover
+- **open submenus on click or explicit activation**, not on hover
 - keep them open until users explicitly close them, click away, or choose another section
 
 This is usually calmer, more predictable, and easier to make accessible.
@@ -93,7 +93,7 @@ If the parent really must be a page link, make the split explicit with:
 
 - a visible separator,
 - a dedicated disclosure control,
-- and large enough tap targets for each action.
+- and large enough targets for each action.
 
 Do not rely on subtle icon-only distinctions that users have to decode.
 
@@ -122,7 +122,7 @@ Prefer a consistent mental model:
 - activate elsewhere or dismiss to close
 - keep current section visibly active while open
 
-Shared logic across mobile and desktop usually reduces both implementation complexity and user confusion.
+Shared logic across narrow and wide layouts usually reduces both implementation complexity and user confusion.
 
 ## Reduce nesting before polishing the interaction
 
@@ -143,9 +143,9 @@ Deeply nested hover systems are especially fragile because users must:
 
 If a fourth navigation level only appears after opening the third which appears after opening the second, the structure is probably too coy for its own good.
 
-## Mobile patterns: prefer calm over maze-like drilling
+## Compact-layout patterns: prefer calm over maze-like drilling
 
-On mobile, the main challenge is preserving hierarchy without turning every move into a back-button ritual.
+In compact layouts, the main challenge is preserving hierarchy without turning every move into a back-button ritual.
 
 ### Preferred order of patterns
 
@@ -172,7 +172,7 @@ If a section contains more than roughly `6–7` items, consider:
 - then adding `Browse all`, or
 - escalating that branch to its own page or overlay.
 
-### Mobile defaults to keep
+### Compact-layout defaults to keep
 
 - the entire row should expand, not just a tiny icon
 - hierarchy needs visible indentation, spacing, or typographic contrast
@@ -201,7 +201,7 @@ Before calling a navigation menu done, check that:
 - submenu toggles are real buttons or equally clear controls
 - the current open state is visible and announced
 - closed content is not focusable
-- users can dismiss an open submenu with outside click/tap and `Escape`
+- users can dismiss an open submenu with outside click and `Escape`
 - opening one submenu closes another when that reduces clutter and ambiguity
 - focus styles are obvious on both parent controls and submenu links
 - keyboard users can move through the structure without surprise traps
@@ -217,7 +217,7 @@ Progressive enhancement is a strength here: a simple link list or `:focus-within
 - Do parent items avoid doing two conflicting jobs at once?
 - Are overview pages deliberately chosen rather than structural leftovers?
 - Is nesting reduced wherever possible?
-- On mobile, does the pattern favor split menus or accordions before deep overlay drilling?
+- In compact layouts, does the pattern favor split menus or accordions before deep overlay drilling?
 - Are expansion targets generous and full-row where appropriate?
 - Are keyboard and assistive-technology behaviors predictable?
 - Would a user understand what opens, what links, and what closes without trial and error?

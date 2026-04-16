@@ -71,7 +71,7 @@ Ask:
 
 Do not let a vague image slow the page down while also failing to explain the product.
 
-## Mobile exposes weak heroes quickly
+## Narrow layouts expose weak heroes quickly
 
 On small screens, decorative hero media often:
 
@@ -80,7 +80,7 @@ On small screens, decorative hero media often:
 - turns useful copy into overlaid contrast problems
 - consumes too much of the viewport before any real information appears
 
-If the hero stops helping on mobile, it is not a strong hero.
+If the hero stops helping in narrow layouts, it is not a strong hero.
 
 ## Accessibility applies at the top of the page too
 
@@ -114,7 +114,7 @@ If the visual only adds atmosphere, question whether atmosphere is worth the cos
 - Can users tell what the product is within a few seconds?
 - Does the first screen make the primary action obvious?
 - Does the visual clarify the message instead of replacing it?
-- Is the hero still useful on mobile, not just on a wide desktop mock?
+- Is the hero still useful in narrow layouts, not just in a wide-layout mock?
 - Does the above-the-fold media earn its performance budget?
 - Is the content readable, accessible, and semantically structured?
 
