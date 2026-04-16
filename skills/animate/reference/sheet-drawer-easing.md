@@ -2,7 +2,7 @@
 
 Drawers and bottom sheets are one of the few UI patterns where a longer, more characterful motion can feel correct instead of slow.
 
-When the goal is a sheet that feels calm, edge-attached, and web-native, start with:
+When the goal is a sheet that feels calm, edge-attached, and grounded in web UI, start with:
 
 - `cubic-bezier(0.32, 0.72, 0, 1)`
 - roughly `450-500ms` for full sheet travel

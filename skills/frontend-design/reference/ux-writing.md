@@ -4,7 +4,7 @@ Use this reference for interface-level UX writing: labels, errors, empty states,
 
 For moments where the real problem is evasive, manipulative, faux-friendly, or overly apologetic interface language — especially in consent, cancellation, upgrades, progress states, and critical system messages — use [interface honesty](./interface-honesty.md).
 
-For broader conversion or positioning work — headlines, landing pages, lifecycle messages, app-store copy, or CTA strategy — use [marketing copywriting](./marketing-copywriting.md).
+For broader conversion or positioning work — headlines, landing pages, lifecycle messages, marketplace listing copy, or CTA strategy — use [marketing copywriting](./marketing-copywriting.md).
 
 For editing existing copy in structured passes rather than rewriting from scratch, use [copy editing sweeps](./copy-editing-sweeps.md).
 

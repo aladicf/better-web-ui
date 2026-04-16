@@ -85,7 +85,7 @@ If the project uses a named `shadcn` style baseline — for example a typography
 
 ### Pickers and gesture-heavy interaction
 
-- [`React Wheel Picker`](https://chanhdai.com/components/react-wheel-picker) — iOS-like wheel picker for React with smooth inertia, infinite loop support, keyboard navigation, and type-ahead search.
+- [`React Wheel Picker`](https://chanhdai.com/components/react-wheel-picker) — wheel-style picker for React with smooth inertia, infinite loop support, keyboard navigation, and type-ahead search.
   - install, anatomy, API, and examples: [React Wheel Picker docs](https://react-wheel-picker.chanhdai.com/docs/getting-started)
   - real-world usage inspiration: [React Wheel Picker showcases](https://react-wheel-picker.chanhdai.com/showcases)
 

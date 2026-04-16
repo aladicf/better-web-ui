@@ -71,7 +71,7 @@ Users shouldn't wonder whether different words, situations, or actions mean the 
 **Check for**:
 - Consistent terminology throughout the interface
 - Same actions produce same results everywhere
-- Platform conventions followed (standard UI patterns)
+- Established web conventions followed (standard UI patterns)
 - Visual consistency (colors, typography, spacing, components)
 - Consistent interaction patterns (same gesture = same behavior)
 

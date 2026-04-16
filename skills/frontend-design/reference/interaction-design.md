@@ -16,7 +16,7 @@ When in doubt, innovate in workflow efficiency, defaults, or information density
 
 - Keep icons conventional unless the label makes the meaning unmistakable
 - Match category expectations for things like dashboard navigation, inline table actions, destructive confirmations, and account settings
-- Use native platform behavior or strong platform conventions when they already solve the problem well
+- Use built-in browser behavior or strong established web conventions when they already solve the problem well
 - Prefer familiar patterns first, then add personality through typography, tone, color, motion, and layout
 
 ### Suspicious moves

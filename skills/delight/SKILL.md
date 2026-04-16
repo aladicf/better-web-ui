@@ -193,7 +193,7 @@ Add personality and joy through these methods:
 **Toggle switches**:
 - Smooth slide with spring physics
 - Color transition
-- Haptic or platform feedback on supported touch-capable browsers
+- Subtle visual feedback, sound, or optional browser-supported vibration where appropriate
 - Optional sound effect
 
 **Progress & achievements**:

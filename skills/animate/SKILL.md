@@ -19,11 +19,11 @@ Consult the [component anatomy reference](../frontend-design/reference/component
 Consult the [responsive design reference](../frontend-design/reference/responsive-design.md) when motion needs to adapt across small screens, touch contexts, or reduced viewport space.
 Consult the [framework official docs reference](../frontend-design/reference/framework-official-docs.md) before making framework-specific animation decisions.
 Consult the [React shadcn accelerators reference](../frontend-design/reference/react-shadcn-accelerators.md) when the request overlaps with React toasts, drawers, text motion, or other UI patterns that already have strong accelerators.
-Consult the [native motion implementation reference](../frontend-design/reference/native-motion-with-css-and-tailwind.md) to decide when modern CSS, Tailwind, or WAAPI can solve the motion cleanly without reaching for a framework animation library.
+Consult the [CSS, Tailwind, and WAAPI motion reference](../frontend-design/reference/css-tailwind-and-waapi-motion.md) to decide when modern CSS, Tailwind, or WAAPI can solve the motion cleanly without reaching for a framework animation library.
 Consult [attribution and sources](reference/attribution-and-sources.md) for the source lineage behind this skill's Emil-inspired motion guidance.
 Consult [ease-out defaults](reference/ease-out-default.md), [easing by context](reference/easing-context.md), and [custom easing curves](reference/custom-easing-curves.md) when choosing motion curves.
 Consult [UI under 300ms](reference/ui-under-300ms.md), [asymmetric press and release timing](reference/asymmetric-press-release.md), [500ms drawer timing](reference/drawer-500ms-duration.md), [faster perceived performance](reference/faster-improves-performance.md), and [tooltip timing escalation](reference/tooltip-delay-instant-followups.md) when the main question is duration rather than easing.
-Consult [on-screen movement easing](reference/ease-in-out-on-screen-movement.md), [drawer easing](reference/ios-drawer-easing.md), and [spring motion](reference/spring-motion.md) when the motion pattern needs more specific guidance.
+Consult [on-screen movement easing](reference/ease-in-out-on-screen-movement.md), [sheet and drawer easing](reference/sheet-drawer-easing.md), and [spring motion](reference/spring-motion.md) when the motion pattern needs more specific guidance.
 Consult [damped drag boundaries](reference/damp-drag-boundaries.md), [upward drag friction](reference/upward-drag-friction.md), [interruptible animations](reference/interruptible-animations.md), [momentum dismissal](reference/momentum-dismissal.md), [pointer capture](reference/pointer-capture.md), [scroll and drag conflicts](reference/scroll-drag-conflicts.md), and [velocity-aware snap points](reference/velocity-aware-snap-points.md) when implementing gesture-heavy surfaces.
 Consult [blur-bridged transitions](reference/blur-bridge-states.md), [clip-path tabs](reference/clip-path-tab-transitions.md), [respect reduced motion](reference/respect-reduced-motion.md), [opacity fallback](reference/opacity-reduced-motion-fallback.md), [reduced motion alternatives](reference/reduced-motion-not-zero.md), [Motion's `useReducedMotion`](reference/use-reduced-motion-hook.md), [hover gap fill](reference/hover-gap-fill.md), [scroll reveal thresholds](reference/scroll-animation-threshold.md), [child orchestration](reference/stagger-children-orchestration.md), and [toast stack depth](reference/toast-stack-depth.md) for polish and accessibility refinement.
 Consult [transform and opacity only](reference/transform-opacity-only.md), [avoid CSS variables in drag loops](reference/avoid-css-variables-drag.md), [clip-path reveals](reference/clip-path-layout-free-reveals.md), [hardware-accelerated motion under load](reference/hardware-accelerated-busy-main-thread.md), and [surgical `will-change`](reference/will-change-subpixel-shift.md) for performance-sensitive property choices.
@@ -56,7 +56,7 @@ Use this decision order before adding any animation:
 4. **Keep motion interruptible** — new user intent beats finishing the old animation.
 5. **Match the input method** — mouse, touch, and keyboard interactions do not all deserve the same motion treatment.
 6. **Plan reduced motion up front** — accessibility is part of the system, not a cleanup pass.
-7. **Prefer the lightest implementation that fits** — native CSS and Tailwind first, WAAPI when imperative timing matters, Motion when the interaction genuinely needs it.
+7. **Prefer the lightest implementation that fits** — modern CSS and Tailwind first, WAAPI when imperative timing matters, Motion when the interaction genuinely needs it.
 
 Use motion for one or more of these jobs:
 
@@ -128,7 +128,7 @@ Use these as the default guidelines for animation work unless the product contex
 - Use **custom cubic-bezier curves** instead of the generic CSS `ease` default.
 - Use **ease-in-out** for reversible, on-screen state changes that travel there and back.
 - Use **spring motion** when the movement should feel physically connected to gesture input or object behavior.
-- For drawers, sheets, and similar surfaces, a good starting point is the iOS-style curve `cubic-bezier(0.32, 0.72, 0, 1)`.
+- For drawers, sheets, and similar surfaces, a good starting point is the sheet-style curve `cubic-bezier(0.32, 0.72, 0, 1)`.
 - Prefer exponential-style deceleration such as `ease-out-quart`, `ease-out-quint`, or `ease-out-expo` for refined UI motion.
 - Avoid bounce and elastic curves unless the product intentionally embraces a toy-like or playful physical metaphor. They usually feel dated, noisy, or self-conscious.
 - Match easing to context:
@@ -267,7 +267,7 @@ Use appropriate techniques for each animation:
 --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);   /* Slightly snappier */
 --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);     /* Confident, decisive */
 --ease-in-out-standard: cubic-bezier(0.65, 0, 0.35, 1); /* Reversible movement */
---ease-ios-sheet: cubic-bezier(0.32, 0.72, 0, 1);   /* Sheets / drawers */
+--ease-sheet-standard: cubic-bezier(0.32, 0.72, 0, 1);   /* Sheets / drawers */
 
 /* AVOID - feel dated and tacky */
 /* bounce: cubic-bezier(0.34, 1.56, 0.64, 1); */

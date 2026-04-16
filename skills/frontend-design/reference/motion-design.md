@@ -11,7 +11,7 @@ Use this bias order by default:
 3. **Web Animations API** when you need imperative or synchronized timing control
 4. **Motion** when the interaction genuinely needs layout animation, framework-linked orchestration, gesture handling, or motion values
 
-For the fuller decision matrix and native examples, consult [native motion with CSS, Tailwind, and WAAPI](./native-motion-with-css-and-tailwind.md).
+For the fuller decision matrix and built-in web motion examples, consult [CSS, Tailwind, and WAAPI motion](./css-tailwind-and-waapi-motion.md).
 
 ## Duration: The 100/300/500 Rule
 
@@ -135,7 +135,7 @@ This is not optional. Vestibular disorders affect ~35% of adults over 40.
 
 **Active vs passive time**: Passive waiting (staring at a spinner) feels longer than active engagement. Strategies to shift the balance:
 
-- **Preemptive start**: Begin transitions immediately while loading (iOS app zoom, skeleton UI). Users perceive work happening.
+- **Preemptive start**: Begin transitions immediately while loading (view-zoom transition, skeleton UI). Users perceive work happening.
 - **Early completion**: Show content progressively—don't wait for everything. Video buffering, progressive images, streaming HTML.
 - **Optimistic UI**: Update the interface immediately, handle failures gracefully. Instagram likes work offline—the UI updates instantly, syncs later. Use for low-stakes actions; avoid for payments or destructive operations.
 

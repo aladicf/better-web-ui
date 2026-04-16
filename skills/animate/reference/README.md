@@ -32,7 +32,7 @@ Use these when the question is: should this move, how fast should it move, and i
 - [easing context](./easing-context.md)
 - [custom easing curves](./custom-easing-curves.md)
 - [ease in out on-screen movement](./ease-in-out-on-screen-movement.md)
-- [ios drawer easing](./ios-drawer-easing.md)
+- [sheet and drawer easing](./sheet-drawer-easing.md)
 - [drawer 500ms duration](./drawer-500ms-duration.md)
 - [asymmetric press release](./asymmetric-press-release.md)
 - [spring motion](./spring-motion.md)

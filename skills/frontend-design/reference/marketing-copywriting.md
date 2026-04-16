@@ -1,6 +1,6 @@
 # Marketing Copywriting for Product Surfaces
 
-Use this reference when writing or restructuring copy for software products across marketing sites, landing pages, feature pages, onboarding, upgrade prompts, lifecycle messages, app-store listings, and other conversion-sensitive surfaces.
+Use this reference when writing or restructuring copy for software products across marketing sites, landing pages, feature pages, onboarding, upgrade prompts, lifecycle messages, marketplace listings, and other conversion-sensitive surfaces.
 
 This library is not trying to turn every design task into a growth-hacker carnival. The goal is clear, credible, action-oriented product copy that helps the right user understand the value and take the next step.
 
@@ -14,7 +14,7 @@ Before writing, gather only what the prompt or workspace does not already make c
   - marketing site: homepage, landing page, feature page, comparison, about
   - product UX: onboarding, empty state, tooltip, permission prompt, upgrade prompt, settings
   - lifecycle: email, push, in-app message, release note
-  - app store: listing text, captions, subtitle
+  - marketplace listing: listing text, captions, subtitle
 - What is the **one** primary action?
   - install
   - start trial
@@ -40,7 +40,7 @@ Before writing, gather only what the prompt or workspace does not already make c
 
 ### 4. Traffic and context
 
-- Where is traffic coming from: ads, organic, referral, marketplace, app-store search, existing product?
+- Where is traffic coming from: ads, organic, referral, marketplace search, existing product?
 - How warm is the visitor: cold, aware, comparison-stage, already evaluating?
 - Narrow layout or wide layout? Language or regional constraints?
 
@@ -310,7 +310,7 @@ Useful patterns:
 - **confirmation**: what changed + what happens next
 - **error**: what happened + likely cause + recovery step
 
-### App-store listings
+### Marketplace listings
 
 - lead with the strongest outcome in the first lines
 - use bullets as outcomes, not feature inventory
@@ -337,7 +337,7 @@ Avoid when a stronger alternative is available:
 
 Prefer:
 
-- `Install the app`
+- `Open the product`
 - `Start free trial`
 - `Create your first workspace`
 - `Import my data`
@@ -353,7 +353,7 @@ Examples:
 
 - `Create my first board`
 - `Import a project`
-- `Install the iOS app`
+- `Open the dashboard`
 - `Request early access`
 
 ## Surface-Specific Notes

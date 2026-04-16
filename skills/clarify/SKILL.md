@@ -15,7 +15,7 @@ Consult the [ux-writing reference](../frontend-design/reference/ux-writing.md) f
 Consult the [interface honesty](../frontend-design/reference/interface-honesty.md) reference when the copy problem involves manipulative friendliness, evasive progress language, consent wording, cancellation language, upgrade pressure, or any surface that should sound more assertive and truthful.
 Consult the [error-recovery](../frontend-design/reference/error-recovery.md) reference when copy changes depend on validation behavior, summaries, examples of correct input, or recoverability patterns rather than wording alone.
 Consult the [status communication](../frontend-design/reference/status-communication.md) reference when the wording touches notifications, alerts, badges, digests, reminders, or notification settings.
-Consult [marketing copywriting](../frontend-design/reference/marketing-copywriting.md) when the work touches headlines, landing pages, feature pages, onboarding promises, lifecycle messaging, app-store copy, or CTA strategy.
+Consult [marketing copywriting](../frontend-design/reference/marketing-copywriting.md) when the work touches headlines, landing pages, feature pages, onboarding promises, lifecycle messaging, marketplace listings, or CTA strategy.
 Consult [copy editing sweeps](../frontend-design/reference/copy-editing-sweeps.md) when improving existing copy through focused editing passes instead of rewriting it wholesale.
 
 ---

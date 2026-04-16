@@ -2,7 +2,7 @@
 
 Drawers and bottom sheets are one of the clearest exceptions to the ordinary under-300ms rule. Because they move large surfaces across significant screen area, they often need more time to feel natural.
 
-For sheet-like motion, `500ms` paired with the right easing can feel more native than a rushed `200ms` slide.
+For sheet-like motion, `500ms` paired with the right easing can feel more grounded than a rushed `200ms` slide.
 
 ```css
 .drawer {

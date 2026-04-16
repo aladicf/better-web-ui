@@ -154,7 +154,7 @@ Use these when color is carrying meaning in states, charts, legends, selections,
 ## Motion and implementation
 
 - [motion design](./motion-design.md)
-- [native motion with CSS and Tailwind](./native-motion-with-css-and-tailwind.md)
+- [CSS, Tailwind, and WAAPI motion](./css-tailwind-and-waapi-motion.md)
 - [framework official docs](./framework-official-docs.md)
 - [react shadcn accelerators](./react-shadcn-accelerators.md)
 

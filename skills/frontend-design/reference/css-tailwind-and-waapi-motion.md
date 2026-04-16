@@ -1,4 +1,4 @@
-# Native motion with modern CSS, Tailwind, and WAAPI
+# CSS, Tailwind, and WAAPI motion
 
 Use this reference when the animation concept is real, but a heavy framework-specific motion library is **not automatically required**.
 
@@ -18,7 +18,7 @@ The goal is to keep agents honest:
 
 Do not treat Motion as the default answer to every hover, opacity, or scale change.
 
-## When native CSS is usually enough
+## When modern CSS is usually enough
 
 Use plain CSS for:
 
@@ -75,7 +75,7 @@ Example reduced-motion fallback:
 ></div>
 ```
 
-## When WAAPI is the better native option
+## When WAAPI is the better built-in option
 
 Use the Web Animations API when you need:
 
@@ -98,7 +98,7 @@ const animation = element.animate(
 )
 ```
 
-WAAPI is especially useful for synchronized skeleton shimmer, imperative toasts, or browser-native animation control in vanilla JS projects.
+WAAPI is especially useful for synchronized skeleton shimmer, imperative toasts, or built-in browser animation control in vanilla JS projects.
 
 ## When Motion is actually worth it
 
@@ -129,7 +129,7 @@ Motion is powerful because it scales. That does **not** mean every effect should
 
 ## Practical guidance for common concepts in this library
 
-### Most concepts that are natively doable
+### Most concepts that are directly doable with web platform APIs
 
 - easing and timing rules
 - button press scaling
