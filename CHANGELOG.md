@@ -6,6 +6,10 @@ The format is inspired by Keep a Changelog and uses a simple `Added` / `Changed`
 
 ## [Unreleased]
 
+### Changed
+
+- `component-anatomy` and `complex-table-ux` now call out a practical TanStack Table + TanStack Virtual sticky-header guardrail: when wide tables scroll horizontally, both the sticky header container and every header cell need an opaque surface background so body content does not bleed through behind non-pinned headers.
+
 ## [2.0.0] - 2026-04-17
 
 ### Added

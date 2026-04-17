@@ -140,6 +140,7 @@ Use them when people need to compare records, scan repeated fields, sort, filter
 ### Good defaults
 
 - keep strong contrast between header region and row content
+- if a sticky header sits above horizontally scrollable content — especially in TanStack Table + TanStack Virtual grids — give both the sticky header container and every header cell an opaque surface background instead of relying on the row background alone or on pinned-column cells only
 - use row hover and selected states that are clear without becoming gaudy
 - group related information in one column when fragmentation would weaken scanability
 - allow resizing when users manage large information sets and column flexibility matters
@@ -149,6 +150,7 @@ Use them when people need to compare records, scan repeated fields, sort, filter
 ### Avoid
 
 - cluttering tables with unnecessary borders
+- letting sticky headers stay partially transparent during horizontal scroll; in wide or virtualized grids, body cells can bleed through unless the header rowgroup and each header cell both paint a real background
 - forcing full long strings into narrow columns when truncation plus a reveal pattern would scan better
 - splitting tightly related data across multiple columns when one richer column would be easier to read
 - defaulting to infinite scroll for dense operational data where pagination gives better orientation and control

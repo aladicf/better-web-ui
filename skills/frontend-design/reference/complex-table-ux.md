@@ -153,6 +153,20 @@ Plan for:
 - header filters with clear reset paths
 - enough room that controls do not collide visually
 
+## Sticky headers need opaque surfaces
+
+Wide operational tables often need both vertical stickiness and horizontal scrolling.
+
+If you are building that with TanStack Table and TanStack Virtual, do not assume the header row background alone will cover every visible header cell during horizontal scroll. In practice, sticky positioning, wide overflow, and shrink-resistant header cells can leave non-pinned headers looking transparent while body rows move behind them.
+
+Good implementation rule:
+
+- give the sticky header rowgroup its own solid surface background
+- give every header cell that same solid background, not just pinned columns
+- treat pinning, sticky positioning, and header/background shadows as one system so overlap stays readable while users scroll
+
+In utility-first stacks, that often means applying something like `bg-background` to both the sticky header wrapper and every `columnheader`, instead of conditionally painting only pinned cells.
+
 ## Filters should match user habits, not just implementation convenience
 
 Header filters are often powerful, but they need domain-aware input behavior.
