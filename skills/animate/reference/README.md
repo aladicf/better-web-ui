@@ -15,6 +15,15 @@ If you only open a few motion references first, start with:
 - [transform and opacity only](./transform-opacity-only.md) — performance-safe property choices
 - [respect reduced motion](./respect-reduced-motion.md) — accessibility baseline
 
+## Thematic guides
+
+For consolidated guidance organized by motion type rather than granular topic:
+
+- [entrance animations](entrance-animations.md) — elements appearing, revealing, entering the viewport
+- [exit animations](exit-animations.md) — elements leaving, dismissing, collapsing
+- [gesture interactions](gesture-interactions.md) — drag, swipe, snap, and physically connected motion
+- [micro-interactions](micro-interactions.md) — button presses, hover states, toggles, focus, tooltips
+
 ## Strategy and timing
 
 - [animation purpose](./animation-purpose.md)

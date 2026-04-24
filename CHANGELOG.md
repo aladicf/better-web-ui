@@ -11,12 +11,19 @@ Format follows [Keep a Changelog](https://keepachangelog.com/) with Added / Chan
 ### Added
 
 - **New `a11y` skill.** Dedicated accessibility remediation workflow covering keyboard navigation, screen reader support, color contrast, semantic HTML, ARIA usage, focus management, and motion sensitivity. Complements `audit` (scoring) and `harden` (general resilience) with systematic implementation guidance.
+- **New `test` skill.** UI testing strategy covering visual regression (screenshot diffing, baseline discipline, anti-flake practices), interaction testing (component interactions, user flows, deterministic data), accessibility assertions (automated axe checks, keyboard traversal, screen reader smoke tests), and test pyramid guidance (unit vs integration vs E2E tradeoffs). Includes tool selection matrix for Playwright, Cypress, Chromatic, Storybook Test Runner, and axe-core.
+- **New `localize` skill.** Comprehensive i18n and localization workflow covering string management strategy (key-based extraction, ICU MessageFormat, context for translators), locale negotiation and routing (subdirectory vs subdomain vs query param strategies), library selection matrix (react-i18next, Lingui, vue-i18n, svelte-i18n, i18next, FormatJS), RTL and bidirectional text support, text expansion resilience, pluralization and grammar complexity, content beyond strings (images, URLs, SEO, legal), translation workflow (developer handoff, TMS integration, continuous localization), and localized UI testing checklist.
 - **New references for accessibility depth:**
   - `accessibility-testing.md` — automated tool integration (axe-core, WAVE, Pa11y), CI workflow guidance, and tool selection matrix.
   - `colorblindness-ux.md` expanded with grayscale-first design workflow, 5-step palette simulation process, and pattern alternatives for charts under color-vision deficiencies.
 - **New references for motion and animation:**
   - `scroll-driven-animations.md` — CSS scroll timelines vs JavaScript observers decision criteria, animation range values, practical patterns (progress bars, parallax, reveals), and graceful degradation with Intersection Observer fallback.
   - `view-transitions.md` — same-document and cross-document transitions, named element morphing, custom keyframes, transition types, and accessibility considerations.
+- **New references for motion and animation (thematic consolidation):**
+  - `entrance-animations.md` — consolidated guidance for elements appearing: ease-out defaults, transform origin discipline, stagger orchestration, scroll-triggered reveals, modal/drawer entry, clip-path layout-free reveals, reduced-motion fallbacks.
+  - `exit-animations.md` — consolidated guidance for elements leaving: 75% duration rule, ease-in curves, toast removal, list deletion, collapse patterns, blur bridging, interruptible exits.
+  - `gesture-interactions.md` — consolidated guidance for drag/swipe/snap: boundary damping, velocity-aware snap points, momentum dismissal, scroll-drag conflicts, pointer capture, spring motion, visual lift cues.
+  - `micro-interactions.md` — consolidated guidance for small feedback: 80ms threshold, button press scale, asymmetric timing, hover gap fill, tooltip escalation, toggle/checkbox transitions, focus states, reduced-motion alternatives.
 - **New references for performance:**
   - `container-queries.md` — component-level responsive patterns, `container-type` and `@container` syntax, named containers, practical card and stats-bar patterns, and migration guide from media queries.
   - `core-web-vitals.md` — deep-dive on LCP subparts, INP optimization strategies, CLS prevention, field vs lab measurement, and the `web-vitals` JavaScript library.
@@ -31,8 +38,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/) with Added / Chan
   - Critical CSS extraction guidance with inline + async loading pattern and caveats.
   - Container queries integration for component-level responsiveness.
 - **`audit/SKILL.md` strengthened with automated testing integration.** New guidance on running axe/WAVE/Pa11y before manual review, treating results as warning systems, and documenting enabled rules.
-- **`animate/SKILL.md` now references** `scroll-driven-animations.md` and `view-transitions.md` for scroll-linked and state-transition motion.
+- **`animate/SKILL.md` now references** `scroll-driven-animations.md` and `view-transitions.md` for scroll-linked and state-transition motion, plus new thematic guides `entrance-animations.md`, `exit-animations.md`, `gesture-interactions.md`, and `micro-interactions.md`.
+- **`animate/reference/README.md` updated** with new "Thematic guides" section linking the four consolidated motion references.
 - **`frontend-design/reference/README.md` index updated** with new references across accessibility, motion, and performance sections.
+- **`README.md` updated.** `test` and `localize` skills added to Execution skills catalog and quick skill picker table.
+- **Wrapper count increased from 189 to 203** due to new `test` and `localize` skills across 7 roots.
 
 ## [2.2.0] - 2026-04-24
 

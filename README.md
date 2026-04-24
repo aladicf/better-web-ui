@@ -248,8 +248,10 @@ For a maintainer-oriented doctrine map and validation workflow, use [`DEVELOPMEN
 - `extract` — pull repeated UI into reusable components, patterns, and tokens
 - `a11y` — systematic accessibility remediation: keyboard, screen readers, contrast, semantics, ARIA, motion sensitivity
 - `harden` — edge cases, i18n, errors, overflow, and resilience
+- `test` — UI testing strategy: visual regression, interaction testing, and accessibility assertions
 - `hierarchy` — priority, emphasis, and action clarity
 - `imagery` — screenshots, icons, photos, and media treatment
+- `localize` — i18n and localization strategy for multilingual products
 - `normalize` — bring drifted UI back into alignment with the design system
 - `onboard` — first-run, activation, and onboarding strategy that gets users to value quickly
 - `typeset` — typography, readability, and type hierarchy
@@ -279,6 +281,8 @@ For a maintainer-oriented doctrine map and validation workflow, use [`DEVELOPMEN
 | too many controls, choices, features, or competing elements | `distill` | `quieter` |
 | structure is sound but the UI is too loud, saturated, or aggressive | `quieter` | `distill` |
 | the UI feels too bland, safe, or underpowered | `bolder` | `distill` or `quieter` |
+| building test coverage, catching visual bugs, or validating UI behavior | `test` | `audit` or `harden` |
+| adding multilingual support, locale switching, or regional formatting | `localize` | `harden` |
 
 The canonical source of truth for every skill lives under `skills/`.
 
