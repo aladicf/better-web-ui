@@ -37,6 +37,8 @@ If the direct pages exist and show install counts, indexing and telemetry are al
 - Canonical skill content lives under `skills/`.
 - Wrapper trees such as `.github/skills/` and `.cursor/skills/` are generated compatibility shims.
 - Each wrapper root also contains a generated `README.md` that explains the shim contract.
+- Those wrapper roots define what this repository publishes for compatibility and discovery; they do **not** guarantee which project directory the upstream `skills` CLI will target during installation.
+- Upstream currently routes several supported agents — including GitHub Copilot, Codex, Cursor, and OpenCode — through the shared `.agents/skills/` project harness even though this repository also publishes agent-specific wrapper trees such as `.github/skills/` and `.codex/skills/`.
 
 ## Design context files
 
@@ -184,6 +186,19 @@ You usually do **not** need to regenerate wrappers for canonical body-text-only 
 
 If you skip regeneration when it is needed, validation will fail with wrapper-drift errors.
 
+## Tuning skill descriptions
+
+When editing a skill description, use this review pass before regenerating wrappers:
+
+- Start with the job: describe what the skill helps the agent accomplish.
+- Then say when to load it in imperative language, usually with `Use when...`.
+- Focus on user intent, artifacts, and outcomes before implementation details; mention techniques only when they clarify scope.
+- Add realistic trigger language plus boundaries for adjacent skills so near-miss prompts do not activate the wrong skill.
+- Keep descriptions concise. The Agent Skills spec caps `description` at 1024 characters, and shorter descriptions are easier for agents to scan across the full library.
+- Sanity-check the wording against a small set of realistic prompts: at least a few should-trigger examples, a few should-not-trigger near misses, casual phrasing, and prompts that describe the need without naming the skill directly.
+
+If a description gets longer because it tries to explain every edge case, that is usually a sign to tighten the wording or move supporting nuance into the body of `SKILL.md` instead of the frontmatter.
+
 ## Recommended workflow
 
 ### Adding a skill
@@ -207,12 +222,15 @@ If you skip regeneration when it is needed, validation will fail with wrapper-dr
 1. Run `npm run lint` after changing `scripts/` or tooling-related files.
 2. Run `npm run validate` to catch README/catalog drift and broken local links.
 3. Regenerate wrappers if you changed wrapper templates or wrapper-root guidance.
+4. If you changed installation guidance, verify that every example command uses an explicit supported upstream `--agent` value unless the docs are intentionally describing interactive auto-detection behavior.
 
 ### Actual local install smoke test
 
 Use `npm run smoke:install` when you want to verify a real local install flow instead of just discovery.
 
 The helper script creates a disposable temporary directory, installs the `add-ui` skill into that temporary project scope, reports which generated wrapper root or roots the `skills` CLI chose, verifies the installed skill appears in `skills list --json`, and then cleans the temp directory up on success.
+
+When you need a reproducible single-target install while checking README examples, prefer running a disposable manual install with one explicit upstream `--agent` flag such as `github-copilot`, `claude-code`, `codex`, `cursor`, `opencode`, or `pi` rather than relying on interactive detection or `--all`.
 
 If you need to assert that a specific install root is present while reproducing host-routing behavior, set `SKILLS_EXPECTED_INSTALL_ROOT` to one of the configured wrapper roots such as `.github/skills` or `.cursor/skills` before running the smoke test. The script will fail if the CLI does not write that root.
 
@@ -221,8 +239,14 @@ If you need to assert that a specific install root is present while reproducing 
 `npm run validate` currently checks:
 
 - skill name matches directory name
-- skill names stay lowercase and hyphenated
+- skill names stay within the 64-character spec limit and use lowercase letters, numbers, and single hyphens only
 - `description` is present
+- `description` stays within the 1024-character Agent Skills spec limit
+- `description` warnings catch missing explicit `Use when` trigger language and unusually long frontmatter blurbs
+- optional `license`, `compatibility`, and `allowed-tools` frontmatter fields are non-empty strings when present
+- `compatibility` stays within the 500-character spec limit
+- `metadata` remains a YAML mapping with non-empty string values
+- canonical `SKILL.md` files warn if they exceed the spec's 500-line progressive-disclosure recommendation
 - `metadata.argument-hint` is non-empty if present
 - top-level docs required for contributors exist
 - local markdown links in canonical docs resolve

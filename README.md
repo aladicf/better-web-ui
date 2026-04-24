@@ -8,20 +8,6 @@ This repository is a **skills package**, not a starter app or deployment templat
 
 The project follows the [Agent Skills](https://agentskills.io/) format and is designed to be installed through the [`skills` CLI](https://skills.sh/docs/cli).
 
-## Direct `skills.sh` links
-
-If search is being moody, use the direct directory pages:
-
-- [Creator page on `skills.sh`](https://skills.sh/aladicf)
-- [Repository page on `skills.sh`](https://skills.sh/aladicf/better-web-ui)
-- [Example skill page: `add-ui`](https://skills.sh/aladicf/better-web-ui/add-ui)
-
-The most reliable install command is still:
-
-```bash
-npx skills add aladicf/better-web-ui
-```
-
 ## Inspired by
 
 - **[Impeccable](https://github.com/pbakaus/impeccable)** — by **Paul Bakaus**
@@ -78,25 +64,64 @@ Install from GitHub:
 npx skills add aladicf/better-web-ui
 ```
 
-You can also browse the live directory entry directly on `skills.sh`:
-
-- [Creator page](https://skills.sh/aladicf)
-- [Repository page](https://skills.sh/aladicf/better-web-ui)
-
 Useful variations:
 
 ```bash
 npx skills add aladicf/better-web-ui --list
-npx skills add aladicf/better-web-ui --all
 npx skills add aladicf/better-web-ui --skill add-ui --skill critique
+npx skills add aladicf/better-web-ui --agent claude-code
 npx skills add aladicf/better-web-ui -g
 ```
 
-The external [`skills` CLI](https://skills.sh/docs/cli) owns the interactive install UI, the `--all` behavior, and the host-to-wrapper-root routing. This repository ships compatibility wrappers for multiple host layouts — including `.github/skills` for GitHub Copilot / VS Code, `.cursor/skills` for Cursor, plus the other supported roots listed below — but it does not contain the editor-detection logic that decides which wrapper root or wrapper-root set gets written during installation.
+Do **not** use `--all` unless you explicitly want **all skills installed to all agents**. 
 
-If a GitHub Copilot / VS Code install lands in `.agents/skills` instead of `.github/skills`, or if the interactive picker does not show an obvious install-all option at the top, that behavior is coming from the upstream `skills` CLI rather than from the canonical skills in this repository. As a current workaround, use `npx skills add aladicf/better-web-ui --all` when you want every skill without manually selecting each entry.
+### Supported install targets
 
-For contributor setup, local installs, and maintainer commands, see [`DEVELOPMENT.md`](DEVELOPMENT.md).
+If you want one predictable install target, use an explicit upstream `--agent` flag.
+
+These are the exact project-scope install commands this repository documents and supports:
+
+| Supported target | Upstream `--agent` value | Project path the upstream CLI uses | Exact install command |
+| --- | --- | --- | --- |
+| Universal `.agents` harness | `universal` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent universal` |
+| GitHub Copilot / VS Code | `github-copilot` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent github-copilot` |
+| Claude Code | `claude-code` | `.claude/skills/` | `npx skills add aladicf/better-web-ui --agent claude-code` |
+| Codex | `codex` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent codex` |
+| Cursor | `cursor` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent cursor` |
+| OpenCode | `opencode` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent opencode` |
+| Pi | `pi` | `.pi/skills/` | `npx skills add aladicf/better-web-ui --agent pi` |
+
+If you only want a subset of skills for one supported target, keep the same `--agent` flag and add `--skill` selectors:
+
+```bash
+npx skills add aladicf/better-web-ui --agent github-copilot --skill add-ui --skill critique
+npx skills add aladicf/better-web-ui --agent claude-code --skill add-ui --skill audit
+npx skills add aladicf/better-web-ui --agent pi --skill setup
+```
+
+If you want a global install instead of a project-scoped install, add `-g` to the same command:
+
+```bash
+npx skills add aladicf/better-web-ui --agent github-copilot -g
+npx skills add aladicf/better-web-ui --agent claude-code -g
+npx skills add aladicf/better-web-ui --agent pi -g
+```
+
+### Troubleshooting installation surprises
+
+#### Why did many folders get created?
+
+That happens when the upstream `skills` CLI installs to multiple agents instead of one. The two common reasons are:
+
+1. you used `--all`, which upstream defines as all skills to all agents
+2. you used the plain interactive install and accepted multiple detected targets
+
+If you want a single target only, reinstall with one explicit `--agent` value from the supported table above.
+
+
+#### Why did GitHub Copilot, Codex, Cursor, or OpenCode land in `.agents/skills`?
+
+Because that is the upstream project-scope path those agents currently use. In this repository, `.github/skills`, `.codex/skills`, `.cursor/skills`, and `.opencode/skills` are compatibility wrapper trees, not a promise that the upstream installer will choose those exact project directories.
 
 ## First thing to do after installing
 
@@ -109,14 +134,41 @@ Run `/setup` first. Yes, before you go off and build the thing.
 
 ## Upgrading from older installs
 
-Upgrading from an older install such as `1.5.x` is simple:
+To update an existing install, use the upstream CLI:
 
-1. Reinstall the library with the same scope you use now (`--all` or the same `--skill ...` set).
-2. Keep project-specific setup in `.better-web-ui.md`, not inside installed skill files.
-3. If you still have legacy `.impeccable.md` context, migrate it into `.better-web-ui.md`.
-4. Re-run `/setup` only if your product context, stack, or preferred libraries changed.
+```bash
+npx skills update
+npx skills update add-ui
+npx skills update -g
+npx skills update -p
+npx skills update -y
+```
 
-That is the whole trick: upgrade the library, keep your project specifics in `.better-web-ui.md`, and newer versions can improve without wiping your setup.
+Use `npx skills update` to update everything, or pass one or more skill names to update only those skills. Add `-g` for global installs, `-p` for project installs, and `-y` to skip the scope prompt.
+
+If you are upgrading from an older `better-web-ui` install, keep your project-specific context in `.better-web-ui.md`, and re-run `/setup` only if your stack or preferences changed.
+
+## Removing skills
+
+Use the upstream CLI to remove all skills or only the ones you want:
+
+```bash
+npx skills remove
+npx skills remove add-ui
+npx skills remove --global add-ui
+npx skills remove --agent claude-code cursor add-ui
+npx skills remove --all
+```
+
+Use `npx skills remove` to pick skills interactively. Pass one or more skill names to remove them directly, add `--global` to remove from your user directory, or add `--agent` to remove from specific agents. `--all` removes every installed skill for the selected agents, so use it only when that is really what you want.
+
+If you only want to clear one specific target, keep the agent flag explicit. For example:
+
+```bash
+npx skills remove add-ui --agent github-copilot
+npx skills remove add-ui --agent claude-code
+npx skills remove add-ui --agent pi
+```
 
 ## How to use it
 
@@ -239,6 +291,8 @@ This repo also ships generated compatibility wrappers so one canonical skill lib
 - `.pi/skills`
 
 Those wrapper trees are shims only. Canonical edits belong in `skills/`. Maintainer workflow details live in [`DEVELOPMENT.md`](DEVELOPMENT.md) and repository-specific editing rules live in [`AGENTS.md`](AGENTS.md).
+
+They are also a repository compatibility surface, not a guarantee that the upstream `skills` CLI will write matching project directories for every supported agent. For example, upstream currently routes GitHub Copilot, Codex, Cursor, and OpenCode project installs through `.agents/skills/`.
 
 ## Contributing
 

@@ -6,9 +6,15 @@ The format is inspired by Keep a Changelog and uses a simple `Added` / `Changed`
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-04-24
+
 ### Changed
 
+- Refined the canonical `adapt`, `delight`, `extract`, `frontend-design`, `setup`, and `showcase` skill descriptions so they use sharper user-intent framing, clearer overlap boundaries, and less implementation-heavy trigger wording.
+- Maintainer docs and validation now codify stronger Agent Skills description guidance: explicit `Use when` phrasing, concise frontmatter, a 1024-character description limit, and lightweight warnings for descriptions that are missing trigger language or growing unusually long.
+- Validation now matches the formal Agent Skills specification more closely by checking optional frontmatter string fields, the 64-character skill-name limit, string-valued `metadata` entries, and the progressive-disclosure recommendation that canonical `SKILL.md` files stay under 500 lines.
 - `component-anatomy` and `complex-table-ux` now call out a practical TanStack Table + TanStack Virtual sticky-header guardrail: when wide tables scroll horizontally, both the sticky header container and every header cell need an opaque surface background so body content does not bleed through behind non-pinned headers.
+- Installation guidance now removes the old `--all` workaround, adds exact copy-pasteable `--agent` commands for the supported install targets, and clarifies that upstream `skills` CLI routing can legitimately install GitHub Copilot, Codex, Cursor, and OpenCode project skills into `.agents/skills/` even though this repository also ships agent-specific compatibility wrapper trees.
 
 ## [2.0.0] - 2026-04-17
 

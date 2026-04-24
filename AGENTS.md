@@ -71,7 +71,9 @@ LICENSE
 - Run `npm install` before using repository scripts.
 - Use `npm run lint` for repository scripts, `npm run generate:wrappers` for compatibility trees, `npm run check:wrapper-drift` for generated wrapper diff checks, and `npm run validate` for canonical skill, doc, and wrapper checks.
 - The repository generates all supported wrapper roots up front; it does **not** decide which root a host installs into.
-- Host/editor detection during `npx skills add ...` is owned by the external `skills` CLI. If VS Code installs into `.agents/skills` instead of `.github/skills`, or Cursor misses `.cursor/skills`, treat that as an upstream CLI routing issue rather than a wrapper-generation bug in this repository.
+- Host/editor detection during `npx skills add ...` is owned by the external `skills` CLI. Treat upstream agent selection and path routing as installer behavior rather than as a wrapper-generation bug in this repository.
+- For current maintainer docs and examples, remember that upstream intentionally routes several supported agents — including GitHub Copilot, Codex, Cursor, and OpenCode — through the shared `.agents/skills/` project harness even though this repository also publishes `.github/skills/`, `.codex/skills/`, `.cursor/skills/`, and `.opencode/skills/` compatibility wrappers.
+- Do not recommend `npx skills add ... --all` in public docs unless you explicitly mean all skills to all agents. Prefer explicit supported `--agent` examples instead.
 
 ### 1. Edit canonical skills first
 
@@ -85,8 +87,11 @@ For each `SKILL.md`:
 
 - `name` must match the directory name
 - `description` must explain both **what the skill does** and **when to use it**
+- prefer imperative descriptions that explicitly tell the agent when to act, usually with `Use when...`
+- lead with user intent and outcomes before internal mechanics or implementation details
+- include trigger language broad enough to catch realistic prompts, and add boundaries when adjacent skills overlap
 - keep names lowercase and hyphenated
-- prefer concise, trigger-friendly descriptions
+- prefer concise, trigger-friendly descriptions that stay comfortably under the 1024-character spec limit so startup metadata stays lean
 
 If a skill needs an argument hint, store it under `metadata.argument-hint` rather than as a top-level frontmatter field so the skill remains valid against the current Agent Skills validator.
 

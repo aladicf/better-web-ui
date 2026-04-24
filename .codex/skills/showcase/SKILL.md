@@ -1,6 +1,6 @@
 ---
 name: showcase
-description: Create standout, technically ambitious interfaces with effects like shaders, spring physics, scroll-driven reveals, and 60fps motion. Use when the user wants to wow, impress, go all-out, or make something that feels extraordinary.
+description: Create standout, technically ambitious interfaces that feel extraordinary through cinematic transitions, advanced motion, heavy rendering, or other high-ambition implementation work. Use when the user wants to wow, impress, go all-out, or push a feature beyond conventional UI polish—not when simple visual confidence or routine cleanup is enough.
 metadata:
   argument-hint: "[target]"
 ---

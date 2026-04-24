@@ -1,6 +1,6 @@
 ---
 name: adapt
-description: Adapt designs to work across different screen sizes, devices, contexts, or platforms. Implements breakpoints, fluid layouts, and robust target sizing. Use when the user mentions responsive design, narrow layouts, breakpoints, viewport adaptation, or cross-context compatibility.
+description: Adapt designs for narrow, medium, wide, embedded, or print web contexts without losing usability, hierarchy, or target sizing. Use when the user mentions responsive design, breakpoints, narrow layouts, viewport changes, touch-capable browsers, or cross-context adaptation.
 metadata:
    argument-hint: "[target] [context (narrow, medium, wide, print...)]"
 ---

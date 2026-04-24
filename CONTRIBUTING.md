@@ -44,10 +44,14 @@ Use this reading order so you do not have to reconstruct the repo from four over
 
 ## Quality bar for skills
 
-- Prefer concise, trigger-friendly descriptions.
+- Prefer concise, trigger-friendly descriptions that lead with user intent.
+- Write descriptions in imperative form and explicitly say when to load the skill, usually with `Use when...`.
+- Mention realistic trigger contexts and overlap boundaries instead of long implementation menus or vague promises.
 - Keep `SKILL.md` focused on workflow; move repeated doctrine into `reference/` files.
 - Avoid duplicate doctrine across skills when a shared reference would do.
 - Preserve canonical naming such as `add-ui` when hosts expose friendlier aliases.
+
+When tuning a description, sanity-check it against a small mix of realistic should-trigger and should-not-trigger prompts before merging. Favor near-miss negatives over obviously unrelated prompts so you catch overlap problems early.
 
 Before creating a new shared reference, check the existing doctrine maps first instead of maintaining another copy of the same catalog here:
 

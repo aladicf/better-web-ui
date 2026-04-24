@@ -13,6 +13,11 @@ import {
 const wrappersOnly = process.argv.includes('--wrappers-only');
 const errors = [];
 const warnings = [];
+const nameHardLimit = 64;
+const descriptionHardLimit = 1024;
+const descriptionSoftLimit = 400;
+const compatibilityHardLimit = 500;
+const skillLineSoftLimit = 500;
 
 function addError(message) {
   errors.push(message);
@@ -29,6 +34,104 @@ function isNonEmptyString(value) {
 function validateRequiredString(fieldName, value, relativeFilePath) {
   if (!isNonEmptyString(value)) {
     addError(`Missing or empty ${fieldName} in ${relativeFilePath}.`);
+  }
+}
+
+function validateOptionalString(fieldName, value, relativeFilePath, { maxLength } = {}) {
+  if (value === undefined) {
+    return;
+  }
+
+  if (!isNonEmptyString(value)) {
+    addError(`${fieldName} must be a non-empty string in ${relativeFilePath}.`);
+    return;
+  }
+
+  const normalizedValue = value.replace(/\s+/g, ' ').trim();
+
+  if (maxLength !== undefined && normalizedValue.length > maxLength) {
+    addError(`${fieldName} in ${relativeFilePath} exceeds the ${maxLength}-character limit.`);
+  }
+}
+
+function validateName(value, directoryName, relativeFilePath) {
+  validateRequiredString('name', value, relativeFilePath);
+
+  if (!isNonEmptyString(value)) {
+    return;
+  }
+
+  if (value.length > nameHardLimit) {
+    addError(`Skill name in ${relativeFilePath} exceeds the ${nameHardLimit}-character limit.`);
+  }
+
+  if (value !== directoryName) {
+    addError(`Skill name mismatch in ${relativeFilePath}: expected name '${directoryName}', found '${value}'.`);
+  }
+
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)) {
+    addError(
+      `Skill name in ${relativeFilePath} must use lowercase letters, numbers, and single hyphens only.`,
+    );
+  }
+}
+
+function validateDescription(value, relativeFilePath) {
+  validateRequiredString('description', value, relativeFilePath);
+
+  if (!isNonEmptyString(value)) {
+    return;
+  }
+
+  const normalizedDescription = value.replace(/\s+/g, ' ').trim();
+
+  if (normalizedDescription.length > descriptionHardLimit) {
+    addError(
+      `Description in ${relativeFilePath} exceeds the ${descriptionHardLimit}-character Agent Skills spec limit.`,
+    );
+  }
+
+  if (!/\bUse(?: this skill)? when\b/i.test(normalizedDescription)) {
+    addWarning(
+      `Description in ${relativeFilePath} should usually include explicit 'Use when' trigger language for stronger skill discovery.`,
+    );
+  }
+
+  if (normalizedDescription.length > descriptionSoftLimit) {
+    addWarning(
+      `Description in ${relativeFilePath} is ${normalizedDescription.length} characters long. Consider tightening it unless each clause clearly improves triggering.`,
+    );
+  }
+}
+
+function validateMetadata(metadata, relativeFilePath) {
+  if (metadata === undefined) {
+    return;
+  }
+
+  if (typeof metadata !== 'object' || Array.isArray(metadata) || metadata === null) {
+    addError(`metadata must be a YAML mapping in ${relativeFilePath}.`);
+    return;
+  }
+
+  for (const [key, metadataValue] of Object.entries(metadata)) {
+    if (!isNonEmptyString(key)) {
+      addError(`metadata keys must be non-empty strings in ${relativeFilePath}.`);
+    }
+
+    if (!isNonEmptyString(metadataValue)) {
+      addError(`metadata.${key} must be a non-empty string in ${relativeFilePath}.`);
+    }
+  }
+}
+
+function validateSkillFileLength(contents, relativeFilePath) {
+  const lineCount = contents.replace(/\r\n/g, '\n').split('\n').length;
+
+  if (lineCount > skillLineSoftLimit) {
+    addWarning(
+      `${relativeFilePath} is ${lineCount} lines long. Consider moving detailed guidance into references, assets, or scripts to stay within the spec's progressive-disclosure guidance.`,
+    );
   }
 }
 
@@ -216,34 +319,25 @@ if (!wrappersOnly) {
 
   for (const skill of skills) {
     const relativeSkillPath = path.relative(projectRoot, skill.skillFilePath);
+    const metadata = skill.frontmatter.metadata;
 
-    validateRequiredString('name', skill.skillName, relativeSkillPath);
-
-    if (skill.skillName !== skill.directoryName) {
-      addError(
-        `Skill name mismatch in ${path.relative(projectRoot, skill.skillFilePath)}: expected name '${skill.directoryName}', found '${skill.skillName}'.`,
-      );
-    }
-
-    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(skill.skillName)) {
-      addError(`Skill name in ${relativeSkillPath} must be lowercase and hyphenated.`);
-    }
-
-    validateRequiredString('description', skill.frontmatter.description, relativeSkillPath);
+    validateName(skill.skillName, skill.directoryName, relativeSkillPath);
+    validateDescription(skill.frontmatter.description, relativeSkillPath);
+    validateOptionalString('license', skill.frontmatter.license, relativeSkillPath);
+    validateOptionalString('compatibility', skill.frontmatter.compatibility, relativeSkillPath, {
+      maxLength: compatibilityHardLimit,
+    });
+    validateOptionalString('allowed-tools', skill.frontmatter['allowed-tools'], relativeSkillPath);
+    validateMetadata(metadata, relativeSkillPath);
+    validateSkillFileLength(skill.contents, relativeSkillPath);
 
     if (
-      skill.frontmatter.metadata !== undefined &&
-      (typeof skill.frontmatter.metadata !== 'object' ||
-        Array.isArray(skill.frontmatter.metadata) ||
-        skill.frontmatter.metadata === null)
-    ) {
-      addError(`metadata must be a YAML mapping in ${relativeSkillPath}.`);
-    }
-
-    if (
-      skill.frontmatter.metadata &&
-      'argument-hint' in skill.frontmatter.metadata &&
-      !isNonEmptyString(skill.frontmatter.metadata['argument-hint'])
+      metadata !== undefined &&
+      typeof metadata === 'object' &&
+      !Array.isArray(metadata) &&
+      metadata !== null &&
+      'argument-hint' in metadata &&
+      !isNonEmptyString(metadata['argument-hint'])
     ) {
       addError(`metadata.argument-hint must be a non-empty string in ${relativeSkillPath}.`);
     }
