@@ -237,7 +237,7 @@ Use `npm run smoke:install` when you want to verify a real local install flow in
 
 The helper script creates a disposable temporary directory, installs the `add-ui` skill into that temporary project scope, reports which generated wrapper root or roots the `skills` CLI chose, verifies the installed skill appears in `skills list --json`, and then cleans the temp directory up on success.
 
-When you need a reproducible single-target install while checking README examples, prefer running a disposable manual install with one explicit upstream `--agent` flag such as `github-copilot`, `claude-code`, `codex`, `cursor`, `opencode`, or `pi` rather than relying on interactive detection or `--all`.
+When you need a reproducible supported install while checking README examples, prefer running a disposable manual install with the explicit upstream target set `--agent codex --agent cursor --agent github-copilot --agent opencode` rather than relying on interactive detection or `--all`. Use a single explicit `--agent` only when you are checking one target-specific path.
 
 If you need to assert that a specific install root is present while reproducing host-routing behavior, set `SKILLS_EXPECTED_INSTALL_ROOT` to one of the configured wrapper roots such as `.github/skills` or `.cursor/skills` before running the smoke test. The script will fail if the CLI does not write that root.
 

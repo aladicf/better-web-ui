@@ -6,6 +6,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/) with Added / Chan
 
 ## [Unreleased]
 
+### Changed
+
+- **Install guidance now defaults to Codex, Cursor, GitHub Copilot, and OpenCode.** README examples avoid the upstream interactive Universal group by documenting explicit `--agent codex --agent cursor --agent github-copilot --agent opencode` installs, and troubleshooting explains that the locked Universal list is owned by the upstream `skills` CLI.
+
 ## [2.4.0] - 2026-04-25
 
 ### Added

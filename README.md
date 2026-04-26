@@ -63,50 +63,53 @@ When a project already has an established stack, agents should match it first. W
 Install from GitHub:
 
 ```bash
-npx skills add aladicf/better-web-ui
+npx skills add aladicf/better-web-ui --agent codex --agent cursor --agent github-copilot --agent opencode
 ```
 
 Useful variations:
 
 ```bash
 npx skills add aladicf/better-web-ui --list
-npx skills add aladicf/better-web-ui --skill add-ui --skill critique
-npx skills add aladicf/better-web-ui --agent claude-code
-npx skills add aladicf/better-web-ui -g
+npx skills add aladicf/better-web-ui --agent codex --agent cursor --agent github-copilot --agent opencode
+npx skills add aladicf/better-web-ui --agent codex --agent cursor --agent github-copilot --agent opencode --skill add-ui --skill critique
+npx skills add aladicf/better-web-ui --agent codex --agent cursor --agent github-copilot --agent opencode -g
 ```
 
 Do **not** use `--all` unless you explicitly want **all skills installed to all agents**. 
 
-### Supported install targets
+### Recommended install target
 
-If you want one predictable install target, use an explicit upstream `--agent` flag.
+For the supported default audience, install directly to Codex, Cursor, GitHub Copilot, and OpenCode:
 
-These are the exact project-scope install commands this repository documents and supports:
+```bash
+npx skills add aladicf/better-web-ui --agent codex --agent cursor --agent github-copilot --agent opencode
+```
+
+Those four upstream agents currently share the same project-scope path, `.agents/skills/`, so the CLI writes one shared copy of each skill there.
+
+If you want one predictable install target, use one explicit upstream `--agent` flag:
 
 | Supported target | Upstream `--agent` value | Project path the upstream CLI uses | Exact install command |
 | --- | --- | --- | --- |
-| Universal `.agents` harness | `universal` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent universal` |
 | GitHub Copilot / VS Code | `github-copilot` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent github-copilot` |
-| Claude Code | `claude-code` | `.claude/skills/` | `npx skills add aladicf/better-web-ui --agent claude-code` |
 | Codex | `codex` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent codex` |
 | Cursor | `cursor` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent cursor` |
 | OpenCode | `opencode` | `.agents/skills/` | `npx skills add aladicf/better-web-ui --agent opencode` |
-| Pi | `pi` | `.pi/skills/` | `npx skills add aladicf/better-web-ui --agent pi` |
 
 If you only want a subset of skills for one supported target, keep the same `--agent` flag and add `--skill` selectors:
 
 ```bash
 npx skills add aladicf/better-web-ui --agent github-copilot --skill add-ui --skill critique
-npx skills add aladicf/better-web-ui --agent claude-code --skill add-ui --skill audit
-npx skills add aladicf/better-web-ui --agent pi --skill setup
+npx skills add aladicf/better-web-ui --agent codex --skill add-ui --skill audit
+npx skills add aladicf/better-web-ui --agent opencode --skill setup
 ```
 
 If you want a global install instead of a project-scoped install, add `-g` to the same command:
 
 ```bash
 npx skills add aladicf/better-web-ui --agent github-copilot -g
-npx skills add aladicf/better-web-ui --agent claude-code -g
-npx skills add aladicf/better-web-ui --agent pi -g
+npx skills add aladicf/better-web-ui --agent codex -g
+npx skills add aladicf/better-web-ui --agent opencode -g
 ```
 
 ### Troubleshooting installation surprises
@@ -120,6 +123,15 @@ That happens when the upstream `skills` CLI installs to multiple agents instead 
 
 If you want a single target only, reinstall with one explicit `--agent` value from the supported table above.
 
+#### Why does the installer show Amp, Antigravity, Cline, Deep Agents, Firebender, Gemini CLI, Kimi Code CLI, or Warp as "Universal"?
+
+The upstream `skills` CLI groups every agent whose project path is `.agents/skills/` into a locked "Universal" section during interactive installs. That list is defined by the CLI, not by this repository's skill metadata, so `better-web-ui` cannot mark only some `.agents/skills/` consumers as universal.
+
+To avoid that locked universal prompt, use explicit agents:
+
+```bash
+npx skills add aladicf/better-web-ui --agent codex --agent cursor --agent github-copilot --agent opencode
+```
 
 #### Why did GitHub Copilot, Codex, Cursor, or OpenCode land in `.agents/skills`?
 
@@ -158,7 +170,7 @@ Use the upstream CLI to remove all skills or only the ones you want:
 npx skills remove
 npx skills remove add-ui
 npx skills remove --global add-ui
-npx skills remove --agent claude-code cursor add-ui
+npx skills remove --agent codex cursor github-copilot opencode add-ui
 npx skills remove --all
 ```
 
@@ -168,8 +180,8 @@ If you only want to clear one specific target, keep the agent flag explicit. For
 
 ```bash
 npx skills remove add-ui --agent github-copilot
-npx skills remove add-ui --agent claude-code
-npx skills remove add-ui --agent pi
+npx skills remove add-ui --agent codex
+npx skills remove add-ui --agent opencode
 ```
 
 ## How to use it

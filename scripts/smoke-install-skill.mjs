@@ -9,6 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const expectedInstallRoot = process.env.SKILLS_EXPECTED_INSTALL_ROOT?.trim() || null;
+const supportedInstallAgents = ['codex', 'cursor', 'github-copilot', 'opencode'];
 
 const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'better-web-ui-smoke-'));
 
@@ -49,7 +50,8 @@ async function pathExists(filePath) {
 try {
   console.log(`Running smoke install in temporary directory: ${tempDir}`);
 
-  run(`npx skills add "${projectRoot}" --skill add-ui -y`, {
+  const agentFlags = supportedInstallAgents.map((agent) => `--agent ${agent}`).join(' ');
+  run(`npx skills add "${projectRoot}" --skill add-ui ${agentFlags} -y`, {
     cwd: tempDir,
   });
 

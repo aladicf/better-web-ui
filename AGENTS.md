@@ -72,7 +72,8 @@ LICENSE
 - Use `npm run lint` for repository scripts, `npm run generate:wrappers` for compatibility trees, `npm run check:wrapper-drift` for generated wrapper diff checks, and `npm run validate` for canonical skill, doc, and wrapper checks.
 - The repository generates all supported wrapper roots up front; it does **not** decide which root a host installs into.
 - Host/editor detection during `npx skills add ...` is owned by the external `skills` CLI. Treat upstream agent selection and path routing as installer behavior rather than as a wrapper-generation bug in this repository.
-- For current maintainer docs and examples, remember that upstream intentionally routes several supported agents — including GitHub Copilot, Codex, Cursor, and OpenCode — through the shared `.agents/skills/` project harness even though this repository also publishes `.github/skills/`, `.codex/skills/`, `.cursor/skills/`, and `.opencode/skills/` compatibility wrappers.
+- For current maintainer docs and examples, default public install guidance to the explicit supported target set `--agent codex --agent cursor --agent github-copilot --agent opencode`. Upstream intentionally routes those agents through the shared `.agents/skills/` project harness even though this repository also publishes `.github/skills/`, `.codex/skills/`, `.cursor/skills/`, and `.opencode/skills/` compatibility wrappers.
+- The upstream `skills` CLI treats every agent with project path `.agents/skills/` as part of its locked Universal group during interactive installs. This repository cannot narrow that Universal group through skill metadata; use explicit `--agent` examples instead.
 - Do not recommend `npx skills add ... --all` in public docs unless you explicitly mean all skills to all agents. Prefer explicit supported `--agent` examples instead.
 
 ### 1. Edit canonical skills first
