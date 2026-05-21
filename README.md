@@ -1,3 +1,5 @@
+> **Maintenance Mode** — This repo remains available and will continue supporting all web frameworks and tools. While the information here stays up to date, my active development focus has shifted to [better-react-web-ui](https://github.com/aladicf/better-react-web-ui), a React + Shadcn + TailwindCSS project.
+
 # better-web-ui
 
 `better-web-ui` is an opinionated Agent Skills library for developers who ship code that works and would like the UI to stop looking like a Midjourney prompt of "modern SaaS dashboard."
